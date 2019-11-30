@@ -25,3 +25,24 @@ def dp_opt(arr, i):
     return opt[len(arr)-1]
 dp_opt(arr)
 
+
+
+#DP-2 Find the number combination that equals the given number from a given arr
+arr = [3, 34, 4, 12, 5, 2]
+
+#recursive 
+def rec_subset(arr, i, s):
+    if s == 0:
+        return True
+    elif i == 0:
+        return arr[0] == s
+    elif arr[i] > s:
+        return rec_subset(arr, i-1, s)
+    else:
+        A = rec_subset(arr, i-1, s-arr[i])
+        B = rec_subset(arr, i-1, s)
+        return A or B
+rec_subset(arr, len(arr)-1, 9)
+
+#memory 
+def 
