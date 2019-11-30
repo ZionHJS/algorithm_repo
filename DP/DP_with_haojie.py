@@ -63,7 +63,7 @@ def dp_subset(arr, S):
 
 dp_subset(arr, 9)
 
-#memory DP 
+#memory DP same but simple version
 def dp_subset(arr, s):
     subset = np.zeros((len(arr), s+1), dtype=bool)   #create 2D array  datatype = Boolean
     subset[:, 0] = True   
@@ -78,7 +78,6 @@ def dp_subset(arr, s):
                 A = subset[i-1, s-arr[i]]
                 B = subset[i-1, s]
                 subset[i, s] = A or B
-    r,c = subset.shape
-    return  subset[r-1, c-1]
+    return  subset[len(arr)-1, s]
 
 print(dp_subset(arr, 9))
