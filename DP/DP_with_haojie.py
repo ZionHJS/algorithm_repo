@@ -66,9 +66,9 @@ dp_subset(arr, 9)
 #memory DP same but simple version
 def dp_subset(arr, S):
     subset = np.zeros((len(arr), S+1), dtype=bool)   #create 2D array  datatype = Boolean
-    subset[:, 0] = True   
-    subset[0, :] = False   
-    subset[0, 0 = True   
+    subset[:, 0] = True   #fill the first row
+    subset[0, :] = False   #fill the first col
+    subset[0, 0] = True   
 
     for i in range(1, len(arr)):
         for s in range(1, S+1):  #注意 这里是从二维数组内向外长的
