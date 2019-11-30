@@ -71,7 +71,7 @@ def dp_subset(arr, s):
     subset[0, 0 = True   
 
     for i in range(1, len(arr)):
-        for s in range(1, s+1):
+        for s in range(1, s+1):  #注意 这里是从二维数组内向外长的
             if arr[i] > s:
                 subset[i,s] = subset[i-1, s]
             else:
