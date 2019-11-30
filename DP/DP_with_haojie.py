@@ -77,7 +77,7 @@ def dp_subset(arr, s):
             else:
                 A = subset[i-1, s-arr[i]]
                 B = subset[i-1, s]
-                subset[i, s] = A or B
+                subset[i, s] = A or B   #只要一个为true就为ture
     return  subset[len(arr)-1, s]
 
 print(dp_subset(arr, 9))
