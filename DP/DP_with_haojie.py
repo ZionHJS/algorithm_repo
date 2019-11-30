@@ -69,12 +69,13 @@ def dp_subset(arr, s):
     subset[:, 0] = True   
     subset[0, :] = False   
     subset[0, 0 = True   
+
     for i in range(1, len(arr)):
         for s in range(1, s+1):
             if arr[i] > s:
                 subset[i,s] = subset[i-1, s]
-            elif:
-                A = subset[arr, i-1, s-arr[i]]
+            else:
+                A = subset[i-1, s-arr[i]]
                 B = subset[i-1, s]
                 subset[i, s] = A or B
     r,c = subset.shape
