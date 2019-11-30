@@ -44,5 +44,40 @@ def rec_subset(arr, i, s):
         return A or B
 rec_subset(arr, len(arr)-1, 9)
 
-#memory 
-def 
+#memory DP
+def dp_subset(arr, S):
+    subset = np.zeros((len(arr), S+1), dtype=bool) #create the j array / dtype = data type 这里全部保存boolean type的数据
+    subset[:, 0] = True   #all rows at postion 0 all True
+    subset[0, :] = False   #0 row at all postions are False
+    subset[0, arr[0]] = True   #0 row at postion 0 is True (this part is important because we wanna 0 0 equals true)
+    for i in range(1, len(arr)):
+        for s in range(1, S + 1):
+            if arr[i] > s:
+                subset[i,s] = subset[i-1, s]
+            elif:
+                A = subset[arr, i-1, s-arr[i]]
+                B = subset[i-1, s]
+                subset[i, s] = A or B
+    r,c = subset.shape
+    return  subset[r-1, c-1]
+
+dp_subset(arr, 9)
+
+#memory DP
+def dp_subset(arr, S):
+    subset = np.zeros((len(arr), S+1), dtype=bool)
+    subset[:, 0] = True   
+    subset[0, :] = False   
+    subset[0, arr[0]] = True   
+    for i in range(1, len(arr)):
+        for s in range(1, S + 1):
+            if arr[i] > s:
+                subset[i,s] = subset[i-1, s]
+            elif:
+                A = subset[arr, i-1, s-arr[i]]
+                B = subset[i-1, s]
+                subset[i, s] = A or B
+    r,c = subset.shape
+    return  subset[r-1, c-1]
+
+dp_subset(arr, 9)
