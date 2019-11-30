@@ -64,18 +64,18 @@ def dp_subset(arr, S):
 dp_subset(arr, 9)
 
 #memory DP same but simple version
-def dp_subset(arr, s):
-    subset = np.zeros((len(arr), s+1), dtype=bool)   #create 2D array  datatype = Boolean
+def dp_subset(arr, S):
+    subset = np.zeros((len(arr), S+1), dtype=bool)   #create 2D array  datatype = Boolean
     subset[:, 0] = True   
     subset[0, :] = False   
     subset[0, 0 = True   
 
     for i in range(1, len(arr)):
-        for s in range(1, s+1):  #注意 这里是从二维数组内向外长的
+        for s in range(1, S+1):  #注意 这里是从二维数组内向外长的
             if arr[i] > s:
                 subset[i,s] = subset[i-1, s]
             else:
-                A = subset[i-1, s-arr[i]]
+                A = subset[i-1, s-arr[i]]   #start from i-1 = 0
                 B = subset[i-1, s]
                 subset[i, s] = A or B   #只要一个为true就为ture
     return  subset[len(arr)-1, s]
