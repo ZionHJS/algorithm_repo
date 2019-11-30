@@ -80,4 +80,4 @@ def dp_subset(arr, S):
     r,c = subset.shape
     return  subset[r-1, c-1]
 
-dp_subset(arr, 9)
+print(dp_subset(arr, 9))
