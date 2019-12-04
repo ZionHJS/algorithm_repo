@@ -14,7 +14,7 @@ def OPT(arr, i):
         return max(A, B)
 OPT(arr, 6)
 #memory DP
-def dpOPT(arr, i):
+def dpOPT(arr):
     opt = np.zero(len(arr))
     opt[0] = arr[0]
     opt[1] = max(arr[0], arr[1])
