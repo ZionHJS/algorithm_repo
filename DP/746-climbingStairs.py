@@ -9,8 +9,7 @@ cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1, 100, 1, 1, 100, 100, 1, 1]
 
 cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
 
-cost = [1, 100, 1, 1, 1, 100, 1, 1, 100]
-
+cost = [1, 100, 1]
 def rec_minCost(cost):
     length = len(cost)
     opt = [0 for _ in range(len(cost))]
@@ -19,12 +18,9 @@ def rec_minCost(cost):
 
     for i in range(2, len(cost)):
         A = opt[i-2] + cost[i]
-        B = opt[i-1]
-        if A < B:
-            opt[i] = A
-        else:
-            opt[i] = B + cost[i]
+        B = opt[i-1] + cost[i]
+        opt[i] = min(A,B)
     print(opt)
-    print(opt[length-1]-cost[length-1])
+    print(min(opt[length-1], opt[length-2]))
 
 rec_minCost(cost)
