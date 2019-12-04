@@ -1,20 +1,20 @@
 import numpy as np
 
+#1 Given Array and a Number and from the max combination of the Array(No Adjacent Number)
 arr = [1,2,4,1,7,8,3]
-
-def rec_opt(arr, i):
+#recursive
+def OPT(arr, i):
     if i == 0:
         return arr[0]
     elif i == 1:
         return max(arr[0], arr[1])
     else:
-        A = rec_opt(arr, i-2) + arr[i]
-        B = rec_opt(arr, i-1)
+        A = OPT(arr, i-2) + arr[i]
+        B = OPT(arr, i-1)
         return max(A, B)
-rec_opt(arr, 6)
-
-
-def dp_opt(arr, i):
+OPT(arr, 6)
+#memory DP
+def dpOPT(arr, i):
     opt = np.zero(len(arr))
     opt[0] = arr[0]
     opt[1] = max(arr[0], arr[1])
@@ -23,7 +23,7 @@ def dp_opt(arr, i):
         B = opt[i-1]
         opt[i] = max(A,B)
     return opt[len(arr)-1]
-dp_opt(arr)
+dpOPT(arr)
 
 
 
@@ -47,14 +47,14 @@ rec_subset(arr, len(arr)-1, 9)
 #memory DP
 def dp_subset(arr, S):
     subset = np.zeros((len(arr), S+1), dtype=bool) #create the j array / dtype = data type 这里全部保存boolean type的数据
-    subset[:, 0] = True   #all rows at postion 0 all True
     subset[0, :] = False   #0 row at all postions are False
-    subset[0, arr[0]] = True   #0 row at postion 0 is True (this part is important because we wanna 0 0 equals true)
+    subset[:, 0] = True   #all rows at postion 0 all True
+    subset[0, arr[0]] = True   #get the one that is true out
     for i in range(1, len(arr)):
         for s in range(1, S + 1):
             if arr[i] > s:
                 subset[i,s] = subset[i-1, s]
-            elif:
+            else:
                 A = subset[arr, i-1, s-arr[i]]
                 B = subset[i-1, s]
                 subset[i, s] = A or B
