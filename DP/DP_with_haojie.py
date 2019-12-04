@@ -49,7 +49,10 @@ def dp_subset(arr, S):
     subset = np.zeros((len(arr), S+1), dtype=bool) #create the j array / dtype = data type 这里全部保存boolean type的数据
     subset[0, :] = False   #0 row at all postions are False
     subset[:, 0] = True   #all rows at postion 0 all True
-    subset[0, arr[0]] = True   #get the one that is true out
+    if arr[0] <= S+1:
+        subset[0, arr[0]] = True   #get the one that is true out
+    
+
     for i in range(1, len(arr)):
         for s in range(1, S + 1):
             if arr[i] > s:
