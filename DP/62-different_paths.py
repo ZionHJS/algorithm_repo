@@ -1,19 +1,13 @@
-import numpy
+import numpy as np
 
 def uniquePaths(m, n):
-        opt = numpy.zeros([m+1,n+1])
-        opt[1,1] = 1
-        opt[1,2] = 1
-        opt[2,1] = 1
-        return print(opt)
+        opt = np.zeros([m, n])
+        opt[0, :] = 1
+        opt[:, 0] = 1
+        for i in range(1, m):
+            for j in range(1, n):
+                opt[i][j] = opt[i][j-1] + opt[i-1][j]
+        return opt[m-1, n-1]
+        
 uniquePaths(10,10)
-
-class Solution(object):
-    def uniquePaths(self, m, n):
-        opt = numpy.zeros([m+1,n+1])
-        opt[1,1] = 1
-        opt[1,2] = 1
-        opt[2,1] = 1
-        return print(opt)
-obj = new Solution(10,10)
-obj.uniquePaths)()
+        
