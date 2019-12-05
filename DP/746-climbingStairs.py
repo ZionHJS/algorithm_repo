@@ -24,7 +24,6 @@ def rec_minCost(cost):
     print(min(opt[_len-1], opt[_len-2]))
 rec_minCost(cost)
 
-
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         _len = len(cost)

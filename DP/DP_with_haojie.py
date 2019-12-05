@@ -51,7 +51,6 @@ def dp_subset(arr, S):
     subset[:, 0] = True   #all rows at postion 0 all True
     if arr[0] <= S+1:
         subset[0, arr[0]] = True   #get the one that is true out
-    
 
     for i in range(1, len(arr)):
         for s in range(1, S + 1):
