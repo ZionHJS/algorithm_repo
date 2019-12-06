@@ -9,6 +9,8 @@ class Solution(object):
             for l in obstacleGrid:
                 if l[0] == 1:
                     return 0
+                    
+        #initialize 1d grid           
         opt = [1]*n
         for i in range(1, m):
             for j in range(1, n):
