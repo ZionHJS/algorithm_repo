@@ -25,8 +25,6 @@ def dpOPT(arr):
     return opt[len(arr)-1]
 dpOPT(arr)
 
-
-
 #DP-2 Find the number combination that equals the given number from a given arr
 arr = [3, 34, 4, 12, 5, 2]
 

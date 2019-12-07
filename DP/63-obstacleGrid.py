@@ -11,7 +11,7 @@ class Solution(object):
                     return 0
         if obstacleGrid[0][0] == 1:
             return 0
-                    
+                
         #initialize 1d grid           
         opt = [1]*n
         for k in range(0, n):
@@ -42,3 +42,5 @@ class Solution:
                 else:
                     obstacleGrid[row][col] = obstacleGrid[row][col-1] + obstacleGrid[row-1][col]
         return obstacleGrid[-1][-1]
+
+
