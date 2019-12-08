@@ -65,12 +65,15 @@ class Solution:
                     dp[i+1]=dp[i]
         return dp[-1]
 
-
-
-
 class Solution:
     def numDecodings(self, s)
         pp, p = 1, int(s[0] != '0')
         for i in range(1, len(s)):
             pp, p = p, pp * (9 < int(s[i-1:i+1]) <= 26) + p * (int(s[i]) > 0)
         return p
+
+def twoSum(a, b):
+    return a + b
+
+print(twoSum(10.3, 2.4))
+print(twoSum('s', 'b'))
