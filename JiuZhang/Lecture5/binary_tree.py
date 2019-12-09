@@ -1,6 +1,5 @@
 # coding=utf-8
 
-
 class TreeNode:
 
     def __init__(self, val):
@@ -34,7 +33,6 @@ def build_tree():
 
     return node_1
 
-
 def traverse_tree(root):
     if root is None:
         return
@@ -42,7 +40,6 @@ def traverse_tree(root):
     print(root.val)
     traverse_tree(root.left)
     traverse_tree(root.right)
-
 
 def preorder_traverse(root):
     # 8 3 1 6 4 7 10 14 13
@@ -53,7 +50,6 @@ def preorder_traverse(root):
     preorder_traverse(root.left)
     preorder_traverse(root.right)
 
-
 def inorder_traverse(root):
     # 1 3 4 6 7 8 10 13 14
     if root is None:
@@ -62,7 +58,6 @@ def inorder_traverse(root):
     inorder_traverse(root.left)
     print(root.val, end=' ')
     inorder_traverse(root.right)
-
 
 def postorder_traverse(root):
     # 1 4 7 6 3 13 14 10 8 
@@ -73,7 +68,6 @@ def postorder_traverse(root):
     postorder_traverse(root.right)
     print(root.val, end=' ')
 
-
 def main():
     root = build_tree()
     preorder_traverse(root)
@@ -81,7 +75,6 @@ def main():
     inorder_traverse(root)
     print()
     postorder_traverse(root)
-
 
 if __name__ == '__main__':
     main()
