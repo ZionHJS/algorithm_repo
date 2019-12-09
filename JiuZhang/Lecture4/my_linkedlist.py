@@ -73,11 +73,11 @@ if __name__ == '__main__':
 
     print(ll.get(1))
     print(ll.get(3))
-
+'''
     ll.set(0, -100)
     ll.set(2, 32)
     ll.traverse()
 
     ll.remove(2)
     ll.traverse()
-
+'''
