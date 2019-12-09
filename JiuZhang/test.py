@@ -17,4 +17,7 @@ print(aList)
 result = [i for i in range(101) if i % 5 == 0]
 print(result)
 
-
+#翻转字符串
+s = 'jiuzhang'
+result = ''
+print(s[9:1:-1])
