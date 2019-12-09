@@ -15,3 +15,6 @@ print(aList)
 aList.reverse()
 print(aList)
 
+#list生成器
+result = [i for i in range(101) if i % 5 == 0]
+print(result)
