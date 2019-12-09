@@ -78,3 +78,10 @@ for c in str_1:
 print(res)
 
 
+from queue import Queue
+que = Queue(maxsize=100)
+for i in range(20):
+    que.put(i)
+print(que.qsize())
+while not que.empty():
+    print(que.get())
