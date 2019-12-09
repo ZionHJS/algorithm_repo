@@ -76,3 +76,5 @@ for c in str_1:
     res = res * 10 + ord(c) - ord('0')
 
 print(res)
+
+
