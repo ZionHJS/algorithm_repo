@@ -1,7 +1,7 @@
 # coding=utf-8
 
 class TreeNode:
-
+    #create a binary tree node 
     def __init__(self, val):
         self.val = val
         self.left = None
@@ -33,6 +33,7 @@ def build_tree():
 
     return node_1
 
+#binary traverse:
 def traverse_tree(root):
     if root is None:
         return
