@@ -41,9 +41,9 @@ def traverse_tree(root):
     print(root.val)
     traverse_tree(root.left)
     traverse_tree(root.right)
+
 #binary traverse 1.preorder:
 def preorder_traverse(root):
-    # 8 3 1 6 4 7 10 14 13
     if root is None:
         return
 
@@ -53,7 +53,6 @@ def preorder_traverse(root):
 
 #binary traverse 2.inorder:
 def inorder_traverse(root):
-    # 1 3 4 6 7 8 10 13 14
     if root is None:
         return
 
@@ -63,7 +62,6 @@ def inorder_traverse(root):
 
 #binary traverse 3.postorder:
 def postorder_traverse(root):
-    # 1 4 7 6 3 13 14 10 8 
     if root is None:
         return
 
@@ -82,4 +80,5 @@ def main():
 if __name__ == '__main__':
     main()
 
+print(56 // 3)
 
