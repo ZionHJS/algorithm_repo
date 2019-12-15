@@ -1,50 +1,58 @@
 # coding=utf-8
 
+
 class TreeNode:
+
     def __init__(self, val):
         self.val = val
         self.left = None
         self.right = None
 
-class BST:
+
+class SetBSTImpl:
+
     def __init__(self):
-        self.__root = None   #创建一个空的BST树函数 开始往里面增加节点
+        self.__root = None
 
     def add(self, val):
-        self.__root = self.__add_helper(self.__root, val)
+        if not self.contains(val):
+            self.__root = self.__add_helper(self.__root, val)
 
     def __add_helper(self, root, val):
-        if not root:   #root 为 null时  Exit Condition call back
+        if not root:
             return TreeNode(val)
         if val < root.val:
             root.left = self.__add_helper(root.left, val)
         else:
             root.right = self.__add_helper(root.right, val)
-        return root   #end call back 这个return 仅仅针对本class的self.__root
+
+        return root
 
     def contains(self, val):
         return self.__contains_helper(self.__root, val)
 
     def __contains_helper(self, root, val):
-        if not root:   #exit condition callback False
+        if not root:
             return False
 
         if root.val == val:
-            return True   #exit condition callback True
+            return True
         elif val < root.val:
             return self.__contains_helper(root.left, val)
         else:
             return self.__contains_helper(root.right, val)
 
-bst = BST()
-bst.add(10)
-bst.add(11)
-bst.add(9)
 
-print(bst)
+if __name__ == '__main__':
 
-print(bst.contains(10))
-print(bst.contains(11))
-print(bst.contains(9))
+    my_set = SetBSTImpl()
 
-print(bst.contains(8))
+    for i in range(100):
+        my_set.add(i)
+
+    success = True
+    for i in range(100):
+        if not my_set.contains(i):
+            success = False
+
+    print(success)
