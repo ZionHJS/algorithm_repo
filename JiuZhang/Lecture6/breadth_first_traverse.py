@@ -57,8 +57,8 @@ def breadth_first_traverse_by_level(root):
 
     while not que.empty():
         n = que.qsize()
-        for i in range(n):
-            cur = que.get()
+        for i in range(n):  #every loop traverse 1 layer
+            cur = que.get() #get the first child of the que
             print(cur.val, end=' ')
             if cur.left:
                 que.put(cur.left)
