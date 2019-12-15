@@ -68,7 +68,7 @@ def breadth_first_traverse_by_level(root):
             if cur.right:
                 que.put(cur.right)
         print()
-        
+    
         level += 1
 
 if __name__ == '__main__':
