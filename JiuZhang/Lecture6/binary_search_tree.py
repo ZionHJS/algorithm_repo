@@ -7,7 +7,6 @@ class TreeNode:
         self.left = None
         self.right = None
 
-
 class BST:
     def __init__(self):
         self.__root = None
@@ -22,7 +21,6 @@ class BST:
             root.left = self.__add_helper(root.left, val)
         else:
             root.right = self.__add_helper(root.right, val)
-
         return root
 
     def contains(self, val):
