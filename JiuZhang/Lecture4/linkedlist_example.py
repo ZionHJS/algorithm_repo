@@ -39,7 +39,6 @@ def run_linkedlist_example():
         cur = cur.next
     print('\n')
 
-
 def run_linkedlist_quiz_1():
     print('LinkedList quiz 1')
     node_1 = ListNode(1)

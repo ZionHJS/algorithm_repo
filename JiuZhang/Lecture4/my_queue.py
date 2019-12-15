@@ -2,7 +2,6 @@
 from my_linkedlist import ListNode
 from queue import Queue
 
-
 class MyQueue:
     """使用Linked list模拟队列"""
     def __init__(self):
