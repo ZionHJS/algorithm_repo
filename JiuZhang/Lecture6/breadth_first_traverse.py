@@ -74,3 +74,4 @@ def breadth_first_traverse_by_level(root):
 if __name__ == '__main__':
     root = build_tree()
     breadth_first_traverse_by_level(root)
+

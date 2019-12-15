@@ -2,7 +2,6 @@
 
 
 class TreeNode:
-
     def __init__(self, val):
         self.val = val
         self.left = None
@@ -10,7 +9,6 @@ class TreeNode:
 
 
 class BST:
-
     def __init__(self):
         self.__root = None
 
