@@ -25,7 +25,6 @@ class SetBSTImpl:
             root.left = self.__add_helper(root.left, val)
         else:
             root.right = self.__add_helper(root.right, val)
-
         return root
 
     def contains(self, val):
@@ -41,7 +40,6 @@ class SetBSTImpl:
             return self.__contains_helper(root.left, val)
         else:
             return self.__contains_helper(root.right, val)
-
 
 if __name__ == '__main__':
 

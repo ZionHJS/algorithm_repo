@@ -28,6 +28,4 @@ if __name__ == '__main__':
 
     print(success)
 
-newSet = {1, 2, 3, '4', 'hello', 7, 8}
-newSet.add(1)
-print(newSet)
+
