@@ -1,8 +1,9 @@
 # coding=utf-8
 
 #merge_sort
+#time complexity O(logn)
 def merge_sort(array):
-    tmp = [0 for _ in range(len(array))]
+    tmp = [0 for _ in range(len(array))]   #把list提到最外面来 所有递归里面都调用这个list
     merge_sort_helper(array, 0, len(array) - 1, tmp)   #tmp => 
 
 
@@ -13,10 +14,10 @@ def merge_sort_helper(array, left, right, tmp):    # [left, right]
     mid = (left + right) // 2    # [left, mid]  [mid + 1, right]
     merge_sort_helper(array, left, mid, tmp)
     merge_sort_helper(array, mid + 1, right, tmp)
-    merge(array, left, right, tmp)
+    merge_sort(array, left, right, tmp)
 
 
-def merge(array, left, right, tmp):
+def merge_sort(array, left, right, tmp):
     len = right - left + 1
 
     mid = (left + right) // 2  # [left, mid], [mid + 1, right]
