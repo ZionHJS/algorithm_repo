@@ -3,7 +3,7 @@
 #merge_sort
 def merge_sort(array):
     tmp = [0 for _ in range(len(array))]
-    merge_sort_helper(array, 0, len(array) - 1, tmp)
+    merge_sort_helper(array, 0, len(array) - 1, tmp)   #tmp => 
 
 
 def merge_sort_helper(array, left, right, tmp):    # [left, right]
@@ -17,20 +17,20 @@ def merge_sort_helper(array, left, right, tmp):    # [left, right]
 
 
 def merge(array, left, right, tmp):
-    n = right - left + 1
+    len = right - left + 1
 
     mid = (left + right) // 2  # [left, mid], [mid + 1, right]
     i, j = left, mid + 1
 
-    for k in range(n):
-        if i <= mid and (j > right or array[i] <= array[j]):
+    for k in range(len):
+        if i <= mid and (array[i] <= array[j] or j > right):
             tmp[k] = array[i]
             i += 1
         else:
             tmp[k] = array[j]
             j += 1
 
-    for k in range(n):
+    for k in range(len):
         array[left + k] = tmp[k]
 
 
