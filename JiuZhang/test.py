@@ -22,7 +22,6 @@ s = 'jiuzhang'
 result = ''
 print(s[9:1:-1])
 
-
 nums_1 = [7, 5, -2, 13, 6, 4]
 nums_2 = [1, 2, 3, 4]
 nums_2.extend(nums_1)

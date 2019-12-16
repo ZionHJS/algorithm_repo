@@ -37,7 +37,7 @@ class Solution:
     # @return True is the binary tress is BST, or false
     def isValidBST(self, root):
         return self.helper(root, float('-inf'), float('inf'))
-    
+
     def helper(self, root, min_value, max_value):
         if not root:
             return True
@@ -45,6 +45,7 @@ class Solution:
             return False
         if root.val >= max_value:
             return False
-
+        
+        #判断左边节点是否都小于根节点  判断右边节点是否都大于根节点
         return self.helper(root.left, min_value, root.val) and self.helper(root.right, root.val, max_value)
 

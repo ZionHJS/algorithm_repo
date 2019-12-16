@@ -1,6 +1,6 @@
 # coding=utf-8
 
-
+#merge_sort
 def merge_sort(array):
     tmp = [0 for _ in range(len(array))]
     merge_sort_helper(array, 0, len(array) - 1, tmp)
