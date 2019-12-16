@@ -77,3 +77,4 @@ if __name__ == '__main__':
         if test_quick_sort():
             cnt += 1
     print(cnt == 1000)
+
