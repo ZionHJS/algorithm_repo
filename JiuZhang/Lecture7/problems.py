@@ -39,12 +39,12 @@ class Solution:
         return self.helper(root, float('-inf'), float('inf'))
     
     def helper(self, root, min_value, max_value):
-        if root is None:
+        if not root:
             return True
         if root.val <= min_value:
             return False
         if root.val >= max_value:
             return False
-        
-        return self.helper(root.left, min_value, root.val) and self.helper(root.right, root.valm max_value)
+
+        return self.helper(root.left, min_value, root.val) and self.helper(root.right, root.val, max_value)
 
