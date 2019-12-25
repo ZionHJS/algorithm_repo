@@ -1,11 +1,13 @@
 # coding=utf-8
 
+
 class TreeNode:
-    #create a binary tree node 
+    # create a binary tree node
     def __init__(self, val):
         self.val = val
         self.left = None
         self.right = None
+
 
 def build_tree():
     node_1 = TreeNode(8)
@@ -33,7 +35,9 @@ def build_tree():
 
     return node_1
 
-#binary traverse:
+# binary traverse:
+
+
 def traverse_tree(root):
     if root is None:
         return
@@ -42,7 +46,9 @@ def traverse_tree(root):
     traverse_tree(root.left)
     traverse_tree(root.right)
 
-#binary traverse 1.preorder:
+# binary traverse 1.preorder:
+
+
 def preorder_traverse(root):
     if root is None:
         return
@@ -51,7 +57,9 @@ def preorder_traverse(root):
     preorder_traverse(root.left)
     preorder_traverse(root.right)
 
-#binary traverse 2.inorder:
+# binary traverse 2.inorder:
+
+
 def inorder_traverse(root):
     if root is None:
         return
@@ -60,7 +68,9 @@ def inorder_traverse(root):
     print(root.val, end=' ')
     inorder_traverse(root.right)
 
-#binary traverse 3.postorder:
+# binary traverse 3.postorder:
+
+
 def postorder_traverse(root):
     if root is None:
         return
@@ -68,6 +78,7 @@ def postorder_traverse(root):
     postorder_traverse(root.left)
     postorder_traverse(root.right)
     print(root.val, end=' ')
+
 
 def main():
     root = build_tree()
@@ -77,8 +88,8 @@ def main():
     print()
     postorder_traverse(root)
 
+
 if __name__ == '__main__':
     main()
 
 print(56 // 3)
-

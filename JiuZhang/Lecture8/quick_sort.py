@@ -15,10 +15,10 @@ def quick_sort_helper(array, left, right):   # [left, right]
     i, j = left, right
 
     while i <= j:
-        while i <= j and array[i] < pivot:
+        while i <= j and array[i] < pivot:  #i <= j 控制了i,j 如果都已经超过了 就不让指针再继续移动了
             i += 1
 
-        while i <= j and array[j] > pivot:
+        while i <= j and array[j] > pivot:   #i <= j 控制了i,j 如果都已经超过了 就不让指针再继续移动了
             j -= 1
 
         if i <= j:
@@ -26,12 +26,11 @@ def quick_sort_helper(array, left, right):   # [left, right]
             i += 1
             j -= 1
 
-    quick_sort_helper(array, left, j)
+    quick_sort_helper(array, left, j)  #i j 边界的判定为难点
     quick_sort_helper(array, i, right)
 
 
 def test_quick_sort():
-
     freq = {}
     array = []
     for i in range(100):

@@ -14,17 +14,17 @@ def merge_sort_helper(array, left, right, tmp):    # [left, right]
     mid = (left + right) // 2    # [left, mid]  [mid + 1, right]
     merge_sort_helper(array, left, mid, tmp)
     merge_sort_helper(array, mid + 1, right, tmp)
-    merge_sort(array, left, right, tmp)
+    merge_sort_merger(array, left, right, tmp)
 
 
-def merge_sort(array, left, right, tmp):
-    len = right - left + 1
+def merge_sort_merger(array, left, right, tmp):   #sort nums here
+    len = right - left + 1 #get the length of the pass in array
 
     mid = (left + right) // 2  # [left, mid], [mid + 1, right]
     i, j = left, mid + 1
 
     for k in range(len):
-        if i <= mid and (array[i] <= array[j] or j > right):
+        if i <= mid and (array[i] <= array[j] or j > right):  #j > right is the tricky part and i < mid
             tmp[k] = array[i]
             i += 1
         else:
