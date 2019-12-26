@@ -31,6 +31,6 @@ class Solution:
 
     def pro_nums(self, m, k):
         total = 0
-        for i in m+1:
+        for i in range(1, m+1):
             total += k*i
         return total

@@ -34,3 +34,8 @@ class Solution:
         for l in L:
             count += l // mid
         return count
+
+
+m = 10
+for i in range(m+1):
+    print(i)
