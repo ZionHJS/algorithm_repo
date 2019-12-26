@@ -17,6 +17,7 @@ class Solution(object):
                     right = mid
                 else:
                     left = mid
+
             # right edge
             else:
                 # target is in right or not
@@ -24,8 +25,9 @@ class Solution(object):
                     left = mid
                 else:  # else is the key situation
                     right = mid
-            if nums[left] == target:
-                return left
-            if nums[right] == target:
-                return right
-            return -1
+
+        if nums[left] == target:
+            return left
+        if nums[right] == target:
+            return right
+        return -1
