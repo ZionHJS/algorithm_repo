@@ -55,3 +55,17 @@ class Solution(object):
                 return True
 
         return -1
+
+# ？？？ for 循环一次过？？？
+
+
+class Solution(object):
+    def search(self, nums, target):
+        if not nums:
+            return False
+
+        for item in nums:
+            if item == target:
+                return True
+
+        return False
