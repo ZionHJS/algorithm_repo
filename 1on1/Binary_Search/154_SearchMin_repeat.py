@@ -2,18 +2,18 @@ class Solution(object):
     def findMin(self, nums):
         if not nums:
             return False
-        if nums[0] < nums[-1]:
-            return nums[0]
 
         left, right = 0, len(nums)-1
 
         while left + 1 < right:
             mid = left + (right - left)//2
-            if nums[left] == nums[right] and nums[mid] == nums[left]:
+            if nums[mid] == nums[left] and nums[mid] == nums[right]:
                 left += 1
                 right -= 1
             else:
-                if nums[mid] >= nums[left]:
+                if nums[left] < nums[right]:
+                    return nums[left]
+                elif nums[mid] >= nums[left]:
                     left = mid
                 else:
                     right = mid
