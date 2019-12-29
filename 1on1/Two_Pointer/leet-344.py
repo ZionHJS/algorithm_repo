@@ -17,11 +17,3 @@ class Solution:
             j -= 1
 
         return s
-
-
-i, j = 0, 99
-while i + 1 < j:
-    i += 1
-    j -= 1
-print(i)
-print(j)
