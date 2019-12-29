@@ -1,24 +1,20 @@
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        if not s:
-            return 0
-        alph_counts = [0 for _ in range(256)]
-        count = 0
-        max_len = 0
-        i, j = 0, 0
+    def threeSumSmaller(self, nums: List[int], target: int) -> int:
+        nums.sort()
+        count = len(nums)
+        smaller_count = 0
 
-        while j < len(s):
-            char = ord(s[j])
-            alph_counts[char] += 1
-            if alph_counts[char] > 1:
-                count += 1
-            while i < len(s) and count >= 1:
-                char = ord(s[i])
-                alph_counts[char] -= 1
-                if alph_counts[char] == 1:
-                    count -= 1
-                i += 1
-            max_len = max(max_len, j-i+1)
-            j += 1
+        for i in range(count):
+            left = i + 1
+            right = count - 1
 
-        return max_len
+            while left < right:
+                curr_sum = nums[i] + nums[left] + nums[right]
+
+                if curr_sum < target:
+                    smaller_count += (right-left)
+                    left += 1
+                else:
+                    right -= 1
+
+        return smaller_count
