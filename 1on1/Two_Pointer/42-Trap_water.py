@@ -1,5 +1,5 @@
-class Solution:
-    def trap(self, height: List[int]) -> int:
+class Solution(object):
+    def trap(self, height):
         if not height or len(height) < 3:
             return 0
 
@@ -11,7 +11,7 @@ class Solution:
                 j += 1  # j will move to the first edge
                 continue
             # if j already at the previous-peak
-            elif j < len(height)-1 and height[j] > height[j+1]:
+            elif j < len(height)-2 and height[j] > height[j+1]:
                 i = j
                 self.findNextPeak(height, j+1, True)
                 if j > i+1:
