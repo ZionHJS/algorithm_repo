@@ -20,3 +20,15 @@ class Solution(object):
                 j += 1
 
         return nums[:i]
+
+
+tmp = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+a = tmp.pop(0)
+print(a)
+print(tmp)
+b = tmp.pop(0)
+print(b)
+print(tmp)
+c = tmp.pop(0)
+print(c)
+print(tmp)
