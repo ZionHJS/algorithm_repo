@@ -3,27 +3,30 @@ class Solution:
         if not height or len(height) < 3:
             return 0
 
-        down = True
         i, j = 0, 0
         sum = 0
 
         while j < len(height):
-            # find the first-peak j => must be the first-peak
             if j == 0 and height[j] <= height[j+1]:
-                j += 1
+                j += 1  # j will move to the first edge
                 continue
-            else:
+            # if j already at the previous-peak
+            elif j < len(height)-1 and height[j] > height[j+1]:
                 i = j
-                if j+1 < len(height):
-                    self.findNextPeak(height, j+1, down)
-                    if j > i+1:
-                        self.twoPeakWater(height, i, j, sum)
-                        i = j
-                        j += 1
-                        continue
+                self.findNextPeak(height, j+1, True)
+                if j > i+1:
+                    self.twoPeakWater(height, i, j, sum)
+                    i = j
+                    j += 1
+                    continue
                 else:
-                    pass
-
+                    break
+            else:  # not have previous-peak yet
+                if j < len(height) - 1:
+                    self.findNextPeak(height, j + 1, False)
+                    i = j
+                else:
+                    break
             j += 1
 
         return sum
@@ -31,7 +34,6 @@ class Solution:
     # passing down = True, j-1 must be the previous peak
     def findNextPeak(self, height, j, down):
         start_j = j
-
         while j < len(height):
             if down and height[j] > height[j-1]:
                 down = False
@@ -47,17 +49,16 @@ class Solution:
             j = start_j  # no nextpeak find
 
     def twoPeakWater(self, height, start, end, sum):
-        peak_sum = 0
         k = start
         if height[start] >= height[end]:
             for k in range(start+1, end):
                 if height[end] - height[k] > 0:
-                    peak_sum += height[end] - height[k]
+                    sum += height[end] - height[k]
+                else:
+                    continue
         else:
             for k in range(start+1, end):
                 if height[start] - height[k] > 0:
-                    peak_sum += height[start] - height[k]
+                    sum += height[start] - height[k]
                 else:
                     break
-
-        sum += peak_sum
