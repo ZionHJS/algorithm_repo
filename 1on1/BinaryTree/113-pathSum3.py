@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
+import copy
 
 
 class Solution:
@@ -14,22 +15,22 @@ class Solution:
         if not root:
             return []
 
-        self.helper(root, sum, list)
-
-        return res
+        self.helper(root, sum, [])
+        return self.res
 
     def helper(self, root, sum, list):
+        dep_list = copy.deepcopy(list)
+        # list.clear()
         if not root:
-            list.clear()
             return
         else:
-            list.append(root.val)
+            dep_list.append(root.val)
 
         if not root.left and not root.right:
-            if root.val = sum:
-                res.append(list)
-            else:
-                list.clear()
+            if root.val == sum:
+                self.res.append(dep_list)
 
-        self.helper(root.left, sum-root.val)
-        self.helper(root.right, sum-root.val)
+            return
+
+        self.helper(root.left, sum-root.val, dep_list)
+        self.helper(root.right, sum-root.val, dep_list)
