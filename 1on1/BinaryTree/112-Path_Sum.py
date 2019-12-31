@@ -21,3 +21,6 @@ class Solution:
             return True
         else:
             return False
+
+
+print(0 == False)
