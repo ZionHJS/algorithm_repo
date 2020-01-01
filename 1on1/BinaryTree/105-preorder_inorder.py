@@ -13,24 +13,21 @@ class Solution:
         elif len(preorder) == 1:
             return TreeNode(preorder[0])
 
-        root = TreeNode(preorder[0])
-        self.helper(root, preorder, inorder)
-        return root
+        #root = TreeNode(preorder[0])
+        self.helper(preorder, inorder)
 
-    def helper(self, root, preorder, inorder):
-        if len(inorder) == 1:
-            root = None
-            return
-        elif len(preorder) == 1:
-            root = None
-            return
+    def helper(self, preorder, inorder):
+        if len(inorder) == 1 or len(preorder) == 0:
+            return None
         else:
-            root.val = preorder[0]
-            # preorder.remove(root.root.val)
-            root_index_pre = preorder.index(root.val)
-            root_index_in = inorder.index(root.val)
+            val = preorder[0]
+            root = TreeNode(val)
+            root_index_pre = preorder.index(val)
+            root_index_in = inorder.index(val)
 
-        self.helper(
-            root.left, preorder[root_index_pre+1:], inorder[:root_index_in])
-        self.helper(
-            root.right, preorder[root_index_pre+root_index_in+1:], inorder[root_index_in+1:])
+        root.left = self.helper(
+            preorder[root_index_pre+1:], inorder[:root_index_in])  # range correct
+        root.right = self.helper(
+            preorder[root_index_pre+root_index_in+1:], inorder[root_index_in+1:])  # range correct
+
+        return root
