@@ -13,19 +13,20 @@ class Solution:
         elif len(preorder) == 1:
             return TreeNode(preorder[0])
 
-        root = TreeNode(None)
+        root = TreeNode(preorder[0])
         self.helper(root, preorder, inorder)
         return root
 
     def helper(self, root, preorder, inorder):
-        if not root:
+        if not preorder:
             return
 
         root.val = preorder[0]
         # preorder.remove(root.root.val)
+        root_index_pre = preorder.index(root.val)
         root_index_in = inorder.index(root.val)
 
         self.helper(
-            root.left, preorder[:root_index_in], inorder[:root_index_in])
+            root.left, preorder[root_index_pre+1:], inorder[:root_index_in])
         self.helper(
-            root.right, preorder[:root_index_in], inorder[:root_index_in])
+            root.right, preorder[root_index_pre+root_index_in+1:], inorder[root_index_in+1:])
