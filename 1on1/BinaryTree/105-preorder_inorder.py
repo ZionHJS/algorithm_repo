@@ -42,7 +42,7 @@ class Solution:
             return TreeNode(preorder[0])
 
         # root = TreeNode(preorder[0])
-        self.helper(preorder, inorder)
+        return self.helper(preorder, inorder)
 
     def helper(self, preorder, inorder):
         if len(inorder) == 0 or len(preorder) == 0:
@@ -59,7 +59,7 @@ class Solution:
         return root
 
 
-#一毛一样的代码 为什么我的过不了呢
+# 一毛一样的代码 为什么我的过不了呢
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -72,13 +72,14 @@ class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         if len(inorder) == 0:
             return None
-        
-        root = TreeNode(preorder[0])
-        
-        root_index_in = inorder.index(preorder[0])
 
-        root.left = self.buildTree(preorder[1:root_index_in+1], inorder[:root_index_in])
-        root.right = self.buildTree(preorder[root_index_in+1:], inorder[root_index_in+1:])
-        
+        root=TreeNode(preorder[0])
+
+        root_index_in=inorder.index(preorder[0])
+
+        root.left=self.buildTree(
+            preorder[1:root_index_in+1], inorder[:root_index_in])
+        root.right=self.buildTree(
+            preorder[root_index_in+1:], inorder[root_index_in+1:])
+
         return root
-
