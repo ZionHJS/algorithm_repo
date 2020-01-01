@@ -10,16 +10,22 @@ class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
         if not preorder and not inorder:
             return None
-        elif len(preorder) == 1 and len(inorder) == 1:
+        elif len(preorder) == 1:
             return TreeNode(preorder[0])
 
-        self.helper([] + preorder, [] + inorder)
+        root = TreeNode(None)
+        self.helper(root, preorder, inorder)
+        return root
 
-    def helper(self, preoder, inorder):
-        if not preorder:
+    def helper(self, root, preorder, inorder):
+        if not root:
             return
 
-        preorder.remove(root.val)
+        root.val = preorder[0]
+        # preorder.remove(root.root.val)
+        root_index_in = inorder.index(root.val)
 
-        root.left = helper([] + preorder, [] + inorder)
-        root.right = helper([] + preorder, [] + inorder)
+        self.helper(
+            root.left, preorder[:root_index_in], inorder[:root_index_in])
+        self.helper(
+            root.right, preorder[:root_index_in], inorder[:root_index_in])
