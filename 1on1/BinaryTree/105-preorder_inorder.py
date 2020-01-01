@@ -18,13 +18,17 @@ class Solution:
         return root
 
     def helper(self, root, preorder, inorder):
-        if not preorder:
+        if len(inorder) == 1:
+            root = None
             return
-
-        root.val = preorder[0]
-        # preorder.remove(root.root.val)
-        root_index_pre = preorder.index(root.val)
-        root_index_in = inorder.index(root.val)
+        elif len(preorder) == 1:
+            root = None
+            return
+        else:
+            root.val = preorder[0]
+            # preorder.remove(root.root.val)
+            root_index_pre = preorder.index(root.val)
+            root_index_in = inorder.index(root.val)
 
         self.helper(
             root.left, preorder[root_index_pre+1:], inorder[:root_index_in])
