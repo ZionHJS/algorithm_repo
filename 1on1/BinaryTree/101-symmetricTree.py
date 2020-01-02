@@ -7,10 +7,6 @@
 
 
 class Solution:
-    def __init__(self):
-        self.left_list = []
-        self.right_list = []
-
     def isSymmetric(self, root: TreeNode) -> bool:
         if not root:
             return None
@@ -18,12 +14,7 @@ class Solution:
             return True
         elif root.left and root.right:
             self.replaceroot(root.right)
-            self.preorder(root.left, self.left_list)
-            self.preorder(root.right, self.right_list)
-            for i in range(len(self.left_list)):
-                if self.left_list[i] != self.right_list[i]:
-                    return False
-            return True
+            return self.issametree(root.left, root.right)
         else:
             return False
 
@@ -38,10 +29,16 @@ class Solution:
             self.replaceroot(root.left)
             self.replaceroot(root.right)
 
-    def preorder(self, root, list):
-        if not root:
-            return
+    def issametree(self, p, q):
+        if not p and not q:
+            return True
 
-        list.append(root.val)
-        self.preorder(root.left, list)
-        self.preorder(root.right, list)
+        if p != q:
+            return False
+        elif p == q:
+            left_bool = self.issametree(p.left, q.left)
+            right_bool = self.issametree(p.right, q.right)
+            if left_bool and right_boll:
+                return True
+            else:
+                return False
