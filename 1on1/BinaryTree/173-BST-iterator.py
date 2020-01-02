@@ -11,23 +11,22 @@ class BSTIterator:
         self.root = root
         self.cur_root = root
         self.pre_root = root
+        self.pre_list = []
         self.res = root.val
 
     def next(self) -> int:
-        if not self.cur_root.val:   #
+        if not self.cur_root.val:  # only right-leaf return will trigger this
             self.cur_root = self.root
             self.next()
 
-        if self.cur_root.left and self.cur_root.right:
+        if self.cur_root.left and self.cur_root.right or self.cur_root.left:
+            self.pre_root = self.cur_root
+            self.pre_list.append(self.pre_root)
             self.cur_root = self.cur_root.left
-            self.pre_root = self.cur_root
             self.next()
-        elif self.cur_root.left or self.cur_root.right:
-            self.pre_root = self.cur_root
-            if self.cur_root.left:
-                self.cur_root = self.cur_root.left
-            else:
-                self.cur_root = self.cur_root.right
+        elif self.cur_root.right:
+            # self.pre_root = self.cur_root  #block this keep the pre_cur = closest cur_root left-parent
+            self.cur_root = self.cur_root.right
 
             if self.pre_root.val:
                 self.res = self.pre_root.val
@@ -36,6 +35,7 @@ class BSTIterator:
             else:
                 self.next()
         else:
+            print(self.cur_root.val)
             if self.pre_root.left:  # cut left first and then cut right
                 self.pre_root.left = None
             else:
@@ -54,3 +54,8 @@ class BSTIterator:
             return False
         else:
             return True
+
+
+test_list = [0, 1, 2, 3, 4, 5, None, None, None, None]
+test_list.remove(None)
+print(test_list)
