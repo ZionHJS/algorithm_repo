@@ -16,46 +16,37 @@ class BSTIterator:
 
     def next(self) -> int:
         if not self.cur_root.val:  # only right-leaf return will trigger this
-            self.cur_root = self.root
+            self.pre_list = [x for x in self.pre_list if x.val != None]
+            print(self.pre_list)
+            self.cur_root = self.pre_list.pop()
             self.next()
 
         if self.cur_root.left and self.cur_root.right or self.cur_root.left:
             self.pre_root = self.cur_root
             self.pre_list.append(self.pre_root)
+
             self.cur_root = self.cur_root.left
             self.next()
         elif self.cur_root.right:
-            # self.pre_root = self.cur_root  #block this keep the pre_cur = closest cur_root left-parent
-            self.cur_root = self.cur_root.right
+            self.pre_root = self.cur_root
+            self.pre_list.append(self.pre_root)
 
-            if self.pre_root.val:
-                self.res = self.pre_root.val
-                self.pre_root.val = None  # right step
-                return self.res
-            else:
-                self.next()
+            self.res = self.cur_root.val
+            self.cur_root.val = None  # right step
+            self.cur_root = self.cur_root.right
+            return self.res
         else:
-            print(self.cur_root.val)
             if self.pre_root.left:  # cut left first and then cut right
                 self.pre_root.left = None
             else:
                 self.pre_root.right = None
 
-            if not self.cur_root.val:
-                self.cur_root = self.pre_root
-                self.next()
-            else:
-                self.res = self.cur_root.val
-                self.cur_root = self.pre_root
-                return self.res
+            self.res = self.cur_root.val
+            self.cur_root = self.pre_list.pop()
+            return self.res
 
     def hasNext(self) -> bool:
         if not self.next():
             return False
         else:
             return True
-
-
-test_list = [0, 1, 2, 3, 4, 5, None, None, None, None]
-test_list.remove(None)
-print(test_list)
