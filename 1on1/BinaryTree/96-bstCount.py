@@ -1,6 +1,5 @@
 class Solution:
     def __init__(self):
-        self.res = []
         self.sum = 0
 
     def numTrees(self, n: int) -> int:
@@ -16,14 +15,13 @@ class Solution:
 
         return self.sum
 
-    def count_bst(self, n):
-        if n == 0:
-            return 0
-        if n == 1:
+    def count_bst(self, n):  # numbers of left-side
+        if m <= 1:
             return 1
+        else:
+            # when i >= 2
+            for j in range(1, n+1):
+                left_count = self.count_bst(j-1)
+                right_count = self.count_bst(n-j)
 
-        for j in range(1, n+1):
-            left_count = self.count_bst(i-1)
-            right_count = self.count_bst(n-i)
-
-            return left_count + right_count
+                return left_count*right_count
