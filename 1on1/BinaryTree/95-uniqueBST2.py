@@ -19,10 +19,10 @@ class Solution(object):
 
     def treeHelper(self, list):
         res = []
-        if not list:
+        if not list:  # => quit condition   callback
             return [None]
         if len(list) == 1:
-            return [TreeNode(list[0])]
+            return [TreeNode(list[0])]  # => quit condition  callback
         else:
             for i in range(0, len(list)):  # index
                 for l in self.treeHelper(list[:i]):
@@ -33,4 +33,4 @@ class Solution(object):
 
                         res.append(root)
 
-            return res
+            return res  # => callback
