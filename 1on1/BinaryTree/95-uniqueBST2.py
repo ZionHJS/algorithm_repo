@@ -15,19 +15,23 @@ class Solution:
         if n < 1:
             return []
         if n == 1:
-            root = TreeNode(n)
-            return [root]
+            return [TreeNode(1)]
         else:
             self.nlist = [x for x in range(1, n+1)]
-            self.treeHelper(nlist):
+            self.treeHelper(self.nlist)
+
+            return self.res
 
     def treeHelper(self, list):
         if not list:
-            return None
+            return [None]
         if len(list) == 1:
-            return TreeNode(list[0])
+            return [TreeNode(list[0])]
         else:
-            for i in range(1, len(list)+1):
-                root = TreeNode(i)
-                root.left = self.treeHelper(list[:i])
-                root.right = self.treeHelper(list[i+1:])
+            for i in range(0, len(list)):  # index
+                for left in self.treeHelper(list[:i]):
+                    for right in self.treeHelper(list[i+1:]):
+                        root = TreeNode(list[i])
+                        root.left = left
+                        root.right = right
+                        self.res.append(root)
