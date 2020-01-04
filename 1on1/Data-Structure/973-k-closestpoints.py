@@ -13,3 +13,27 @@ class Solution(object):
         for i in range(K):
             res.append(heapq.heappop(heap)[1])
         return res
+
+
+list = [1, 2, 3, 4, 5, 6, 7]
+semester = [[], [], [], [], [], [], []]
+
+for i in range(len(semester)):
+    semester[i].append(m for m in list)
+
+print(semester)
+
+
+list = [1, 2, 3, 4, 5, 6, [], [], []]
+list.remove([])
+print(list)
+list.remove([])
+print(list)
+list.remove([])
+print(list)
+
+
+if 3 in list:
+    return True
+else:
+    return False
