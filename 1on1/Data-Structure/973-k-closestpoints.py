@@ -1,25 +1,15 @@
 import heapq
+import math
 
 
 class Solution(object):
     def kClosest(self, points, K):
-        if not points:
-            return []
-
-        dic = {}
         heap = []
-
-        for i in points:
-            dis_i = self.get_dis(points[i])
-            if dis_i not in dic:
-                dic[dis_i] = []
-            dic[dis_i].append(points[i])  # zipper
-
-        for j in range(k):
-            for m in dic:
-                heapq.heappush(heap, m)
-
-        return heapq.heappop(heap)
-
-    def get_dis(self, point):
-        return sqrt(pow(point[0], 2) + pow(point[1], 2))
+        def distance(x): return points[x][0]**2 + points[x][1]**2
+        length = len(points)
+        for i in range(length):
+            heapq.heappush(heap, (distance(i), points[i]))
+        res = []
+        for i in range(K):
+            res.append(heapq.heappop(heap)[1])
+        return res
