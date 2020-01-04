@@ -89,3 +89,7 @@ list = []
 
 if not list:
     print('je')
+
+
+queue = [[x, 1] for x in range(10)]
+print(queue)
