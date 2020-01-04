@@ -10,6 +10,9 @@ class Solution(object):
         relations_dic = {}
 
         for i in range(N):
+            if not len(relations):
+                break
+
             if not relations_dic.has_key(i):
                 relations_dic[i] = []
             for j in range(len(relations)):
@@ -20,10 +23,13 @@ class Solution(object):
                     relations_dic[i].remove(y[1])
 
                 for z in range(len(relations)):
-                    if relations[z][0] in relations_dic[i]:
-                        relations_dic[i+1] = []
-                        relations_dic[i+1].append(relations[z][1])
-                        relations.pop(z)
+                    if z < len(relations):
+                        if relations[z][0] in relations_dic[i]:
+                            relations_dic[i+1] = []
+                            relations_dic[i+1].append(relations[z][1])
+                            relations.pop(z)
+                    else:
+                        break
 
         print(relations_dic)
         if relations:
