@@ -6,36 +6,43 @@ class Solution(object):
         if not relations:
             return -1
 
-        semesters = [[] for _ in range(N)]
         relations_dic = {}
+        semesters_dic = {}
+
+        for i in range(len(relations)):
+            relations_dic[relations[i][0]] = relations[i][1]
 
         for i in range(N):
             if not len(relations):
                 break
 
-            if not relations_dic.has_key(i):
-                relations_dic[i] = []
-            for j in range(len(relations)):
-                relations_dic[i].append(relations[j][0])
+            if not semesters_dic.has_key(i):
+                semesters_dic[i] = []
 
-            for y in relations:
-                if y[1] in relations_dic[i]:
-                    relations_dic[i].remove(y[1])
+            for key in relations_dic.keys():
+                semesters_dic[i].append(key)
 
-                for z in range(len(relations)):
-                    if z < len(relations):
-                        if relations[z][0] in relations_dic[i]:
-                            relations_dic[i+1] = []
-                            relations_dic[i+1].append(relations[z][1])
-                            relations.pop(z)
-                    else:
-                        break
+            for key in relations_dic.keys():
+                if relations_dic[key] in semesters_dic[i]:
+                    semesters_dic[i].remove(relations_dic[key])  # 只删得到一个
 
-        print(relations_dic)
-        if relations:
+            for key in relations_dic.keys():
+                if key in semesters_dic[i]:
+                    if not semesters_dic.has_key(i+1):
+                        semesters_dic[i+1] = []
+                    semesters_dic[i+1].append(relations_dic[key])
+                    del relations_dic[key]
+
+        print(semesters_dic)
+        if len(relations_dic):
             return -1
 
-        return len(relations_dic)
+        for key in semesters_dic.keys():
+            if not semesters_dic[key]:
+                del semesters_dic[key]
+        print(semesters_dic)
+
+        return len(semesters_dic)
 
 
 list = ['abc', 'def', 'hij', 'klm', [1, 2], [2, 3]]
@@ -47,9 +54,9 @@ print(list)
 N = 10
 semesters = [[] for _ in range(N)]
 print(semesters)
-semesters[2].append(3)
-semesters[2].append(4)
-semesters[2].append(5)
+# semesters[9].append(3)
+# semesters[9].append(4)
+# semesters[9].append(5)
 print(semesters)
 for o in semesters:
     if o == []:
@@ -71,7 +78,14 @@ print(semesters)
 
 dic = {2: [1], 3: [3], 'a': [4]}
 print(dic)
-dic['a'].remove(4)
-print(dic['a'])
-print(dic)
 print(len(dic))
+del dic[2]
+del dic[3]
+del dic['a']
+print(len(dic))
+
+
+list = []
+
+if not list:
+    print('je')
