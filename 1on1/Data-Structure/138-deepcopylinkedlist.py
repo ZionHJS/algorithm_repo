@@ -27,3 +27,12 @@ class Solution(object):
                 self.new_head.random = None
             else:
                 self.new_head.random = head.next.random
+
+
+a = [[1, 2, 3, ], [4, 5, 6], [7, 8, 9]]
+list = []
+
+for i in range(len(a)):
+    list += a[i]
+
+print(list)
