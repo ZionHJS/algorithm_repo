@@ -2,38 +2,40 @@ import queue
 
 
 class Solution:
-    def canFinish(self, num: int, pre: List[List[int]]) -> bool:
-        if not num or not pre:
-            return True
+    def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        if not n:
+            return False
+        if len(edges) != n-1:
+            return False
 
-        # graph => course:[list of courses]
-        graph = {}
-        for i in range(num):  # labbeld from 0 to n-1
-            graph[i] = []
-        for i in range(len(pre)):
-            graph[pre[i][1]].append(pre[i][0])  # pre:[post]
+        # initialize graph
+        graph = self.initialize_graph(n, edges)
 
-        # map records each course's indegree number
-        indegree_map = {}
-        for i in range(num):
-            for post in graph[i]:  # ??? at least it is a [], you can for in []
-                if post not in indegree_map:
-                    indegree_map[post] = 1
-                else:
-                    indegree_map[post] += 1
-
-        # put course which's indegree = 0 into queue
+        # BFS   #存疑
         q = queue.Queue()
-        for i in range(num):
-            if i not in indegree_map:  # put the node into the queue starts with these without pres
-                q.put(i)
-        count = 0
+        s = set()
+        q.put(0)  # labeled from 0 to n-1  all n nodes
+        s.add(0)
         while q.qsize():
-            cur = q.get()
-            count += 1
-            for post in graph[cur]:
-                indegree_map[post] -= 1
-                if indegree_map[post] == 0:
-                    q.put(post)
-        # return Boolean
-        return count == num  # did we counted all the courses???
+            node = q.get()
+            for neighbor in graph[node]:
+                if neighbor not in s:
+                    s.add(neighbor)
+                    # first put in 0 to see if it can go through all the node in the graph
+                    q.put(neighbor)
+
+        # boolean
+        return len(s) == n
+
+    def initialize_graph(self, n, edges):
+        graph = {}
+        for i in range(n):
+            graph[i] = set()
+
+        for edge in edges:
+            u = edge[0]
+            v = edge[1]
+            graph[v].add(u)
+            graph[u].add(v)
+
+        return graph
