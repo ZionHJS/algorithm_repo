@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         if not grid or not grid[0]:
@@ -22,7 +25,7 @@ class Solution:
             for i in range(4):
                 next_x = x + dx[i]
                 next_y = y + dy[i]
-                if not self.is_valid(gird, next_x, next_y):
+                if not self.is_valid(grid, next_x, next_y):
                     continue
                 queue.append((next_x, next_y))
                 grid[next_x][next_y] = '0'
