@@ -15,19 +15,19 @@ class Solution:
         return islands
 
     def bfs(self, grid, x, y):
-        queue = deque([(x, y)])
+        dqueue = deque([(x, y)])
         grid[x][y] = '0'
-        dx = [0, 0, 1, -1]
-        dy = [1, -1, 0, 0]
-        while queue:
-            x, y = queue.popleft()
+        dx = [0, 0, 1, -1]  # helper_x
+        dy = [1, -1, 0, 0]  # helper_y
+        while dqueue:
+            x, y = dqueue.popleft()
 
-            for i in range(4):
+            for i in range(4):  # get the up down left right next_point
                 next_x = x + dx[i]
                 next_y = y + dy[i]
                 if not self.is_valid(grid, next_x, next_y):
                     continue
-                queue.append((next_x, next_y))
+                dqueue.append((next_x, next_y))
                 grid[next_x][next_y] = '0'
 
     def is_valid(self, grid, x, y):
