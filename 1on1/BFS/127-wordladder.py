@@ -44,3 +44,10 @@ class Solution:
                     continue
                 nextword_list.append(left + char + right)
         return nextword_list
+
+
+list_a = [1, 2, 3, 4, 5, 6]
+print(list_a[7:])
+
+for char in 'abcdefghijklmnopqrstuvwxyz':
+    print(char)
