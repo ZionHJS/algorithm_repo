@@ -33,14 +33,3 @@ class Solution:
     def is_valid(self, grid, x, y):
         n, m = len(grid), len(grid[0])
         return 0 <= x < n and 0 <= y < m and grid[x][y] == '1'
-
-
-d = deque([(1, 2), (3, 4)])
-print(d)
-
-print "length:", len(d)
-print "left end:", d[0]
-print "right end:", d[-1]
-
-d.remove('b')
-print d

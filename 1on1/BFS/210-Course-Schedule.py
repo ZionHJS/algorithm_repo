@@ -1,50 +1,35 @@
-import queue
+from collections import deque
 
 
 class Solution:
-    def __init__(self):
-        self.res = []
+    def numIslands(self, grid: List[List[str]]) -> int:
+        if not grid or not grid[0]:
+            return 0
 
-    def findOrder(self, num: int, pre: List[List[int]]) -> List[int]:
-        if not num:
-            return []
+        islands = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == '1':
+                    self.bfs(grid, i, j)
+                    islands += 1
+        return islands
 
-        # graph
-        graph = {}
-        for i in range(num):
-            graph[i] = []
-        for n in pre:
-            graph[n[1]].append(n[0])  # key:val => pre:[post]
-        print(graph)
+    def bfs(self, grid, x, y):
+        dqueue = deque([(x, y)])
+        grid[x][y] = '0'
+        dx = [0, 0, 1, -1]  # helper_x
+        dy = [1, -1, 0, 0]  # helper_y
+        while dqueue:
+            x, y = dqueue.popleft()
 
-        # indegree count{}
-        indegree_map = {}
-        for i in range(num):
-            for neighbor in graph[i]:
-                if neighbor not in indegree_map:
-                    indegree_map[neighbor] = 1
-                else:
-                    indegree_map[neighbor] += 1
-        print(indegree_map)
+            for i in range(4):  # get the up down left right next_point
+                next_x = x + dx[i]
+                next_y = y + dy[i]
+                if not self.is_valid(grid, next_x, next_y):
+                    continue
+                dqueue.append((next_x, next_y))
+                grid[next_x][next_y] = '0'
 
-        # BFS
-        q = queue.Queue()
-        for i in range(num):
-            if i not in indegree_map:
-                # set.add(i)
-                q.put(i)
-        print(q)
-
-        while q.qsize():
-            cur = q.get()
-            self.res.append(cur)
-            for neighbor in graph[cur]:
-                indegree_map[neighbor] -= 1
-                if indegree_map[neighbor] == 0:
-                    q.put(neighbor)
-
-        # result
-        if len(self.res) == num:
-            return self.res
-        else:
-            return []
+    def is_valid(self, grid, x, y):
+        n, m = len(grid), len(grid[0])
+        return 0 <= x < n and 0 <= y < m and grid[x][y] == '1'
