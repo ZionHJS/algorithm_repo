@@ -18,7 +18,7 @@ class Solution:
             return
 
         for i in range(index, len(candidates)):
-            if candidates[i] > target:
+            if candidates[i] > target:  # new target = target - candidates[i]
                 break
 
             # if i > 0 and candidates[i] == candidates[i-1]:   #this part is checking the duplicates
