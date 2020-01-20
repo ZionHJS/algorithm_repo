@@ -9,13 +9,13 @@ class Solution:
         return res
 
     def dfs(self, res, left, right, index, s):
-        if left == 0 and right == 0:
+        if left == 0 and right == 0:  # exit condition
             if self.isvalid(s):
                 res.append(s)
                 return
 
         for i in range(index, len(s)):
-            if i > index and s[i] == s[i-1]:
+            if i > index and s[i] == s[i-1]:  # 去重
                 continue
 
             if s[i] == '(':
