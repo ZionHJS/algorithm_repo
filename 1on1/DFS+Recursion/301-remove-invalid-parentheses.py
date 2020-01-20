@@ -9,7 +9,7 @@ class Solution:
         return res
 
     def dfs(self, res, left, right, index, s):
-        if left == 0 and right == 0:  # exit condition
+        if left == 0 and right == 0:  # exit condition 这个判断条件也是一个优化
             if self.isvalid(s):
                 res.append(s)
                 return
@@ -18,10 +18,12 @@ class Solution:
             if i > index and s[i] == s[i-1]:  # 去重
                 continue
 
-            if s[i] == '(':
-                self.dfs(res, left-1, right, i, s[:i] + s[i+1:])
+            if s[i] == '(':  # 两个if 是需要满足的条件
+                if left > 0:
+                    self.dfs(res, left-1, right, i, s[:i] + s[i+1:])
             if s[i] == ')':
-                self.dfs(res, left, right-1, i, s[:i] + s[i+1:])
+                if right > 0:
+                    self.dfs(res, left, right-1, i, s[:i] + s[i+1:])
 
     def isvalid(self, s):
         left, right = self.get_leftright_count(s)
