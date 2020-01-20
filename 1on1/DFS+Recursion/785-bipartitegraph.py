@@ -3,29 +3,23 @@ import queue
 
 class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
-        if len(graph) <= 1:
-            return False
+        color = {}
 
-        graph_ = {}
-        set_A = []
-        set_B = []
+        def dfs(pos):
+            for i in graph[pos]:
+                if i in color:
+                    if color[i] == color[pos]:
+                        return False
+                else:
+                    color[i] = 1 - color[pos]
+                    if not dfs(i):
+                        return False
+            return True
 
         for i in range(len(graph)):
-            graph_[i] = graph[i]  # node => connects
-        # print(graph_)
+            if i not in color:
+                color[i] = 0
+                if not dfs(i):
+                    return False
 
-    # bfs
-
-    def bfs(self, graph, set_A, set_B):
-        que = queue.Queue()
-        s = set()
-
-        que.put(graph[0])
-
-        while q.qsize():
-            cur_node = que.get()
-            if cur_node in s:
-                continue
-            s.add(cur_node)
-            for n in graph[cur_node]:
-                que.put(n)
+        return True
