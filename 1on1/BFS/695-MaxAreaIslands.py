@@ -14,7 +14,10 @@ class Solution:
                 if grid[i][j] == 1:
                     self.bfs(grid, i, j, area_res)
 
-        return max(area_res)
+        if area_res:
+            return max(area_res)
+        else:
+            return 0
 
     def bfs(self, grid, y, x, area_res):
         dq = deque([(y, x)])
@@ -24,12 +27,11 @@ class Solution:
         temp_area = 1
 
         while dq:
-            temp_area = 1
             y, x = dq.popleft()
 
             for i in range(4):
-                next_y = y + help_y[0]
-                next_x = x + help_x[0]
+                next_y = y + help_y[i]
+                next_x = x + help_x[i]
                 if not self.is_valid(grid, next_y, next_x):
                     continue
                 else:
@@ -37,8 +39,8 @@ class Solution:
                     dq.append((next_y, next_x))
                     grid[next_y][next_x] = 0
 
-            area_res.append(temp_area)
-            print('res_area_list:', area_res)
+        area_res.append(temp_area)
+        print('res_area_list:', area_res)
 
     def is_valid(self, grid, y, x):
         y_, x_ = len(grid), len(grid[0])
