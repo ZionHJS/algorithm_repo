@@ -63,3 +63,7 @@ print('length:', length)
 res_ = []
 print('res:', res_)
 print('res -1 :', res_[-1])
+
+
+haha = []
+print('sorted:', haha[0])  # index out of range
