@@ -45,3 +45,33 @@ class Solution:
         list.append(node.val)
         self.LinkedListToList(node.next, list)
         return list
+
+
+strs = ['abc', 'bad', 'cga', 'dsf', 'eqa', 'fag']
+for i in range(len(strs)):
+    str_list = list(strs[i])
+    print('str_list is:', str_list)
+    str_list.sort()
+    str_s = str(str_list)
+    print('str_s is:', str_s)
+
+
+res = []
+hashmap = {}
+strs = ['abc', 'bad', 'cga', 'dsf', 'eqa', 'fag']
+
+for i in range(len(strs)):
+    str_list = list(strs[i])  # turn 'bac' in to ['b','a', 'c']
+    str_list.sort()  # sort it to ['a', 'b','c']
+    str_s = str(str_list)
+    if str_s not in hashmap:
+        hashmap[str_s] = []
+    hashmap[str_s].append(strs[i])
+
+for key in hashmap:
+    res.append(hashmap[key])
+
+
+temp_str = ''
+temp_str = temp_str[:len(temp_str)-1]
+print('temp_str:', temp_str)
