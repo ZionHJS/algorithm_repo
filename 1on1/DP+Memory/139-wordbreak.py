@@ -1,26 +1,26 @@
-# 第一遍 暴力解法 超时
+#memo:  (超时)
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        if not s:
+        if not dict:
             return False
 
-        memo = [False for _ in range(len(s)+1)]
+        memo = [False for _ in range(len(s) + 1)]
+        memo[0] = True
 
-        #memo[-1] = self.dfs(s, wordDict, memo)
+        self.dfs(len(s), s, wordDict, memo)
 
-        return self.dfs(s, wordDict, memo)
+        return memo[-1]
 
-    def dfs(self, s, wordDict, memo):
-        if s in wordDict:
-            return True
+    def dfs(self, index, s, wordDict, memo):
+        if index == 0 or memo[index] != False:
+            return memo[index]
 
-        for i in range(len(s)-1, -1, -1):
-            if s[i:] in wordDict:
-                memo[i] = self.dfs(s[:i], wordDict, memo)
-                if memo[i] == True:
+        for word in wordDict:
+            if word == s[len(s)-len(word):index]:
+                memo[index] = self.dfs(
+                    index-len(word), s[:len(s)-len(word)], wordDict, memo)
+                if memo[index] == True:
                     return True
-                else:
-                    continue
 
         return False
 
