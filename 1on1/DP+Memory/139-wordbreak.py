@@ -26,4 +26,28 @@ class Solution:
 
 # 第二遍 真正的memo
 
+
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        memo = {}
+        return self.dfs(s, memo, wordDict)
+
+    def dfs(self, s, memo, wordDict):
+        if s in memo:
+            return memo[s]  # 返回键memo[s]对应的值
+        if s in wordDict:
+            memo[s] = True
+            return True
+
+        for i in range(1, len(s)):
+            left = s[0:i]
+            right = s[i:]
+            if right in wordDict and self.dfs(left, memo, wordDict):
+                memo[s] = True
+                return True
+
+            memo[s] = False
+
+        return False
+
 # 第三遍 dp
