@@ -36,3 +36,9 @@ class Solution:
             dp[i] = max((nums[i-1] + dp[i-2]), dp[i-1])
 
         return dp[-1]
+
+
+x = 2 % 1
+y = 4 % 2
+print('x:', x)
+print('y:', y)
