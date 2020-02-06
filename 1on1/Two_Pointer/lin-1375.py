@@ -6,9 +6,9 @@ class Solution:
     """
 
     def kDistinctCharacters(self, s, k):
-        if not s or k = 0:
+        if not s or k == 0:
             return 0
-        elif k = 1:
+        elif k == 1:
             return len(s)
 
         alpha_counts = [0 for _ in range(256)]

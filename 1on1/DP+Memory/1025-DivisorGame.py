@@ -21,3 +21,11 @@ class Solution:
                 memo[n-i] = self.dfs(n-i, memo)
 
         return memo[n]
+
+
+i = 9
+j = i // 2
+k = i % 2
+
+print('j:', j)
+print('k:', k)
