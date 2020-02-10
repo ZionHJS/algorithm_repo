@@ -92,3 +92,36 @@ while not que.empty():
 list = []
 if not list:
     print('true')
+
+
+str_ = ''
+str_ += str(2)
+print("str:", str_)
+
+print(int("null")
+
+print("null".isdigit())
+
+print("," == ",")
+
+list=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+def test(self, list):
+    tmp=0
+    for i in range(10):
+        if list[i] == 5:
+            tmp=list[i]
+            break
+            return list[i]
+    return tmp
+
+res=["None", "123", "23", "hell", "12"]
+print("".join(res))
+
+str_res="1,2,None,None,3,4,None,None,5,None,None,"
+list=str_res.split(",")
+print("list:", list)
+q=collections.deque(list)
+print("q:", q)
+
+dict={}
+dict[a]
