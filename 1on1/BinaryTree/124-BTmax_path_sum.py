@@ -8,27 +8,26 @@
 
 class Solution:
     def __init__(self):
-        self.max_sum = 0
+        self.max_sum = -1e8  # -1e8 就是一个很大很大的数
         self.sum_dic = {}
 
     def maxPathSum(self, root: TreeNode) -> int:
         self.pre_helper(root)
-
         return self.max_sum
 
     def pre_helper(self, root):
         if not root:
-            return 0
+            return
 
         if root.left not in self.sum_dic:
             left_max_sum = self.max_node_sum(root.left, root.val)
         else:
-            left_max_sum = self.sum_dic[root.left]
+            left_max_sum = self.sum_dic[root.left] + root.val
 
         if root.right not in self.sum_dic:
             right_max_sum = self.max_node_sum(root.right, root.val)
         else:
-            right_max_sum = self.sum_dic[root.right]
+            right_max_sum = self.sum_dic[root.right] + root.val
 
         cur_max_sum = max(root.val, left_max_sum, right_max_sum,
                           left_max_sum+right_max_sum-root.val)
@@ -49,7 +48,7 @@ class Solution:
         right_sum = self.max_node_sum(root.right, pre_sum)
 
         #max_cur_sum = max(left_sum, right_sum, left_sum+right_sum-pre_sum)
-        max_cur_sum = max(left_sum, right_sum)
+        max_cur_sum = max(pre_sum, left_sum, right_sum)
 
         self.sum_dic[root] = max_cur_sum - temp_sum
         return max_cur_sum
