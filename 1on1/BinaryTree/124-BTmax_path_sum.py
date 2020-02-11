@@ -20,20 +20,20 @@ class Solution:
         if not root:
             return 0
 
-        if root.left in self.sum_dic:
-            left_sum = self.sum_dic[root.left]
+        if root.left not in self.sum_dic:
+            left_max_sum = self.max_node_sum(root.left, root.val)
         else:
-            left_sum = self.max_node_sum(root.left, root.val)
+            left_max_sum = self.sum_dic[root.left]
 
-        if root.right in self.sum_dic:
-            right_sum = self.sum_dic[root.right]
+        if root.right not in self.sum_dic:
+            right_max_sum = self.max_node_sum(root.right, root.val)
         else:
-            right_sum = self.max_node_sum(root.right, root.val)
+            right_max_sum = self.sum_dic[root.right]
 
-        max_cur_sum = max(left_sum+root.val, right_sum +
-                          root.val, left_sum+right_sum+root.val)
+        cur_max_sum = max(root.val, left_max_sum, right_max_sum,
+                          left_max_sum+right_max_sum-root.val)
 
-        self.max_sum = max(self.max_sum, max_cur_sum)  # post order
+        self.max_sum = max(self.max_sum, cur_max_sum)  # pre-order
 
         self.pre_helper(root.left)
         self.pre_helper(root.right)
@@ -48,7 +48,8 @@ class Solution:
         left_sum = self.max_node_sum(root.left, pre_sum)
         right_sum = self.max_node_sum(root.right, pre_sum)
 
-        max_cur_sum = max(left_sum, right_sum, left_sum+right_sum-pre_sum)
+        #max_cur_sum = max(left_sum, right_sum, left_sum+right_sum-pre_sum)
+        max_cur_sum = max(left_sum, right_sum)
 
         self.sum_dic[root] = max_cur_sum - temp_sum
         return max_cur_sum
