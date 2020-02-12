@@ -8,7 +8,7 @@
 
 class Solution:
     def __init__(self):
-        self.temp_node = TreeNode(0)
+        self.temp_node = TreeNode(None)
 
     def flatten(self, root: TreeNode) -> None:
         if not root.left and not root.right:
@@ -16,7 +16,7 @@ class Solution:
         elif not root:
             return None
 
-        cur_node = TreeNode(0)
+        cur_node = TreeNode(None)
 
         self.traver_helper(root, cur_node)
 
