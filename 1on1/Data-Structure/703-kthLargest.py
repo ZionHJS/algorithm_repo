@@ -1,4 +1,6 @@
 import heapq
+#print("heapify:", heapq.heapify([2, 3, 6, 1, 0, -1]))
+print("heapify:", heapq.heapify([2, 3, 4, 5, 6]))
 
 
 class KthLargest:
@@ -18,3 +20,9 @@ class KthLargest:
             return heapq.heappop(self.heap)
         else:
             return heapq.heappop(self.heap)
+
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+nums_ = nums[-5:]
+#print("nums_:", nums_)
+print("heapify:", heapq.heapify([2, 3, 6, 1, 0, -1]))
