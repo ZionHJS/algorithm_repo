@@ -1,6 +1,6 @@
 class Solution:
     def __init__(self):
-        self.room_list = [[]]
+        self.room_list = []
 
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         if not intervals:
@@ -8,28 +8,25 @@ class Solution:
 
         n = len(intervals)
         target = intervals.pop()
+        self.room_list.append([target])
 
         self.partition(intervals, target)
 
-        if len(self.room_list[-1]) > 0:
-            return len(self.room_list)
-        else:
-            return len(self.romm_list) - 1
+        print("room_list:", self.room_list)
+        return len(self.room_list)
 
     def partition(self, intervals, target):
         if not intervals:
             return
 
-        for i in range(len(intervals)):
-            if len(intervals) > 0:
-                if not self.confOrNot(target, intervals[i]):
-                    self.room_list[-1].append(intervals.pop(i))
-            else:
-                return
+        for event in intervals:
+            if not self.confOrNot(target, event):
+                intervals.remove(event)
+                self.room_list[-1].append(event)
 
         if len(intervals) > 0:
             target = intervals.pop()
-            self.room_list.append([])
+            self.room_list.append([target])
         else:
             return
 
@@ -39,7 +36,7 @@ class Solution:
         return
 
     def confOrNot(self, arr1, arr2):
-        if (arr2[0] >= arr1[0] and arr2[0] < arr[1]) or (arr2[1] > arr1[0] and arr2[1] <= arr1[1]):
-            return True
-        else:
+        if arr2[0] >= arr1[1] or arr2[1] <= arr1[0]:
             return False
+        else:
+            return True
