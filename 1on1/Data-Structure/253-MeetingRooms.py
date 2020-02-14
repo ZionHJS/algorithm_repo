@@ -7,7 +7,7 @@ class Solution:
             return 0
 
         n = len(intervals)
-        target = intervals.pop()
+        target = intervals[-1]
         self.room_list.append([target])
 
         self.partition(intervals, target)
@@ -21,11 +21,17 @@ class Solution:
 
         for event in intervals:
             if not self.confOrNot(target, event):
-                intervals.remove(event)
+                # intervals.remove(event)
                 self.room_list[-1].append(event)
 
+        for event in self.room_list[-1]:
+            if event in intervals:
+                intervals.remove(event)
+
+        print("intervals:", intervals)
+
         if len(intervals) > 0:
-            target = intervals.pop()
+            target = intervals[-1]
             self.room_list.append([target])
         else:
             return
