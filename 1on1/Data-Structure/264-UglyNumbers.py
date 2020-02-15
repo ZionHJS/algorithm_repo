@@ -1,31 +1,33 @@
 import heapq
+import queue
 
 
 class Solution:
+    def __init__(self):
+        self.heap = []
+
     def nthUglyNumber(self, n: int) -> int:
-        if n == 1 or n == 2:
+        if n <= 6:
             return n
 
-        base = [2, 3, 5]
-        heap = []
+        factors = [2, 3, 5]
+        q = queue.Queue()
+        q.put(1)
+        heapq.heappush(self.heap, -1)  # initialization
 
-        for i in range(0, 4):
-            self.getMultiply(base, i, 1, n)  # i => 1,2,3
+        # bfs
+        while q.qsize():
+            for i in range(q.qsize()):
+                cur_multi = q.get()
+                for factor in factors:
+                    if len(self.heap) < n:
+                        if -cur_multi*factor not in self.heap:
+                            heapq.heappush(self.heap, -cur_multi*factor)
+                            q.put(cur_multi*factor)
+                    else:
+                        if -cur_multi*factor not in self.heap:
+                            if cur_multi*factor < -self.heap[0]:
+                                heapq.heappop(self.heap)
+                                heapq.heappush(self.heap, -cur_multi*factor)
 
-        return heap[0]
-
-    def getMultiply(self, base, times, multi, n):
-        if times == 0:
-            if len(heap) < n:
-                heapq.heappush(heap, -multi)
-            else:
-                if multi > -heap[0]:
-                    heapq.heappop(heap)
-                    heapq.heappush(heap, -multi)
-            return
-
-        for i in range(1, len(base)):
-            multi *= base[i]
-            self.getMultiply(base[1:], times-1, multi, n)
-
-        return
+        return -self.heap[0]
