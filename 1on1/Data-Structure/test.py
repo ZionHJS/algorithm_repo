@@ -1,6 +1,7 @@
-print("divmod:", divmod(10, 3))
+import queue
 
-
-A = [2, 1, 0, 4, 6, 7, 2, 3]
-A.sort()
-print("A:", A)
+q = queue.Queue()
+q.put([1, 2])
+a, b = q.get()
+print("a:", a)
+print("b:", b)
