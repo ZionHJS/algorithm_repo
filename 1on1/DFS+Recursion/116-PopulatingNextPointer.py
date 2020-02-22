@@ -18,7 +18,7 @@ class Solution:
         if not root:
             return self.res
         elif not root.left and not root.right:
-            return [root.val, None]
+            return [root.val, "#"]
 
         self.bfs(root)
         return self.res
@@ -26,10 +26,9 @@ class Solution:
     def bfs(self, root):
         q = queue.Queue()
         q.put(root)
-        q.put(None)
 
         while q.qsize():
-            if q.qsize() > 0:
+            for i in range(q.qsize()):
                 cur_node = q.get()
                 if cur_node != None:
                     if cur_node.left:
@@ -37,4 +36,5 @@ class Solution:
                     if cur_node.right:
                         q.put(cur_node.right)
                     self.res.append(cur_node.val)
-            self.res.append(None)
+
+            self.res.append("#")
