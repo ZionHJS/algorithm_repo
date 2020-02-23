@@ -1,10 +1,12 @@
-start = []
-end = [1, 2, 3, 4, 5, 6]
-print("combine:", start+end)
+for i in range(10):
+    i += 100
+    print("i:", i)
 
-graph = {}
-graph[1] = [2, 3]
-if 1 in graph:
-    print("graph:", graph)
-if 2 not in graph:
-    print("not in")
+
+string = '123456'
+print("range:", string[2:])
+print("string[j]:", string[3])
+
+string = '1,2,3,4,5,6'
+str_list = string.split(',')
+print("str_list:", str_list)
