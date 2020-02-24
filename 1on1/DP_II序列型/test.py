@@ -36,3 +36,7 @@ class Solution:
         for j in range(0, 5, 2):  # j => 0/2/4 未持有的时候才能计算收益
             res = max(res, dp[n-1][j])  # 最后一row的最大值
         return res
+
+
+for i in range(0, 1):
+    print("now_i:", i)
