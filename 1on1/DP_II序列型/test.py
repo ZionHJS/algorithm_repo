@@ -38,5 +38,12 @@ class Solution:
         return res
 
 
-for i in range(0, 1):
-    print("now_i:", i)
+s = set()
+s.add("--++")
+s.add("-+--")
+print("s:", s)
+if "--++" in s:
+    print("init")
+
+for k in range(0, -1, -1):
+    print("k:", k)
