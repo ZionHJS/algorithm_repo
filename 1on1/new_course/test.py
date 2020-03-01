@@ -5,3 +5,11 @@ left = collections.Counter(li)
 end = collections.Counter()
 print("left:", left)
 print("end:", end)
+
+
+words = ["hello", "hi", "helo"]
+words.remove("hello")
+print("words:", words)
+
+word = "something"
+print("word_idx:", word[100])
