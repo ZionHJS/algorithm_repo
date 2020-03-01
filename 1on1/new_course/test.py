@@ -1,13 +1,7 @@
-chars = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
-chars = chars.split(" ")
-print("chars:", chars)
-print("chars_idx:", chars.index("i"))
+import collections
 
-chars = "abcdefghijklmnopqrstuvwxyz"
-print("position_b:", chars.find("b"))
-
-print("1e9:", 1e9)
-
-bulls = 0
-res = "".join(bulls)
-print("join:", res)
+li = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 5, 6, 8]
+left = collections.Counter(li)
+end = collections.Counter()
+print("left:", left)
+print("end:", end)
