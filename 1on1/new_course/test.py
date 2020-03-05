@@ -26,3 +26,7 @@ print("res:", 1//2)
 word = "thisisword"
 word[1] = "o"
 print("word:", word)
+
+
+s = "Let's take LeetCode contest"
+print("len_s:", len(s))
