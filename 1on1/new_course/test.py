@@ -19,3 +19,10 @@ class Solution:
             j -= 1 if cur_sum >= K else res.append(cur_sum) i += 1
 
         return max(res) if res else return -1
+
+
+print("res:", 1//2)
+
+word = "thisisword"
+word[1] = "o"
+print("word:", word)
