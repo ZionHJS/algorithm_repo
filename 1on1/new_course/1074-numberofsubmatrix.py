@@ -1,6 +1,7 @@
 class Solution:
     def numSubmatrixSumTarget(self, matrix: List[List[int]], target: int) -> int:
         n, m = len(matrix), len(matrix[0])
+        self.count = 0
         # make the matrix to sum_matrix
         for i in range(n):
             for j in range(m):
@@ -16,7 +17,6 @@ class Solution:
                     matrix[i][j-1] - matrix[i-1][j-1]
 
         # traverse the sum_matrix to see if any submatrices that sum to a target
-        self.count = 0
         for i in range(n-1):
             for j in range(m-1):
                 self.count_target(i, j, matrix, target, n, m)
@@ -27,7 +27,7 @@ class Solution:
     def count_target(self, y, x, matrix, target, n, m):
         for i in range(y+1, n):
             for j in range(x+1, m):
-                dif_sum = matrix[i][j] - matrix[i][j-1] - \
-                    matrix[i-1][j] + matrix[x][y]
+                dif_sum = matrix[i][j] - matrix[y-1][j] - \
+                    matrix[i][x-1] + matrix[y-1][x-1]
                 if dif_sum == target:
                     self.count += 1
