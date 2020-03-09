@@ -1,3 +1,10 @@
-num = 29
-str_num = str(num)
-print("str_num:", str_num, "str_num[i]:", str_num[1])
+combination = [['home', 'about', 'career'], ['home', 'about', 'home'], ['home', 'about', 'cart'], ['home', 'about', 'maps'], ['home', 'about', 'home'], ['home', 'about', 'home'], ['home', 'about', 'about'], ['home', 'about', 'career'], ['home', 'career', 'career'], ['home', 'career', 'home'], ['home', 'career', 'cart'], ['home', 'career', 'maps'], ['home', 'career', 'home'], ['home', 'career', 'home'], ['home', 'career', 'about'], ['home', 'career', 'career'], ['home', 'home', 'career'], [
+    'home', 'home', 'home'], ['home', 'home', 'cart'], ['home', 'home', 'maps'], ['home', 'home', 'home'], ['home', 'home', 'home'], ['home', 'home', 'about'], ['home', 'home', 'career'], ['home', 'cart', 'career'], ['home', 'cart', 'home'], ['home', 'cart', 'cart'], ['home', 'cart', 'maps'], ['home', 'cart', 'home'], ['home', 'cart', 'home'], ['home', 'cart', 'about'], ['home', 'cart', 'career'], ['home', 'maps', 'career'], ['home', 'maps', 'home'], ['home', 'maps', 'cart'], ['home', 'maps', 'maps']]
+print("combination:", combination)
+s_combination = set(combination)
+print("s_combination:", s_combination)
+
+combination = [['home', 'about', 'career'], ['home', 'about', 'home'], ['home', 'about', 'cart'], ['home', 'about', 'maps'], ['home', 'about', 'home'], ['home', 'about', 'home'], ['home', 'about', 'about'], ['home', 'about', 'career'], ['home', 'career', 'career'], ['home', 'career', 'home'], ['home', 'career', 'cart'], ['home', 'career', 'maps'], ['home', 'career', 'home'], ['home', 'career', 'home'], ['home', 'career', 'about'], ['home', 'career', 'career'], ['home', 'home', 'career'], [
+    'home', 'home', 'home'], ['home', 'home', 'cart'], ['home', 'home', 'maps'], ['home', 'home', 'home'], ['home', 'home', 'home'], ['home', 'home', 'about'], ['home', 'home', 'career'], ['home', 'cart', 'career'], ['home', 'cart', 'home'], ['home', 'cart', 'cart'], ['home', 'cart', 'maps'], ['home', 'cart', 'home'], ['home', 'cart', 'home'], ['home', 'cart', 'about'], ['home', 'cart', 'career'], ['home', 'maps', 'career'], ['home', 'maps', 'home'], ['home', 'maps', 'cart'], ['home', 'maps', 'maps']]
+if ['home', 'about', 'career'] in combination:
+    print("inside!")
