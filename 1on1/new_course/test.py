@@ -1,10 +1,12 @@
-combination = [['home', 'about', 'career'], ['home', 'about', 'home'], ['home', 'about', 'cart'], ['home', 'about', 'maps'], ['home', 'about', 'home'], ['home', 'about', 'home'], ['home', 'about', 'about'], ['home', 'about', 'career'], ['home', 'career', 'career'], ['home', 'career', 'home'], ['home', 'career', 'cart'], ['home', 'career', 'maps'], ['home', 'career', 'home'], ['home', 'career', 'home'], ['home', 'career', 'about'], ['home', 'career', 'career'], ['home', 'home', 'career'], [
-    'home', 'home', 'home'], ['home', 'home', 'cart'], ['home', 'home', 'maps'], ['home', 'home', 'home'], ['home', 'home', 'home'], ['home', 'home', 'about'], ['home', 'home', 'career'], ['home', 'cart', 'career'], ['home', 'cart', 'home'], ['home', 'cart', 'cart'], ['home', 'cart', 'maps'], ['home', 'cart', 'home'], ['home', 'cart', 'home'], ['home', 'cart', 'about'], ['home', 'cart', 'career'], ['home', 'maps', 'career'], ['home', 'maps', 'home'], ['home', 'maps', 'cart'], ['home', 'maps', 'maps']]
-print("combination:", combination)
-s_combination = set(combination)
-print("s_combination:", s_combination)
+com_1 = ["home", "bob", "aart"]
+com_2 = ["home", "bob", "badsh"]
+com_3 = ["home", "bob", "badsh"]
+print("is_bigger:", com_1 < com_2)
+if com_1 > com_2:
+    print("bigger")
+else:
+    print("notsure")
 
-combination = [['home', 'about', 'career'], ['home', 'about', 'home'], ['home', 'about', 'cart'], ['home', 'about', 'maps'], ['home', 'about', 'home'], ['home', 'about', 'home'], ['home', 'about', 'about'], ['home', 'about', 'career'], ['home', 'career', 'career'], ['home', 'career', 'home'], ['home', 'career', 'cart'], ['home', 'career', 'maps'], ['home', 'career', 'home'], ['home', 'career', 'home'], ['home', 'career', 'about'], ['home', 'career', 'career'], ['home', 'home', 'career'], [
-    'home', 'home', 'home'], ['home', 'home', 'cart'], ['home', 'home', 'maps'], ['home', 'home', 'home'], ['home', 'home', 'home'], ['home', 'home', 'about'], ['home', 'home', 'career'], ['home', 'cart', 'career'], ['home', 'cart', 'home'], ['home', 'cart', 'cart'], ['home', 'cart', 'maps'], ['home', 'cart', 'home'], ['home', 'cart', 'home'], ['home', 'cart', 'about'], ['home', 'cart', 'career'], ['home', 'maps', 'career'], ['home', 'maps', 'home'], ['home', 'maps', 'cart'], ['home', 'maps', 'maps']]
-if ['home', 'about', 'career'] in combination:
-    print("inside!")
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+sum_ = sum(arr[3:5])
+print("cur_sum:", sum_)
