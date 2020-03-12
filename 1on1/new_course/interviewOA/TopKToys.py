@@ -8,17 +8,20 @@ class countToy:
         count_toy_quote = {}
 
         for toy in toys:
+            print("toy:", toy)
             toy_cnt = 0
             quo_toy_cnt = 0
             for quote in quotes:
-                if toy in quote:
+                if toy in quote.lower():
+                    quote = quote.lower()
                     toy_cnt += quote.count(toy)
+                    print("toy_cnt:", toy_cnt)
                     quo_toy_cnt += 1
             count_toy[toy] = toy_cnt
             count_toy_quote[toy] = quo_toy_cnt
-
         print("count_toy:", count_toy)
         print("count_toy_quote:", count_toy_quote)
+
         freqs = {}
         for toy, quo_cnt in count_toy_quote:
             if quo_cnt not in freqs:
@@ -48,3 +51,20 @@ class countToy:
             ans.append(res[o][1])
             if len(ans) == numToys:
                 return ans
+
+
+numToys = 6
+topToys = 2
+toys = ["elmo", "elsa", "legos", "drone", "tablet", "warcraft"]
+numQuotes = 6
+quotes = [
+    "Elmo is the hottest of the season! Elmo will be on every kid's wishlist!",
+    "The new Elmo dolls are super high quality",
+    "Expect the Elsa dolls to be very popular this year, Elsa!",
+    "Elsa and Elmo are the toys I'll be buying for my kids, Elsa is good",
+    "For parents of older kids, look into buying them a drone",
+    "Warcraft is slowly rising in popularity ahead of the holiday season"
+]
+
+countToys = countToy()
+print("ans:", countToys.toyCount(numToys, topToys, toys, numQuotes, quotes))
