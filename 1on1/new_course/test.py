@@ -1,35 +1,16 @@
-words = ["cat", "cats", "catsts", "dog", "dogcatsdog",
-         "hippop", "rat", "ratc"]
-max_word = max(words, key=lambda x: len(x))
-max_word_len = len(max(words, key=lambda x: len(x)))
-print("word_len:", max_word_len)
+toy = "elmo"
+quote = "elmo is the hottest of the season! elmo will be on every kid's wishlist!"
 
+if toy in quote:
+    print("inside")
 
-word1 = "abcd"
-word2 = "acde"
-word3 = "abde"
-if word1 < word2:
-    print("word2 is bigger!")
-else:
-    print("word1 is bigger")
+count1 = quote.count(toy)
+print("count:", count1)
 
-word1 = "abcd"
-word3 = "abde"
-if word3 < word1:
-    print("word1 is bigger!")
-else:
-    print("word3 is bigger")
+quote2 = "elm"
+count2 = quote2.count(toy)
+print("count2:", count2)
 
-
-toys = ["sdasds", "elmo", "elsa", "legos",
-        "drone", "tablet", "airbullon", "warcraft"]
-#sorted_toys = sorted(toys)
-toys.sort()
-print("sorted_toys:", toys)
-
-
-dic = {4: "apple", 3: "banana", 2: "watermelon", 1: "pinch"}
-print("dic:", dic)
-keys = dic.keys()
-print("keys:", keys)
-print("keys[-1]:", keys[-1])
+res = [(3, "asd"), (4, "asd"), (5, "sasdf"), (6, "sdagdf"), (7, "gfh")]
+print("res:", res)
+print("res[0][1]:", res[0][1])
