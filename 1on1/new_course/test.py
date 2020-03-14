@@ -1,16 +1,17 @@
-toy = "elmo"
-quote = "elmo is the hottest of the season! elmo will be on every kid's wishlist!"
+from collections import defaultdict
+edges = [[0, 1], [0, 2], [1, 3], [2, 3], [2, 5], [5, 6], [3, 4]]
+g = defaultdict(list)
+print("g:", g)
 
-if toy in quote:
-    print("inside")
+log = "dig1 8 1 5 1"
+fidx = log.find(" ")
+print("fidx:", fidx)
 
-count1 = quote.count(toy)
-print("count:", count1)
 
-quote2 = "elm"
-count2 = quote2.count(toy)
-print("count2:", count2)
+def g(x):
+    return (x[x.find(" "):], x[:x.find(" ")])
 
-res = [(3, "asd"), (4, "asd"), (5, "sasdf"), (6, "sdagdf"), (7, "gfh")]
-print("res:", res)
-print("res[0][1]:", res[0][1])
+
+logs = ["let1 art can", "let2 own kit dig", "let3 art zero"]
+for log in logs:
+    print("g(log):", g(log))
