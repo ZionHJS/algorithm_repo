@@ -16,3 +16,7 @@ str_inorder = str(inorder)
 print("str_inorder:", str_inorder)
 list_inorder = list(str_inorder)
 print("list_inorder:", list_inorder)
+
+list1 = [1, 2, 1]
+list2 = [1, 2, 1]
+print("equalOrNot:", list1 == list2)
