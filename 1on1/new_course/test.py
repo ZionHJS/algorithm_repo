@@ -20,3 +20,6 @@ print("list_inorder:", list_inorder)
 list1 = [1, 2, 1]
 list2 = [1, 2, 1]
 print("equalOrNot:", list1 == list2)
+
+num = 232
+print("char_num:", chr(num))
