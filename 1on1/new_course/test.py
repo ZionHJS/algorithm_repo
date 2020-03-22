@@ -23,3 +23,9 @@ print("equalOrNot:", list1 == list2)
 
 num = 232
 print("char_num:", chr(num))
+
+test_list = [1, [4, [6]], [1, 1], 2, [1, 1]]
+test_list = [4, [6]]
+ordered = test_list[::-1]
+print("ordered:", ordered)
+print("test_list:", test_list)
