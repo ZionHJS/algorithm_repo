@@ -29,3 +29,14 @@ test_list = [4, [6]]
 ordered = test_list[::-1]
 print("ordered:", ordered)
 print("test_list:", test_list)
+
+num1 = 2
+num2 = 4
+num3 = 7
+print("%1:", num1//3)
+print("%2:", num2//3)
+print("%3:", num3//3)
+
+s = "loveleetcode"
+c = "e"
+print("idx:", s.index(c))
