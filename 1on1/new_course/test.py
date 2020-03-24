@@ -40,3 +40,6 @@ print("%3:", num3//3)
 s = "loveleetcode"
 c = "e"
 print("idx:", s.index(c))
+
+tmp_list = []
+print("tmp:", tmp_list[-1])
