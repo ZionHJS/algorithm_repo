@@ -43,3 +43,7 @@ print("idx:", s.index(c))
 
 tmp_list = []
 print("tmp:", tmp_list[-1])
+
+pop = -3
+tmp = 2
+print("res:", pop/tmp)
