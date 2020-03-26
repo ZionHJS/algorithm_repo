@@ -47,3 +47,13 @@ print("tmp:", tmp_list[-1])
 pop = -3
 tmp = 2
 print("res:", pop/tmp)
+
+
+string1 = "leetcode"
+list_str1 = list(string1)
+list_str1.sort(cmp=lambda x, y: x < y)
+string2 = "codeeelt"
+list_str2 = list(string2)
+list_str2.sort()
+print("list_str1:", list_str1)
+print("list_str2:", list_str2)
