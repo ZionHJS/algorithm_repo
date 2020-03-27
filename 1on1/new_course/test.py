@@ -57,3 +57,7 @@ list_str2 = list(string2)
 list_str2.sort()
 print("list_str1:", list_str1)
 print("list_str2:", list_str2)
+
+list = [1, 2, 3, 4, 5, 6, 7, 8]
+for i, num in enumerate(list):
+    print("i:", i, "num:", num)
