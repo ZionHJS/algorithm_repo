@@ -68,3 +68,10 @@ print("int_str:", int_str)
 
 num = 1e9
 print("is_digit:", int(num))
+
+s = set()
+tu = (1, 2)
+tu2 = (3, 4)
+s.add(tu)
+print("s:", s)
+print("bollean:", tu2 not in s)
