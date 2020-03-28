@@ -65,3 +65,6 @@ for i, num in enumerate(list):
 str_num = "2*3-4*5"
 int_str = int(str_num)
 print("int_str:", int_str)
+
+num = 1e9
+print("is_digit:", int(num))
