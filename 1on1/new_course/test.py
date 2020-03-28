@@ -61,3 +61,7 @@ print("list_str2:", list_str2)
 list = [1, 2, 3, 4, 5, 6, 7, 8]
 for i, num in enumerate(list):
     print("i:", i, "num:", num)
+
+str_num = "2*3-4*5"
+int_str = int(str_num)
+print("int_str:", int_str)
