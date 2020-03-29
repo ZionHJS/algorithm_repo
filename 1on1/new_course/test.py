@@ -75,3 +75,6 @@ tu2 = (3, 4)
 s.add(tu)
 print("s:", s)
 print("bollean:", tu2 not in s)
+
+i = 1
+print("%:", i//2)
