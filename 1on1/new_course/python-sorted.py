@@ -5,3 +5,7 @@ b = sorted(L, cmp=lambda x, y: cmp(x[1], y[1]))
 print L
 print a
 print b
+
+dic = {3: 2, 4: 4, 5: 4, 6: 4}
+target = max(dic, key=dic.get)
+print("target:", target)
