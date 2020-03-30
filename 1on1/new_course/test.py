@@ -120,3 +120,20 @@ print("list_s:", list_s)
 s = "abcdefghijk"
 res = bisect.insert(s, "d")
 print("res:", res)
+
+
+list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+list2 = [3, 4, 5, 6, 7, 8, 9, 10, 11]
+str_list = str(list1)
+print("str_list:", str_list)
+
+
+union_list = list1.union(list2)
+print("union_list:", union_list)
+
+string = ""
+res = string+str(3)
+print("res:", res)
+
+print("tes:", 2 % 3)
+print("test2:", 5 % 3)
