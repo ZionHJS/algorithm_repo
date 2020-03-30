@@ -46,3 +46,17 @@ class Solution:
             last = current
 
         return True
+
+
+s = set()
+s.add((1, 2))
+s.add((3, 4))
+s.add((5, 6))
+s.add((6, 7))
+print("cur_len:", len(s))
+
+nxt_q = set()
+print("tr or false:", not nxt_q)
+
+left = right = 1
+print("judge:", left == right == 1)

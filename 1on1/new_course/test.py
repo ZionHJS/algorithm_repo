@@ -1,3 +1,18 @@
+import collections
+import bisect
+s = "abcdefghijk"
+res_s = bisect.bisect_right(s, "d")
+print("res_s:", res_s)
+list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
+res_l = bisect.bisect_right(list, "d")
+print("res_list:", res_l)
+
+
+nums = [1, 3, 2, 2, 5, 2, 3, 7]
+dic = collections.Counter(nums)
+print("dic:", dic)
+
+
 preorder = [3, 9, 20, 15, 7]
 print("preorder_last:", preorder[-3:-1])
 
@@ -6,6 +21,17 @@ pop = preorder.pop(0)
 print("pop:", pop)
 print("preorder:", preorder)
 
+
+s = set()
+s.add(1)
+s.add(2)
+s.add(3)
+s.add(4)
+s.add(5)
+s.add(6)
+print("s:", s)
+list_s = list(s)
+print("list_s:", list_s)
 
 inorder = [9, 3, 15, 20, 7]
 postorder = [9, 15, 7, 20, 3]
@@ -78,3 +104,19 @@ print("bollean:", tu2 not in s)
 
 i = 1
 print("%:", i//2)
+
+
+s = set()
+s.add((1, 2))
+if (1, 2) in s:
+    print("in here!")
+
+list = [(1, 2), (1, 2), (5, 6)]
+s_list = set(list)
+print("s_list:", s_list)
+list_s = list(s_list)
+print("list_s:", list_s)
+
+s = "abcdefghijk"
+res = bisect.insert(s, "d")
+print("res:", res)
