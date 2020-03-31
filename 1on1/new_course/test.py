@@ -137,3 +137,8 @@ print("res:", res)
 
 print("tes:", 2 % 3)
 print("test2:", 5 % 3)
+
+
+memo = [[1, 2], [3, 4], [5, 6]]
+for i, j in memo:
+    print("i:", i, "j:", j)
