@@ -23,9 +23,13 @@ class LFUCache:
             return -1
 
     def put(self, key: int, val: int) -> None:
+        if self.capacity == 0:
+            return -1
+
         if len(self.dict) < self.capacity:
             if key not in self.dict:
-                self.min_cnt = 0
+                self.min_cnt = 1
+
             self.dict[key] = val
             self.cnt_dict[key] += 1
             cur_cnt = self.cnt_dict[key]
@@ -35,9 +39,19 @@ class LFUCache:
                 if not self.order[self.min_cnt]:
                     self.min_cnt += 1
         else:
-            while not self.order[self.min_cnt]:
-                self.min_cnt += 1
-            remove_key = self.order[self.min_cnt].pop(0)
-            del self.cnt_dict[remove_key]
-            del self.dict[remove_key]
-            self.put(key, val)
+            if key not in self.dict:
+                while not self.order[self.min_cnt]:
+                    self.min_cnt += 1
+                remove_key = self.order[self.min_cnt].pop(0)
+                del self.cnt_dict[remove_key]
+                del self.dict[remove_key]
+                self.put(key, val)
+            else:
+                self.dict[key] = val
+                self.cnt_dict[key] += 1
+                cur_cnt = self.cnt_dict[key]
+                self.order[cur_cnt].append(key)
+                if cur_cnt > 1:
+                    self.order[cur_cnt-1].remove(key)
+                    if not self.order[self.min_cnt]:
+                        self.min_cnt += 1
