@@ -142,3 +142,8 @@ print("test2:", 5 % 3)
 memo = [[1, 2], [3, 4], [5, 6]]
 for i, j in memo:
     print("i:", i, "j:", j)
+
+
+a = {'a': 9, 'b': 1, 'c': 5}
+l = len(a)
+print("length:", l)
