@@ -158,3 +158,18 @@ print("res:", temp[1:])
 dicts = {1: "a", 2: "b", 3: "c"}
 res = dicts.get
 print("get:", res)
+
+
+str1, str2 = "ab", "abc"
+print("str2-str1:", str1 in str2)
+
+strs = "sdfasdbasd"
+test = strs.split(",")
+print("test:", test)
+
+for i in range(10):
+    print("i:", i)
+    for j in range(10):
+        print("j:", j)
+        if j == 3:
+            break
