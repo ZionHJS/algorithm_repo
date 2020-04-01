@@ -147,3 +147,10 @@ for i, j in memo:
 a = {'a': 9, 'b': 1, 'c': 5}
 l = len(a)
 print("length:", l)
+
+
+wordDict = ["catsss", "cat", "andsss", "sandss", "dogssss"]
+print("min:", min(wordDict))
+
+temp = ""
+print("res:", temp[1:])
