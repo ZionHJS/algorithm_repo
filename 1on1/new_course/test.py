@@ -154,3 +154,7 @@ print("min:", min(wordDict))
 
 temp = ""
 print("res:", temp[1:])
+
+dicts = {1: "a", 2: "b", 3: "c"}
+res = dicts.get
+print("get:", res)
