@@ -1,5 +1,11 @@
-import collections
+
 import bisect
+import collections
+str1 = "aavvccsdef"
+cnt = collections.Counter(str1)
+print("cnt:", cnt)
+
+
 s = "abcdefghijk"
 res_s = bisect.bisect_right(s, "d")
 print("res_s:", res_s)
@@ -197,3 +203,8 @@ elif s or s2:
 
 s_list = list(s)
 print("s_list:", s_list)
+
+
+hits = [(0, 0)] * 3
+print("hits:", hits)
+print("%:", 299 % 300)
