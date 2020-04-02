@@ -32,7 +32,6 @@ class Solution:
                     tmp_cnt += 1
                 if tmp_cnt == 6:
                     new_wordlist.append(word)
-
         return new_wordlist
 
     def tryguess(self, word, master):
@@ -60,6 +59,7 @@ class Solution:
                             tmp_cnt += 1
                             if tmp_cnt == tmp:
                                 return
-                        # elif new_tmp > tmp:
-                        #     self.target[i] = char
+                        elif new_tmp > tmp:
+                            self.target[i] = char
+                            self.prev_cnt = tmp
                         break
