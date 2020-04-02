@@ -173,3 +173,27 @@ for i in range(10):
         print("j:", j)
         if j == 3:
             break
+
+cor = [1, 0]
+val = 1
+print("equal_1:", cor == val)
+print("equal_2:", cor[0] == val)
+print("exist:", val[0])
+
+s = set()
+s.add((1, 2))
+s.add((3, 4))
+s.add((5, 6))
+s.add((1, 2))
+s.add((5, 6))
+print("s:", s)
+print("length:", len(s))
+s2 = set()
+
+if s and s2:
+    print("both!")
+elif s or s2:
+    print("only!")
+
+s_list = list(s)
+print("s_list:", s_list)
