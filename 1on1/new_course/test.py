@@ -208,3 +208,10 @@ print("s_list:", s_list)
 hits = [(0, 0)] * 3
 print("hits:", hits)
 print("%:", 299 % 300)
+
+a = ["a", "b", "c"]
+b = ["e", "f", "g"]
+print("combine1:", a + b)
+c = a.append(b)
+print("append:", c)
+print("com:", a += b)
