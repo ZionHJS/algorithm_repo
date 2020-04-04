@@ -215,3 +215,28 @@ print("combine1:", a + b)
 c = a.append(b)
 print("append:", c)
 print("com:", a += b)
+
+
+x = {'a': [1, 2], 'b': [3, 4, 6]}
+y = {'b': [2, 3, 5, 6, 7], 'c': 4}
+z = x.copy()
+z.update(y)
+#o = {**x, **y}
+print("com_z:", z.update(y))
+print("com_o:", o)
+
+
+x = {'a': 1, 'b': 2}
+y = {'b': 3, 'c': 4}
+
+x = {'a': [1, 2], 'b': [3, 4, 6, 9, 10]}
+y = {'b': [2, 3, 5, 6, 7], 'c': 4}
+z = x.copy()
+z.update(y)
+
+print("z:", z)
+print("o:", o)
+
+
+chars = "abcdefghijklmnopqrstuvwxyz"
+print("length:", len(chars))
