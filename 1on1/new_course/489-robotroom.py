@@ -44,29 +44,32 @@ class Solution:
         self.map[(self.cur_x, self.cur_y)] = 1
         robot.clean()
         moved = 0
-        while robot.move():
+        if robot.move():
             moved += 1
             self.cur_x = self.cur_x + self.x_[cur_cnt]
             self.cur_y = self.cur_y + self.y_[cur_cnt]
             self.map[(self.cur_x, self.cur_y)] = 1
             robot.clean()
-        self.blk_x = self.cur_x + self.x_[cur_cnt]
-        self.blk_y = self.cur_y + self.y_[cur_cnt]
-        self.map[(self.blk_x, self.blk_y)] = 0
+        else:
+            self.blk_x = self.cur_x + self.x_[cur_cnt]
+            self.blk_y = self.cur_y + self.y_[cur_cnt]
+            self.map[(self.blk_x, self.blk_y)] = 0
+            # return
 
         # try all nxt_directions(x4)  dfs()
         for i in range(4):
-            if i != cur_cnt and i != self.opp[cur_cnt]:
-                nxt_x, nxt_y = self.cur_x+self.x_[i], self.cur_y+self.y_[i]
-                if (nxt_x, nxt_y) not in self.map:
-                    if i - self.turn_cnt > 0:
-                        for k in range(i-self.turn_cnt):
-                            robot.turnRight()
-                    else:
-                        for k in range(self.turn_cnt-i):
-                            robot.turnLeft()
-                    self.turn_cnt = i
-                    self.cleanRoom(robot)
+            # if i != self.opp[cur_cnt]:
+            nxt_x, nxt_y = self.cur_x+self.x_[i], self.cur_y+self.y_[i]
+            # if ((nxt_x, nxt_y) not in self.map) or self.map[(nxt_x, nxt_y)] != 0:
+            if (nxt_x, nxt_y) not in self.map:
+                if i - self.turn_cnt > 0:
+                    for k in range(i-self.turn_cnt):
+                        robot.turnRight()
+                else:
+                    for k in range(self.turn_cnt-i):
+                        robot.turnLeft()
+                self.turn_cnt = i
+                self.cleanRoom(robot)
         # robot 还需要开回到dfs()启动前的状态    通过moved和i 两个属性来操作
         back_cnt = self.opp[cur_cnt]
         if back_cnt - self.turn_cnt > 0:
@@ -75,8 +78,8 @@ class Solution:
         else:
             for k in range(self.turn_cnt - back_cnt):
                 robot.turnLeft()
-        while moved:
-            moved -= 1
+        if moved:
+            #moved -= 1
             robot.move()
             self.cur_x = self.cur_x + self.x_[back_cnt]
             self.cur_y = self.cur_y + self.y_[back_cnt]
