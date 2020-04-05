@@ -1,6 +1,16 @@
-
-import bisect
 import collections
+import bisect
+import random
+rnd = random.randint(0, 1)
+print("rnd:", rnd)
+
+idx = 0
+if idx:
+    print("if words")
+else:
+    print("not work")
+
+
 str1 = "aavvccsdef"
 cnt = collections.Counter(str1)
 print("cnt:", cnt)
