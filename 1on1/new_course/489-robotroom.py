@@ -56,10 +56,9 @@ class Solution:
 
         # try all nxt_directions(x4)  dfs()
         for i in range(4):
-            if i != cur_cnt:
+            if i != cur_cnt and i != self.opp[cur_cnt]:
                 nxt_x, nxt_y = self.cur_x+self.x_[i], self.cur_y+self.y_[i]
                 if (nxt_x, nxt_y) not in self.map:
-                    left, right = 0, 0
                     if i - self.turn_cnt > 0:
                         for k in range(i-self.turn_cnt):
                             robot.turnRight()
@@ -79,6 +78,8 @@ class Solution:
         while moved:
             moved -= 1
             robot.move()
+            self.cur_x = self.cur_x + self.x_[back_cnt]
+            self.cur_y = self.cur_y + self.y_[back_cnt]
         for k in range(2):
             robot.turnRight()
         self.turn_cnt = cur_cnt
