@@ -240,3 +240,15 @@ print("o:", o)
 
 chars = "abcdefghijklmnopqrstuvwxyz"
 print("length:", len(chars))
+
+a = [0, 1, 1, 0]
+for i, val in enumerate(a):
+    print("i:", i, "val", val)
+
+
+set1 = set((1, 3))
+set2 = set((2, 4))
+inter = set1.intersection(set2)
+print("inter:", inter)
+union = set1.union(set2)
+print("union:", union)
