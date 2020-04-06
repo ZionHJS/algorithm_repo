@@ -282,3 +282,8 @@ list.sort(key=lambda x: x[0], reverse=True)
 print("sort_list:", list)
 list.remove((9, (1, 3)))
 print("new_list:", list)
+
+
+list = [1, 2, 3, 34, 5, 5]
+sums = sum(list)
+print("sums:", sums)
