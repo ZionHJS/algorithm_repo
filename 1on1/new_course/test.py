@@ -1,6 +1,9 @@
 import collections
 import bisect
 import random
+rnd = random.randint(1, 2)
+print("rnd:", rnd)
+
 rnd = random.randint(0, 1)
 print("rnd:", rnd)
 
@@ -287,3 +290,6 @@ print("new_list:", list)
 list = [1, 2, 3, 34, 5, 5]
 sums = sum(list)
 print("sums:", sums)
+
+rnd = random.randint(1, 2)
+print("rnd:", rnd)
