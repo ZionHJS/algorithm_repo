@@ -293,3 +293,7 @@ print("sums:", sums)
 
 rnd = random.randint(1, 2)
 print("rnd:", rnd)
+
+
+S = "abcdebddebde", T = "bde"
+print("inornot:", T in S)
