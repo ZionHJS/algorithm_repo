@@ -5,15 +5,12 @@ class Solution:
         if m != 0:
             return False
         nums.sort()
-        #print("nums:", nums)
 
         # Grouping
         for i in range(d):
             if not self.get_nxt_set(nums, k):
                 return False
-
         return True
-        # return sum(nums) == 0
 
     def get_nxt_set(self, nums, k):
         cnt, prev = 0, 0
@@ -30,5 +27,4 @@ class Solution:
                         nums[i] = 0
             if cnt == k:
                 return True
-
         return False
