@@ -1,3 +1,6 @@
+import math
+
+
 class Solution:
     def minWindow(self, S: str, T: str) -> str:
         if len(S) < len(T):
@@ -109,4 +112,50 @@ class Solution:
                 tmp_end_idx = dfs(i, 1)
                 if tmp_end_idx+1-i < tmp_len:
                     tmp_len, res = tmp_end_idx+1-i, S[i:tmp_end_idx + 1]
+        return res
+
+# without memo
+
+
+class Solution:
+    def minWindow(self, S: str, T: str) -> str:
+        def dfs(i, j):
+            if j == len(T):  # exit! if success and find the end
+                return i
+            tmp_idx = S.find(T[j], i + 1)
+            if tmp_idx != -1:
+                return dfs(tmp_idx, j+1)
+            else:
+                return float('inf')  # exit! not find to the end
+
+        tmp_len, res = float('inf'), ''
+        for i, s in enumerate(S):
+            if s == T[0]:
+                # 从T[1]开始 在 S[i+1:] 中找 每个 char  看是否能找到所有的char 如果不能找到所有 就返回 inf
+                tmp_end_idx = dfs(i, 1)
+                if tmp_end_idx+1-i < tmp_len:
+                    tmp_len, res = tmp_end_idx+1-i, S[i:tmp_end_idx + 1]
+        return res
+
+
+class Solution:
+    def minWindow(self, S: str, T: str) -> str:
+        def dfs(i, j):
+            if j == len(T):  # exit! if success and find the end
+                return i
+            nxt_idx = S.find(T[j], i + 1)
+            if (S[i], nxt_idx, j) not in memo:
+                if nxt_idx != -1:
+                    memo[S[i], nxt_idx, j] = dfs(nxt_idx, j+1)
+                else:
+                    # exit! not find to the end
+                    memo[S[i], nxt_idx, j] = math.inf
+            return memo[S[i], nxt_idx, j]
+
+        local_len, res, memo = math.inf, '', {}
+        for i, s in enumerate(S):
+            if s == T[0]:
+                local_end = dfs(i, 1)
+                if local_end+1-i < local_len:
+                    local_len, res = local_end+1-i, S[i:local_end + 1]
         return res

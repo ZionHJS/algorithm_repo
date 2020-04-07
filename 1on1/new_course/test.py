@@ -297,3 +297,5 @@ print("rnd:", rnd)
 
 S = "abcdebddebde", T = "bde"
 print("inornot:", T in S)
+
+print("inornot:", (1 or 2 or 3 or 4) == 4)
