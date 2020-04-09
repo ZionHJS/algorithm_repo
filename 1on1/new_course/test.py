@@ -299,3 +299,14 @@ S = "abcdebddebde", T = "bde"
 print("inornot:", T in S)
 
 print("inornot:", (1 or 2 or 3 or 4) == 4)
+
+s = "abc"
+print("exist:", s[3:])
+
+s = "123456789"
+print("ord_s_i:", ord("1"))
+
+print("res:", 1//3)
+
+str = "123456789"
+print("reverse:", str[::-1])
