@@ -315,3 +315,21 @@ print("reverse:", str[::-1])
 list = [2, 9, 3, 5, 4, 6, 8, 1]
 list.sort(reverse=True)
 print("sort_True:", list)
+
+
+a = "asdfghkju"
+la = list(a)
+print("list:", la)
+a.sort()
+print("sorted:", a)
+
+a = [1, 2, 3, 4]
+b = [3, 2, 4, 1]
+c = [1, 2, 3, 4]
+print("equal:", a == b)
+print("equal:", a == c)
+
+list = [["JFK", "SFO"], ["JFK", "ATL"]]
+print("list:", list)
+list.sort()
+print("list:", list)
