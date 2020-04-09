@@ -310,3 +310,8 @@ print("res:", 1//3)
 
 str = "123456789"
 print("reverse:", str[::-1])
+
+
+list = [2, 9, 3, 5, 4, 6, 8, 1]
+list.sort(reverse=True)
+print("sort_True:", list)
