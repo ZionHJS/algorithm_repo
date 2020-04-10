@@ -333,3 +333,6 @@ list = [["JFK", "SFO"], ["JFK", "ATL"]]
 print("list:", list)
 list.sort()
 print("list:", list)
+
+a = "abcdef"
+print("statOrnot:", a.startswith("abc"))
