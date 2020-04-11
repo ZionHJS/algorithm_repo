@@ -1,6 +1,12 @@
-import collections
-import bisect
 import random
+import bisect
+import collections
+c = collections.Counter()
+print("c:", c)
+c["a"] = 3, c["b:", 4]
+print("c:", c)
+
+
 rnd = random.randint(1, 2)
 print("rnd:", rnd)
 
@@ -336,3 +342,10 @@ print("list:", list)
 
 a = "abcdef"
 print("statOrnot:", a.startswith("abc"))
+
+a = "efghjkl"
+b = "egk"
+if b in a:
+    print("in")
+else:
+    print("notIn")
