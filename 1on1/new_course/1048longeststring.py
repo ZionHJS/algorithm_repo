@@ -33,7 +33,7 @@ class Solution:
             max_len += 1
             m = q.qsize()
             #print("m:", m)
-            for i in range(m):
+            for j in range(m):
                 cur_word = q.get()
                 for i in range(n):
                     if len(cur_word)+1 > len(words[i]):

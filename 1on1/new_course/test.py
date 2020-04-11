@@ -349,3 +349,8 @@ if b in a:
     print("in")
 else:
     print("notIn")
+
+
+dp = {'a': 1, 'b': 1, 'ba': 2, 'bca': 3, 'bda': 3, 'bdca': 4}
+print("max_val:", max(dp.values()))
+print("max_key:", max(dp.keys()))
