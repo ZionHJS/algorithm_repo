@@ -354,3 +354,9 @@ else:
 dp = {'a': 1, 'b': 1, 'ba': 2, 'bca': 3, 'bda': 3, 'bdca': 4}
 print("max_val:", max(dp.values()))
 print("max_key:", max(dp.keys()))
+
+tmp = []
+print("max:", max(tmp))
+
+list = ["a", "b", "c"]
+print("str:", str(list))
