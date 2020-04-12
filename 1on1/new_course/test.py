@@ -423,3 +423,7 @@ print("res:", memo[(1, 2, "abc")])
 memo = {}
 memo["a"] = "target"
 print("res:", memo["a"])
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+print("+:", a+b)
