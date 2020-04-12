@@ -1,11 +1,18 @@
 import random
 import bisect
 import collections
+list = ["aabbcc", "ddeeff", "gghhii"]
+tmp = "".join(list)
+print("tmp:", tmp)
+res1 = set(tmp)
+print("res1:", res1)
+res2 = collections.Counter(tmp)
+print("res2:", res2)
+
 c = collections.Counter()
 print("c:", c)
 c["a"] = 3, c["b:", 4]
 print("c:", c)
-
 
 rnd = random.randint(1, 2)
 print("rnd:", rnd)
@@ -360,3 +367,30 @@ print("max:", max(tmp))
 
 list = ["a", "b", "c"]
 print("str:", str(list))
+
+a = []
+a.append("")
+print("a:", a)
+
+a = "eftg"
+b = "uil"
+zip_ = zip(a, b)
+print("zip_:", zip_)
+for pair in zip_:
+    print("pair:", pair)
+
+a = "aabbcc"
+res = set(a)
+print("res:", res)
+
+list = ["aabbcc", "ddeeff", "gghhii"]
+tmp = "".join(list)
+print("tmp:", tmp)
+res1 = set(tmp)
+print("res1:", res2)
+res2 = collections.Counter(tmp)
+print("res2:", res2)
+
+
+res = set("".join(list))
+print("res:", res)
