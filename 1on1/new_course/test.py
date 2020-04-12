@@ -394,3 +394,15 @@ print("res2:", res2)
 
 res = set("".join(list))
 print("res:", res)
+
+
+res = "abcdef"
+re1 = res*1
+print("re1:", re1)
+re2 = res*0
+print("re2:", re2)
+
+
+word = "abcdfsaaa"
+s_w = set(word)
+print("s_w:", s_w)

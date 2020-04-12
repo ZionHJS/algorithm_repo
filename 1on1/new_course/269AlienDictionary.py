@@ -26,13 +26,13 @@ class Solution:
         for key in degrees:
             if degrees[key] == 0:
                 q.put(key)
-
+        if not len(graph) and q.qsize() > 1:
+            print("here")
+            return ""
         while q.qsize():
             x = q.get()
             res += x
             for y in graph[x]:
-                if degrees[y] == 0:
-                    return ""
                 degrees[y] -= 1
                 if degrees[y] == 0:
                     q.put(y)
