@@ -1,6 +1,11 @@
 import random
 import bisect
 import collections
+memo = collections.defaultdict()
+memo[((1, 2), "abc")] == "target"
+print("res:", memo[(1, 2), "abc"])
+
+
 list = ["aabbcc", "ddeeff", "gghhii"]
 tmp = "".join(list)
 print("tmp:", tmp)
@@ -402,7 +407,19 @@ print("re1:", re1)
 re2 = res*0
 print("re2:", re2)
 
-
 word = "abcdfsaaa"
 s_w = set(word)
 print("s_w:", s_w)
+
+memo = {}
+memo[((1, 2), "abc")] = "target"
+print("res:", memo[(1, 2), "abc"])
+print("check:", memo["abc"])
+
+memo = {}
+memo[(1, 2, "abc")] = "target"
+print("res:", memo[(1, 2, "abc")])
+
+memo = {}
+memo["a"] = "target"
+print("res:", memo["a"])
