@@ -1,7 +1,11 @@
 import random
 import bisect
 import collections
-memo = collections.defaultdict()
+test = collections.defaultdict(lambda: [])
+for key in test:
+    print("key_here!")
+
+
 memo[((1, 2), "abc")] == "target"
 print("res:", memo[(1, 2), "abc"])
 
@@ -430,3 +434,16 @@ print("+:", a+b)
 
 a = 5
 print("divide:", a/2)
+
+s = -1
+str_s = str(s)
+print("str_s:", str_s)
+
+
+s = [-1]
+e = [-3, -4, -5]
+print("sum:", s+e)
+
+a = 3
+l_a = list(a)
+print("l_a:", l_a)
