@@ -469,3 +469,11 @@ print("res:", 11//3)
 
 a = "abcdfg"
 print("left:", a[:-0])
+
+cur = ['This    ', 'is    ', 'an']
+res1 = "".join(cur)
+res2 = str(cur)
+print("res:", res1)
+print("res2:", res2)
+
+print("tmp:", 3 % 1)
