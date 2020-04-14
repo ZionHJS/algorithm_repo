@@ -459,3 +459,13 @@ print("largert?:", s1 < s2)
 
 for i in range(10)[::-1]:
     print("i:", i)
+
+a = [[1], [2], [3]]
+b = [[4]]
+c = a+b
+print("c:", c)
+
+print("res:", 11//3)
+
+a = "abcdfg"
+print("left:", a[:-0])
