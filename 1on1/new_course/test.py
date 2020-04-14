@@ -456,3 +456,6 @@ print("l:", l)
 s1 = "i love leetcode"
 s2 = "ironman"
 print("largert?:", s1 < s2)
+
+for i in range(10)[::-1]:
+    print("i:", i)

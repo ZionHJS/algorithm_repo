@@ -1,5 +1,4 @@
 import collections
-import heapq
 
 
 class AutocompleteSystem:
@@ -9,47 +8,34 @@ class AutocompleteSystem:
         self.degree = collections.defaultdict(lambda: 0)
         for i in range(len(S)):
             self.degree[S[i]] = T[i]
-        self.s = set(S)
         self.tmp_his = ""
 
     def input(self, c: str) -> List[str]:
-        #print("degree:", self.degree)
         if c == "#":
             if not self.tmp_his:
                 return []
-            self.s.add(self.tmp_his)
             self.degree[self.tmp_his] += 1
-            res = self.tmp_his
             self.tmp_his = ""
-            return [res]
         else:
             self.tmp_his += c
-            heap = []
+            q = []
             for s in self.degree:
                 if s.startswith(self.tmp_his):
-                    if len(heap) < 3:
-                        if heap and self.degree[s] == heap[0][0]:
-                            if heap[0][1] > s:
-                                tmp = heapq.heappop(heap)
-                                heapq.heappush(heap, (self.degree[s], s))
-                                heapq.heappush(heap, tmp)
-                        heapq.heappush(heap, (self.degree[s], s))
-                    elif len(heap) == 3:
-                        if self.degree[s] == heap[0][0]:
-                            if heap[0][1] > s:
-                                heapq.heappop(heap)
-                                heapq.heappush(heap, (self.degree[s], s))
-                        elif self.degree[s] > heap[0][0]:
-                            heapq.heappop(heap)
-                            heapq.heappush(heap, (self.degree[s], s))
-            #print("heap:", heap)
-
+                    q.append((self.degree[s], s))
+            if not q:
+                return q
+            q.sort(key=lambda x: x[0], reverse=True)
+            tmp_list = []
             res = []
-            for i in range(3):
-                if heap:
-                    res.append(heapq.heappop(heap))
-                else:
-                    break
-            res.sort(reverse=True)
-            res = list(filter(lambda x: x[0], res))
-            return res
+            prev_key = q[0][0]
+            for i in range(len(q)+1):
+                if i == len(q) or q[i][0] != prev_key:
+                    tmp_list.sort()
+                    res += tmp_list
+                    if len(res) >= 3 or i == len(q):
+                        return res[:3]
+                    tmp_list = []
+                tmp_list.append(q[i][1])
+                prev_key = q[i][0]
+
+            return res[:3]
