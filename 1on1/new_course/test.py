@@ -447,3 +447,12 @@ print("sum:", s+e)
 a = 3
 l_a = list(a)
 print("l_a:", l_a)
+
+
+l = ["izw", "ironman", "i love leetcode", "island", "iwo"]
+l.sort()
+print("l:", l)
+
+s1 = "i love leetcode"
+s2 = "ironman"
+print("largert?:", s1 < s2)
