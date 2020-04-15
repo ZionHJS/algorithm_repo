@@ -477,3 +477,7 @@ print("res:", res1)
 print("res2:", res2)
 
 print("tmp:", 3 % 1)
+
+
+s = set()
+print("len_s:", len(s))
