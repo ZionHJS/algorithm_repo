@@ -481,3 +481,11 @@ print("tmp:", 3 % 1)
 
 s = set()
 print("len_s:", len(s))
+
+pq = [3, 3, 3, 4, 5, 5, 6, 2, 2, 2]
+pq.remove(3)
+print("pq:", pq)
+
+a = "abasdads"
+list_a = list(a)
+print("list_a:", list_a)
