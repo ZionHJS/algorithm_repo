@@ -38,3 +38,43 @@ class Solution:
             tmp_right = max(tmp_right, B[i][1])
 
         return ans
+
+
+class Solution:
+    def getSkyline(self, B: List[List[int]]) -> List[List[int]]:
+        if not B:
+            return []
+        B.sort()
+        ans = []
+        heap = []
+        tmp_right = [0, 0, 0]
+        ans.append([B[0][0], B[0][2]])
+        heapq.heappush(heap, [-B[0][2], B[0][1]])
+        tmp_right = B[0]
+
+        for i in range(1, len(B)):
+            heapq.heappush(heap, [-B[i][2], B[i][1]])
+            if B[i][0] <= tmp_right[1]:
+                if B[i][0] <= B[i-1][1]:  # 前后相交
+                    if B[i][2] > B[i-1][2]:
+                        ans.append([B[i][0], B[i][2]])
+                    elif B[i][2] < B[i-1][2]:
+                        height = 0
+                        while len(heap):
+                            if B[i-1][2] <= -heap[0][0] or heap[0][1] <= B[i-1][1]:
+                                heapq.heappop(heap)
+                        height = -heap[0][0] or 0
+                        ans.append([B[i-1][1], height])
+                else:  # 前后不相交
+                    if B[i][2] > -heap[0][0]:
+                        ans.append(B[i][0], B[i][2])
+            else:
+                heap = []
+                ans.append([tmp_right[1], 0])
+            if B[i][1] > tmp_right[1]:
+                tmp_right = B[i]
+
+        if B[-1][1] < tmp_right[1]:
+            ans.append([tmp_right[0], tmp_right[2]])
+
+        return ans
