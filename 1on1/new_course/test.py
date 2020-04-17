@@ -517,3 +517,20 @@ print("res:", res)
 t = ["4", "13", "5", "/", "+"]
 res = [t]*2
 print("res:", res)
+
+a = "abcdef"
+a_ = a[::-1]
+print("a_:", a_)
+
+i = 5
+for j in range(i)[::-1]:
+    print("j:", j)
+
+a = "# a # b # a # a # b # a #"
+b = a.split("#")
+print("b:", b)
+
+a = "-"
+b = "sfg"
+c = a.join(b)
+print("c:", c)
