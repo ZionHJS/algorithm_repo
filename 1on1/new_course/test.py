@@ -489,3 +489,27 @@ print("pq:", pq)
 a = "abasdads"
 list_a = list(a)
 print("list_a:", list_a)
+
+s = "aaaabbbbcdefgdddccchjklmn"
+cnt = s.count("esd")
+print("cnt:", cnt)
+new_s = s.split("e")
+print("new_s:", new_s)
+
+
+s_s = set(s)
+print("set:", s_s)
+
+t = "1+2*3"
+print("t:", t)
+new_t = int(t)
+print("new_t:", new_t)
+
+op1 = 3
+op2 = 5
+f = {"+": +, "-": -, "*": *, "/": /}
+print("res:", op1f["*"]op2)
+
+t = "1+2*3+(5*7)"
+res = eval(t)
+print("res:", res)
