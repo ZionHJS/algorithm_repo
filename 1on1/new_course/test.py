@@ -547,3 +547,19 @@ print("a:", a)
 
 for i in range(10, -1, -1):
     print("i:", i)
+
+
+dic = {}
+if not dic:
+    print("not inside!")
+else:
+    print("dict")
+
+print("here!")
+
+
+r1 = 3/2
+r2 = 9/6
+r3 = 7/5
+print("r1:", r1, "r2:", r2, "r3:", r3)
+print("equal:", r1 == r2, "notequal:", r3 == r1)
