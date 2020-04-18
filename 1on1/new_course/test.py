@@ -1,6 +1,11 @@
 import random
 import bisect
 import collections
+a = [1, 1, 1, 1, 9, 9, 9, 9, 3, 3, 3, 3, 4, 4, 5, 6, 7]
+bisect.insort(a, 2)
+print("a:", a)
+
+
 test = collections.defaultdict(lambda: [])
 for key in test:
     print("key_here!")
@@ -534,3 +539,11 @@ a = "-"
 b = "sfg"
 c = a.join(b)
 print("c:", c)
+
+a = [1, 1, 1, 1, 3, 3, 3, 3, 4, 4, 5, 6, 7]
+bisect.insort(a, 2)
+print("a:", a)
+
+
+for i in range(10, -1, -1):
+    print("i:", i)
