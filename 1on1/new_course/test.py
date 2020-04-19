@@ -563,3 +563,12 @@ r2 = 9/6
 r3 = 7/5
 print("r1:", r1, "r2:", r2, "r3:", r3)
 print("equal:", r1 == r2, "notequal:", r3 == r1)
+
+a = [(1, 2), (3, 4), (5, 6)]
+s = set(a)
+print("s_1:", s[1])
+
+
+print("s:", s)
+if (5, 2) in s:
+    print("in here!")
