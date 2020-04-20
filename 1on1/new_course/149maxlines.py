@@ -38,3 +38,10 @@ class Solution:
                 prevs += dic[key]
 
         return ans
+
+
+dic = [(1, 2), (3, 4), (5, 6), (7, 8)]
+s = set([(5, 4), (6, 8), (1, 9)])
+print("s:", s)
+new = set.union(s, dic)
+print("new:", new)
