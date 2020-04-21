@@ -571,3 +571,7 @@ print("s_1:", s[1])
 print("s:", s)
 if (5, 2) in s:
     print("in here!")
+
+a = [[1, 2], [3, 4], [5, 6], []]
+print("a:", a)
+print("a[3]:", a[3])
