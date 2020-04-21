@@ -568,7 +568,6 @@ a = [(1, 2), (3, 4), (5, 6)]
 s = set(a)
 print("s_1:", s[1])
 
-
 print("s:", s)
 if (5, 2) in s:
     print("in here!")
