@@ -1,6 +1,16 @@
 import random
 import bisect
 import collections
+
+b = "000001123123"
+print("int:", int(b))
+c = "0000000"
+print("int:", int(c))
+
+a = "1.1"
+idx = bisect.bisect_right(a, "*")
+print("idx:", idx)
+
 a = [1, 1, 1, 1, 9, 9, 9, 9, 3, 3, 3, 3, 4, 4, 5, 6, 7]
 bisect.insort(a, 2)
 print("a:", a)
@@ -575,3 +585,12 @@ if (5, 2) in s:
 a = [[1, 2], [3, 4], [5, 6], []]
 print("a:", a)
 print("a[3]:", a[3])
+
+a = 0.6666
+print("str_a:", str(a))
+
+print("divid:", float(10/3))
+
+a = [{}, {}, {}, {}]
+a[0]["c"] = 2
+print("a:", a)
