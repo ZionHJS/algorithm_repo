@@ -596,3 +596,5 @@ a[0]["c"] = 2
 print("a:", a)
 
 print("ord:", ord("a"))
+
+print("cur:", −2 ^ 31)

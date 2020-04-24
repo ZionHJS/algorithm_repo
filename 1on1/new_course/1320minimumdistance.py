@@ -59,3 +59,20 @@ class Solution:
                 dp2[(a, c)] = min(dp2[(a, c)], dp[(a, b)] + d(b, c))
             dp, dp2 = dp2, collections.defaultdict(lambda:3000)
         return min(dp.values())
+
+
+import math, collections
+
+class Solution:
+    def minimumDistance(self, W: str) -> int:
+        def d(a, b):   #get the distance
+            return a and abs(a // 6 - b // 6) + abs(a % 6 - b % 6)
+
+        dp, dp2 = collections.defaultdict(lambda:0), collections.defaultdict(lambda:math.inf)
+        dp[(0,0)] = 0
+        for c in (ord(c) + 1 for c in W):
+            for a, b in dp:
+                dp2[(c, b)] = min(dp2[(c, b)], dp[(a, b)] + d(a, c))
+                dp2[(a, c)] = min(dp2[(a, c)], dp[(a, b)] + d(b, c))
+            dp, dp2 = dp2, collections.defaultdict(lambda:math.inf)
+        return min(dp.values())
