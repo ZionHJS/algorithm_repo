@@ -522,7 +522,7 @@ print("new_t:", new_t)
 
 op1 = 3
 op2 = 5
-f = {"+": +, "-": -, "*": *, "/": / }
+f = {"+": +, "-": -, "*": *, "/": /}
 print("res:", op1f["*"]op2)
 
 t = "1+2*3+(5*7)"
@@ -598,3 +598,8 @@ print("a:", a)
 print("ord:", ord("a"))
 
 print("cur:", −2 ^ 31)
+
+
+a = 0
+b = 1
+print("res:", a and b)
