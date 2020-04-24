@@ -594,3 +594,5 @@ print("divid:", float(10/3))
 a = [{}, {}, {}, {}]
 a[0]["c"] = 2
 print("a:", a)
+
+print("ord:", ord("a"))

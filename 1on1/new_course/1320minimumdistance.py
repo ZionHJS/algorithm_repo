@@ -36,3 +36,26 @@ class Solution:
         dfs(0, "", "", 0, word)
 
         return res
+
+
+
+import math, collections
+
+class Solution:
+    def minimumDistance(self, W: str) -> int:
+        def d(a, b):
+            return a and abs(a // 6 - b // 6) + abs(a % 6 - b % 6)
+
+        #dp, dp2 = {(0, 0): 0}, collections.defaultdict(lambda:3000)
+        dp, dp2 = collections.defaultdict(lambda:0), collections.defaultdict(lambda:3000)
+        dp[(0,0)] = 0
+        for c in (ord(c) + 1 for c in W):
+            #print("c:", c)
+            for a, b in dp:
+                # dp2[(c, b)] = min(dp2.get((c, b), 3000), dp[a, b] + d(a, c))
+                # dp2[(a, c)] = min(dp2.get((a, c), 3000), dp[a, b] + d(b, c))
+                #print("a:", a, "b:", b, "c:", c)
+                dp2[(c, b)] = min(dp2[(c, b)], dp[(a, b)] + d(a, c))
+                dp2[(a, c)] = min(dp2[(a, c)], dp[(a, b)] + d(b, c))
+            dp, dp2 = dp2, collections.defaultdict(lambda:3000)
+        return min(dp.values())
