@@ -522,7 +522,7 @@ print("new_t:", new_t)
 
 op1 = 3
 op2 = 5
-f = {"+": +, "-": -, "*": *, "/": /}
+f = {"+": +, "-": -, "*": *, "/": / }
 print("res:", op1f["*"]op2)
 
 t = "1+2*3+(5*7)"
@@ -606,3 +606,8 @@ print("res:", a and b)
 
 a = "abcdef"
 print("exsit:", a[10:])
+
+a = "longer"
+b = "target"
+for pair in zip(a, b):
+    print("pair:", pair)
