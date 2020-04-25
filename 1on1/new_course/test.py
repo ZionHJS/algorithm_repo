@@ -611,3 +611,9 @@ a = "longer"
 b = "target"
 for pair in zip(a, b):
     print("pair:", pair)
+
+for i in range(10):
+    for j in range(10):
+        print("i:", i, "j:", j)
+        if j > 5:
+            break
