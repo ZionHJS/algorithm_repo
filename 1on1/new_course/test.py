@@ -603,3 +603,6 @@ print("cur:", −2 ^ 31)
 a = 0
 b = 1
 print("res:", a and b)
+
+a = "abcdef"
+print("exsit:", a[10:])
