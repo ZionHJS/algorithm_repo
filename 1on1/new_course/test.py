@@ -522,7 +522,7 @@ print("new_t:", new_t)
 
 op1 = 3
 op2 = 5
-f = {"+": +, "-": -, "*": *, "/": / }
+f = {"+": +, "-": -, "*": *, "/": /}
 print("res:", op1f["*"]op2)
 
 t = "1+2*3+(5*7)"
@@ -621,3 +621,6 @@ for i in range(10):
 nxt = [(-1, 0), (0, 1), (1, 0), (0, -1)]
 for key in nxt:
     print("key:", key)
+
+record = set((3, 5))
+print("record:", record)
