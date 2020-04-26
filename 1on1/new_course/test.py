@@ -617,3 +617,7 @@ for i in range(10):
         print("i:", i, "j:", j)
         if j > 5:
             break
+
+nxt = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+for key in nxt:
+    print("key:", key)
