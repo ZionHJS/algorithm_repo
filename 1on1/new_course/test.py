@@ -522,7 +522,7 @@ print("new_t:", new_t)
 
 op1 = 3
 op2 = 5
-f = {"+": +, "-": -, "*": *, "/": / }
+f = {"+": +, "-": -, "*": *, "/": /}
 print("res:", op1f["*"]op2)
 
 t = "1+2*3+(5*7)"
@@ -648,3 +648,15 @@ print("record:", record)
 
 for ij in ((0, 1), (0, 1), (1, 0), (1, 0)):
     print("ij:", ij)
+
+a = 1
+b = 1
+a >>= 2
+b <<= 3
+print("move_a:", a)
+print("move_b:", b)
+
+
+n = 2
+a = (n | 1)
+print("a:", a)
