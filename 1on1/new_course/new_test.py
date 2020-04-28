@@ -49,7 +49,7 @@ print("num:", int(0b00000))
 k = 0b0 | 0b1000000000
 print("k:", bin(k), "k:", k)
 
-k = 0b00 | 0b1000000000
+k = 0b10 | 0b100000
 print("k:", bin(k), "k:", k)
 
 k = 0b10 & 0b100
