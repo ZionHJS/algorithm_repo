@@ -54,3 +54,6 @@ print("k:", bin(k), "k:", k)
 
 k = 0b10 & 0b100
 print("k:", bin(k), "k:", k)
+
+a = [3, 5]
+print("*:", *a)
