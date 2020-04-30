@@ -9,21 +9,19 @@ class Solution:
         tmp = []
         for i in range(len(E)):
             if E[i] == "{":
-                if i > 1 and E[i-1] != ",":
+                if len(pros) > len(stack):  # 如果还有内层没破 累加
                     prev_pro = pros.pop()
                     product = ["".join(c) for c in itertools.product(
                         prev_pro, [chars])] if chars else prev_pro
                     pros.append(product)
                     tmp = []
                     chars = ""
-                else:
-                    pop = stack.pop()
-                    pop += tmp
-                    stack.append(pop)
+                else:  # 如果是保持平衡的 直接向内 同时加stack和pros
+                    stack.append(tmp)
                     pros.append(chars)
                     tmp = []
                     chars = ""
-                    #print("stack:", stack)
+                    print("stack:", stack)
             elif E[i] != "}" and E[i] != ",":
                 chars += E[i]
             elif E[i] == ",":
@@ -39,24 +37,24 @@ class Solution:
                     prev_pro, tmp)] if prev_pro else tmp
                 print("product:", product)
 
-                #prev = stack.pop()
-                #cur = list(set(prev+ product))
                 if i+1 < len(E):
-                    if E[i+1] == ",":
-                        tmp = stack.pop()+product
+                    if E[i+1] == "," or E[i+1] == "}":  # 内层破 向外合并
+                        # print("here!")
+                        tmp = stack.pop()+product  # len(stack) == len(pros)
                         chars = ""
                     else:
-                        pros.append(product)
+                        pros.append(product)  # 没破  pros变多
                         tmp = []
                         chars = ""
                 else:
-                    tmp = stack.pop()+product
+                    if stack:
+                        tmp = stack.pop()+product
+                    else:
+                        tmp = product
                     chars = ""
-
-                #print("tmp:", tmp)
-                # stack.append(tmp)
-
-        #print("tmp:", tmp, "res:", list(set(tmp)))
-        #res = list(set(tmp)) if not chars else list(set(tmp.append(chars)))
-        # res.sort()
-        return tmp
+        print("stack:", stack, "pros:", pros)
+        tmp = ["".join(c) for c in itertools.product(
+            pros[-1], tmp)] if pros[-1] else tmp
+        res = list(set(tmp))
+        res.sort()
+        return res
