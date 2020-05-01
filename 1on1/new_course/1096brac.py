@@ -3,84 +3,95 @@ import itertools
 
 class Solution:
     def braceExpansionII(self, E: str) -> List[str]:
-        if "{" not in E:
-            return [E]
-        stack = [[]]
+        stack = []
         chars = ""
-        pros = [""]
-        tmp = []
+        pros = []
+        cur = []
         switch = False
         for i in range(len(E)):
-            if E[i] == "{":
-                if switch:  # 如果还有内层没破 累加
+            if E[i] == "{":  # in
+                if switch:
                     prev_pro = pros.pop()
                     product = ["".join(c) for c in itertools.product(
                         prev_pro, [chars])] if chars else prev_pro
-                    print("new_Pro:", product, "switch false!")
                     pros.append(product)
-                    tmp = []
+                    # stack.append(cur)
+                    print("{-switch:", "stack:", stack, "pros:", pros)
+                    cur = []
                     chars = ""
                     switch = False
                 else:
-                    # if not tmp and chars:
-                    #     switch = True
-                    stack.append(tmp)
+                    stack.append(cur)
                     pros.append([chars])
-                    tmp = []
+                    print("stack:", stack, "pros:", pros)
+                    cur = []
                     chars = ""
-                    #swtich = True
-                    #print("stack:", stack)
             elif E[i] != "}" and E[i] != ",":
                 chars += E[i]
-                if i == len(E)-1 and switch:
-                    prev_pro = pros.pop()
-                    product = ["".join(c) for c in itertools.product(
-                        prev_pro, [chars])] if chars else prev_pro
-                    tmp = stack.pop()+product
+                # if i == len(E)-1:
+                #     if switch:
+                #         prev_pro = pros.pop()
+                #         product = ["".join(c) for c in itertools.product(prev_pro, [chars])] if chars else prev_pro
+                #         cur += product
+                #     else:
+                #         cur.append(chars)
+                print("change chars:", chars)
             elif E[i] == ",":
                 if switch:
-                    print("counter the ,")
                     prev_pro = pros.pop()
                     product = ["".join(c) for c in itertools.product(
                         prev_pro, [chars])] if chars else prev_pro
-                    tmp += product
-                    # pros.append(product)
+                    #cur += product
+                    cur = stack.pop() + cur + product
+                    print(",-switch-off-cur:", cur)
                     switch = False
                 else:
                     if chars:
-                        tmp.append(chars)
+                        cur.append(chars)
                 chars = ""
-            elif E[i] == "}":
+            elif E[i] == "}":  # out
                 if chars:
-                    tmp.append(chars)
-                if pros:
-                    prev_pro = pros.pop()
-                print("prev_pro:", prev_pro, "tmp:", tmp)
+                    cur.append(chars)
+                print("chars:", chars, "cur:", cur)
+                prev_pro = pros.pop()
                 product = ["".join(c) for c in itertools.product(
-                    prev_pro, tmp)] if prev_pro else tmp
+                    prev_pro, cur)] if prev_pro else cur
                 print("product:", product)
 
-                if i+1 < len(E):
-                    if E[i+1] == "," or E[i+1] == "}":  # 内层破 向外合并
-                        tmp = stack.pop()+product  # len(stack) == len(pros)
-                        print("broke here!", "tmp:", tmp)
-                        chars = ""
-                    else:
-                        print("swtich True!")
-                        # 破了一层但是后面还有连续 len(stack)还是==len(pros)  更新pros[-1]
-                        pros.append(product)
-                        tmp = []
-                        chars = ""
+                if i < len(E)-1:
+                    if E[i+1] != "," and E[i+1] != "}":
+                        if switch:
+                            cur = stack.pop()+product
+                            prev_pro = pros.pop()
+                            print("switch!", "cur:", cur,
+                                  "prev_pro:", prev_pro)
+                            product = ["".join(c) for c in itertools.product(
+                                prev_pro, cur)] if prev_pro else cur
+                            pros.append(product)
+                        else:
+                            pros.append(product)
+                            print("switch!", "pros:", pros)
                         switch = True
-                else:
-                    if stack:
-                        tmp = stack.pop()+product
+                        chars = ""
+                        cur = []
+                        #cur = stack.pop()
                     else:
-                        tmp = product
-                    #chars = ""
-        print("stack:", stack, "pros:", pros, "tmp:", tmp, "chars:", chars)
-        #tmp = ["".join(c) for c in itertools.product(tmp, chars)] if chars else tmp
-        tmp = stack.pop()+tmp
-        res = list(set(tmp))
-        res.sort()
+                        cur = stack.pop()+product
+                        chars = ""
+                        print("break-cur:", cur)
+                # else:
+                #     cur=stack.pop()+product
+                #     print("the last", "cur:", cur, "stack:", stack, "pros:", pros)
+
+        print("stack:", stack, "pros:", pros, "cur:", cur, "chars:", chars)
+        if chars:
+            cur.append(chars)
+        while pros:
+            prev_pro = pros.pop()
+            product = ["".join(c) for c in itertools.product(
+                prev_pro, cur)] if prev_pro else cur
+            cur = stack.pop() + product
+        res = list(set(cur))
+        # res.sort()
+        #print("stack:", stack, "pros:", pros, "cur:", cur, "chars:", chars)
         return res
