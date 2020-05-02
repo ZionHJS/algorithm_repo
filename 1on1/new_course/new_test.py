@@ -25,3 +25,18 @@ a = ["ncaa", "ncaaiawn", "ncaaown", "ncaaxwn", "ncaer", "ncaia", "ncao", "ncaw",
 
 b = ["ncaaiawn", "ncaan", "ncaaown", "ncaaxwn", "ncaern", "ncaian", "ncaon", "ncawn", "ncaxn", "ngaaiawn", "ngaan", "ngaaown", "ngaaxwn", "ngaern", "ngaian", "ngaon", "ngawn", "ngaxn", "nhaaiawn", "nhaan", "nhaaown", "nhaaxwn",
      "nhaern", "nhaian", "nhaon", "nhawn", "nhaxn", "njaaiawn", "njaan", "njaaown", "njaaxwn", "njaern", "njaian", "njaon", "njawn", "njaxn", "nlaaiawn", "nlaan", "nlaaown", "nlaaxwn", "nlaern", "nlaian", "nlaon", "nlawn", "nlaxn"]
+
+a = set()
+a.add("b")
+c = ["a", "b"]
+c.append(a)
+print("a:", a)
+
+
+c = ["a", "b", "c"]
+if c.index("d"):
+    print("try_find:")
+
+row = [1, 2, 3, 4, 5, 6, 7, 8]
+mid = int(len(row)/2)
+print("mid:", mid)
