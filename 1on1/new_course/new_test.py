@@ -40,3 +40,9 @@ if c.index("d"):
 row = [1, 2, 3, 4, 5, 6, 7, 8]
 mid = int(len(row)/2)
 print("mid:", mid)
+
+a = [""]
+if a:
+    print("is a")
+else:
+    print("a-false!")
