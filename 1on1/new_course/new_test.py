@@ -1,4 +1,13 @@
 import itertools
+import collections
+
+c = collections.defaultdict(list)
+S = "abcde"
+for i, char in enumerate(S):
+    c[char].append(i)
+print("c:", c)
+
+
 a = [1, 2, 3, 4, 5, 6]
 print("res:", itertools.product(*a))
 
@@ -53,3 +62,9 @@ for i in range(10, 3):
 s = "abcde"
 if "acd" in s:
     print("it is in!")
+
+c = defaultdict(list)
+S = "abcde"
+for r, i in enumerate(S):
+    c[i].append(r)
+print("c:", c)
