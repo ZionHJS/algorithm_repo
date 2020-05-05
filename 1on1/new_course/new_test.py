@@ -46,3 +46,10 @@ if a:
     print("is a")
 else:
     print("a-false!")
+
+for i in range(10, 3):
+    print("bigger?")
+
+s = "abcde"
+if "acd" in s:
+    print("it is in!")
