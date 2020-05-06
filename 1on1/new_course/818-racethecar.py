@@ -11,6 +11,7 @@ class Solution:
             left = left-speed
             dis[left] = steps
             speed *= 2
+        print("dis:", dis)
 
         def helper(start, target, prev_steps):
             if prev_steps >= self.res:
@@ -19,6 +20,7 @@ class Solution:
             pos = start
             D = True
             steps = 0
+
             while pos < target:
                 prev_pos = pos
                 pos += speed
@@ -27,6 +29,7 @@ class Solution:
             if pos == target:
                 self.res = min(self.res, prev_steps+steps)
                 return
+
             # for left
             #case01-stop and restart
             helper(prev_pos, target, prev_steps+steps+1)
@@ -40,6 +43,7 @@ class Solution:
                 if prev_pos in dis:
                     self.res = min(self.res, prev_steps+steps +
                                    l_steps+1+dis[prev_pos])
+                    break
 
             # for right
             new_pos = target-(pos-target)
@@ -54,6 +58,7 @@ class Solution:
                 if new_pos in dis:
                     self.res = min(self.res, prev_steps +
                                    steps+r_steps+1+dis[new_pos])
+                    break
 
         helper(0, target, 0)
 
