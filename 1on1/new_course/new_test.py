@@ -68,3 +68,11 @@ S = "abcde"
 for r, i in enumerate(S):
     c[i].append(r)
 print("c:", c)
+
+a = bin(0)
+b = bin(1)
+c = bin(2)
+d = bin(3)
+f = bin(4)
+print("a:", a, "b:", b, "c:", c, "d:", d, "f:", f)
+5
