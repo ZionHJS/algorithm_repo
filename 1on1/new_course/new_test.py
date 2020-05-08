@@ -76,3 +76,5 @@ d = bin(3)
 f = bin(4)
 print("a:", a, "b:", b, "c:", c, "d:", d, "f:", f)
 5
+for i in range(10, -1, -1):
+    print("i:", i)
