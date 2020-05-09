@@ -84,3 +84,6 @@ if a:
     print("A!")
 else:
     print("not A")
+
+a = bin(1)
+print("a:", a)
