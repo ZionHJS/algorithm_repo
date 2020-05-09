@@ -31,3 +31,29 @@ class StreamChecker:
                 if self.dfs(root.children[child], tmp, cnt):
                     return True
         return False
+
+
+class StreamChecker:
+    def __init__(self, words: List[str]):
+        self.words = set()
+        self.prefix = set()
+        for word in words:
+            if word not in self.words:  # optimize
+                self.words.add(word)
+                # tmp_prefix = ""
+                # for i in range(len(word)):
+                #     tmp_prefix += word[i]
+                #     self.prefix.add(tmp_prefix)
+        self.Q = ""
+
+    def query(self, letter: str) -> bool:
+        self.Q += letter
+        find = False
+        if letter in self.words:
+            find = True
+        if not find:
+            for i in range(min(len(self.Q), 2001)):
+                if self.Q[i:] in self.words:
+                    find = True
+                    break
+        return find

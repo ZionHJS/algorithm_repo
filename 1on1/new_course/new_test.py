@@ -78,3 +78,9 @@ print("a:", a, "b:", b, "c:", c, "d:", d, "f:", f)
 5
 for i in range(10, -1, -1):
     print("i:", i)
+
+a = set()
+if a:
+    print("A!")
+else:
+    print("not A")
