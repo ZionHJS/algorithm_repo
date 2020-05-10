@@ -1,23 +1,46 @@
-import heapq
-
-
 class Solution:
-    def assignBikes(self, workers: List[List[int]], bikes: List[List[int]]) -> List[int]:
-        n, m = len(workers), len(bikes)
-        visited_w, visited_b, heaps, ans = set(), set(), [], [-1 for i in range(n)]
-        for i in range(n-1, -1, -1):
-            for j in range(m-1, -1, -1):
-                res_i = self.get_dis(workers[i], bikes[j])
-                heapq.heappush(heaps, (res_i, (i, j)))
+    def minFlips(self, M: List[List[int]]) -> int:
+        m, n = len(M[0]), len(M)
+        if m == n == 1:
+            return 1 if M[0][0] == 1 else 0
+        nxt = [(0, -1), (-1, 0), (1, 0), (0, 1)]
+        memo = set()
+        steps = 0
+        ans = math.inf
+        q = []
+        cors = set()
+        for i in range(n):
+            for j in range(m):
+                cors.add((i, j))
+                if M[i][j] == 1:
+                    q.append((i, j))
+        Q = [tuple(q)]
+        memo.add(tuple(q))
+        while Q:
+            steps += 1
+            newQ = []
+            for q in Q:
+                for cor in cors:
+                    nxt_q = []
+                    for q_ in q:
+                        nxt_q.append(q_)
+                    if cor in nxt_q:
+                        nxt_q.remove(cor)
+                    else:
+                        nxt_q.append(cor)
+                    for k in range(4):
+                        nyy, nxx = cor[0]+nxt[k][0], cor[1]+nxt[k][1]
+                        if 0 <= nyy < n and 0 <= nxx < m:
+                            if (nyy, nxx) not in nxt_q:
+                                nxt_q.append((nyy, nxx))
+                            else:
+                                nxt_q.remove((nyy, nxx))
+                    if not nxt_q:
+                        return steps
+                    nxt_q = tuple(nxt_q)
+                    if nxt_q not in memo:
+                        newQ.append(nxt_q)
+                        memo.add(nxt_q)
+            Q = newQ
 
-        while len(heaps) > 0:
-            cur_ans = heapq.heappop(heaps)
-            if (cur_ans[1][0] not in visited_w) and (cur_ans[1][1] not in visited_b):
-                ans[cur_ans[1][0]] = cur_ans[1][1]
-                visited_w.add(cur_ans[1][0]), visited_b.add(cur_ans[1][1])
-
-        return ans
-
-    def get_dis(self, worker, bike):
-        dis = abs(worker[0]-bike[0])+abs(worker[1]-bike[1])
-        return dis
+        return -1
