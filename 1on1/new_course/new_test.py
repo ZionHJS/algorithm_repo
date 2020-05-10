@@ -91,3 +91,15 @@ print("a:", a)
 a = "(let x 2 (mult x (let x 3 y 4 (add x y))))"
 b = a.replace(")", " )").replace("(", "( ").split()
 print("b:", b)
+
+memo = set()
+q = []
+q.append((1, 0))
+q.append((2, 0))
+q.append((3, 0))
+tq = tuple(q)
+memo.add(tq)
+q.append((3, 0))
+tq2 = tuple(q)
+memo.add(tq2)
+print("memo:", memo)
