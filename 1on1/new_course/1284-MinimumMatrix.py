@@ -22,13 +22,21 @@ class Solution:
             for q in Q:
                 for cor in cors:
                     nxt_q = []
+                    visited = set()
                     if cor not in q:
                         nxt_q.append(cor)
+                    else:
+                        visited.add(cor)
                     for k in range(4):
                         nyy, nxx = cor[0]+nxt[k][0], cor[1]+nxt[k][1]
-                        if 0 <= nyy < n and 0 <= nxx < m
-                        if (nyy, nxx) not in q:
+                        if 0 <= nyy < n and 0 <= nxx < m:
+                            if (nyy, nxx) not in q:
                                 nxt_q.append((nyy, nxx))
+                            else:
+                                visited.add((nyy, nxx))
+                    for q_ in q:
+                        if q_ not in visited:
+                            nxt_q.append(q_)
                     if not nxt_q:
                         return steps
                     nxt_q = tuple(nxt_q)
