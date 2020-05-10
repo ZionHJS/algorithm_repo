@@ -103,3 +103,11 @@ q.append((3, 0))
 tq2 = tuple(q)
 memo.add(tq2)
 print("memo:", memo)
+
+
+memo = set()
+q = set()
+q.add((1, 2))
+q.add((2, 3))
+memo.add(q)
+print("memo:", memo)
