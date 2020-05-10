@@ -87,3 +87,7 @@ else:
 
 a = bin(1)
 print("a:", a)
+
+a = "(let x 2 (mult x (let x 3 y 4 (add x y))))"
+b = a.replace(")", " )").replace("(", "( ").split()
+print("b:", b)
