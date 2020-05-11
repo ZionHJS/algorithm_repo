@@ -111,3 +111,6 @@ q.add((1, 2))
 q.add((2, 3))
 memo.add(q)
 print("memo:", memo)
+
+for i in range(10)[::-1]:
+    print("i:", i)
