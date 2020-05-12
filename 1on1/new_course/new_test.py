@@ -124,3 +124,9 @@ print("exsit or not:", O[:-1])
 M = [[0, 1], [1, 0]]
 for o in combinations(M, 3):
     print("o:", o)
+
+
+print("res:", 1//2)
+
+a = "1*2*4*6*7"
+print("a:", int(a))
