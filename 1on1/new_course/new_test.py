@@ -1,6 +1,11 @@
 import itertools
 import collections
 
+A = [[1, 2], [3, 4], [5, 6, 0, 1], [7, 8, 9]]
+print("a-product:", itertools.product(A))
+for a in itertools.product():
+    print("a:", a)
+
 M = [0, 1, 2, 3]
 for o in itertools.combinations(M, 3):
     print("o:", o)
