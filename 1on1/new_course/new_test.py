@@ -11,7 +11,6 @@ for i, char in enumerate(S):
     c[char].append(i)
 print("c:", c)
 
-
 a = [1, 2, 3, 4, 5, 6]
 print("res:", itertools.product(*a))
 
