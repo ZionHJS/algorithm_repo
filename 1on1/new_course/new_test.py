@@ -135,3 +135,9 @@ print("res:", 1//2)
 
 a = "1*2*4*6*7"
 print("a:", int(a))
+
+a = 0
+if 0 <= a <= 0:
+    print("exist")
+if 0 <= a < 0:
+    print("exist too")
