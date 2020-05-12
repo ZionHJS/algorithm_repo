@@ -1,6 +1,10 @@
 import itertools
 import collections
 
+M = [0, 1, 2, 3]
+for o in itertools.combinations(M, 3):
+    print("o:", o)
+
 c = collections.defaultdict(list)
 S = "abcde"
 for i, char in enumerate(S):
@@ -114,3 +118,10 @@ print("memo:", memo)
 
 for i in range(10)[::-1]:
     print("i:", i)
+
+O = [1]
+print("exsit or not:", O[:-1])
+
+M = [[0, 1], [1, 0]]
+for o in combinations(M, 3):
+    print("o:", o)
