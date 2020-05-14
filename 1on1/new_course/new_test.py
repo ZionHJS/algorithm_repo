@@ -141,3 +141,6 @@ if 0 <= a <= 0:
     print("exist")
 if 0 <= a < 0:
     print("exist too")
+
+a = "3"
+print("torf:", a.isdigit())
