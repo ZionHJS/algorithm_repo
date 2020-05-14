@@ -147,3 +147,10 @@ print("torf:", a.isdigit())
 
 for i in range(100)[1::3]:
     print("i:", i)
+
+
+pc = set()
+pc.add((1, 2))
+print("pc:", pc)
+pc.remove((1, 2))
+print("pc:", pc)
