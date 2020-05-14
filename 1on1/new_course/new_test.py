@@ -144,3 +144,6 @@ if 0 <= a < 0:
 
 a = "3"
 print("torf:", a.isdigit())
+
+for i in range(100)[1::3]:
+    print("i:", i)
