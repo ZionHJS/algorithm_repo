@@ -184,3 +184,12 @@ print("visited:", visited)
 memo = set()
 memo.add(tuple(visited))
 print("tuple:", memo)
+
+
+m = set()
+c = set()
+T = False
+
+m.add(1) if T else c.add(2)
+
+print("m:", m, "c:", c)
