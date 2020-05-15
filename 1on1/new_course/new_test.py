@@ -193,3 +193,7 @@ T = False
 m.add(1) if T else c.add(2)
 
 print("m:", m, "c:", c)
+
+a = -1
+if a:
+    print("A")

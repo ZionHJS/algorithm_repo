@@ -1,42 +1,32 @@
 class Solution:
     def catMouseGame(self, graph: List[List[int]]) -> int:
-        memo = {}
-        points = set()
-        for edge in graph:
-            points = set.union(points, set(edge))
-        #print("points:", points)
+        def dfs(midx, cidx, prevm, prevc, T, path):  # T => mouse / not T => cat
+            if (midx, cidx, T) in path:
+                print("repeat!")
+                return 0
+            path.add((midx, cidx, T))
 
-        def dfs(midx, cidx, mvisited, cvisited, T):  # T => mouse / not T => cat
-            if (midx, cidx, tuple(mvisited), tuple(cvisited), T) in memo:
-                return memo[(midx, cidx, tuple(mvisited), tuple(cvisited), T)]
-            elif len(mvisited)+len(cvisited) == len(points):
-                if T:
-                    return 1 if len(mvisited) > len(cvisited) else -1 if len(mvisited) <= len(cvisited) else 0
-                else:
-                    return 1 if len(mvisited) <= len(cvisited) else -1 if len(mvisited) > len(cvisited) else 0
-
-            cur_res = -math.inf
+            cur_res = -1
             cur_idx = midx if T else cidx
             print("cur_idx:", cur_idx, "T:", T)
             for nidx in graph[cur_idx]:
-                if nidx == 0 and T:
-                    print("M won!", "cur_idx:", cur_idx, "return!")
+                if (nidx == midx and not T) or (nidx == 0 and T):
+                    path.discard((midx, cidx, T))
                     return 1
-                if nidx not in mvisited and nidx not in cvisited and nidx != 0:
-                    print("next-step:", nidx, "T:", T)
-                    mvisited.add(nidx) if T else cvisited.add(nidx)
-                    nxt_res = dfs(nidx, cidx, mvisited, cvisited, False) if T else dfs(
-                        midx, nidx, mvisited, cvisited, True)
+                if nidx != ((prevm or cidx) if T else prevc) and nidx != 0:
+                    print("nxt:", nidx, "prevm:", prevm, "prevc:", prevc)
+                    nxt_res = dfs(nidx, cidx, midx, prevc, False, path) if T else dfs(
+                        midx, nidx, prevm, cidx, True, path)
                     nxt_res = 1 if nxt_res == -1 else -1 if nxt_res == 1 else 0  # cal current
                     # -1 loose / 0 draw / 1 win
                     cur_res = max(cur_res, nxt_res)
-                    mvisited.discard(nidx) if T else cvisited.discard(nidx)
-            if cur_res == -math.inf:
-                print("Draw!", "Return!")
+            if cur_res == -1 and (prevm != -1 if T else prevc != -1):
+                print("go back", "prevm:", prevm, "prevc:",
+                      prevc, "midx:", midx, "cidx:", cidx)
+                cur_res = dfs(prevm, cidx, midx, prevc, False, path) if T else dfs(
+                    midx, prevc, prevm, cidx, True, path)
+            path.discard((midx, cidx, T))
+            return cur_res
 
-            memo[(midx, cidx, tuple(mvisited), tuple(cvisited), T)
-                 ] = cur_res if cur_res != -math.inf else 0
-            return cur_res if cur_res != -math.inf else 0
-
-        res = dfs(1, 2, set([1]), set([2]), True)
+        res = dfs(1, 2, -1, -1, True, set())
         return 1 if res == 1 else 2 if res == -1 else 0
