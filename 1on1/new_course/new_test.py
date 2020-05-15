@@ -154,3 +154,33 @@ pc.add((1, 2))
 print("pc:", pc)
 pc.remove((1, 2))
 print("pc:", pc)
+
+s1 = set()
+s1.add(1)
+s1.add(2)
+s2 = set()
+s2.add(3)
+s2.add(4)
+s2.add(1)
+print("union:", s1.union(s2))
+
+s = set()
+if not s:
+    print("not!")
+
+
+memo = set()
+midx = 0
+cidx = 1
+visited = (2, 3, 4, 5, 6)
+memo.add((midx, cidx, visited))
+print("memo:", memo)
+
+visited = set()
+visited.add(1)
+visited.add(2)
+visited.add(3)
+print("visited:", visited)
+memo = set()
+memo.add(tuple(visited))
+print("tuple:", memo)
