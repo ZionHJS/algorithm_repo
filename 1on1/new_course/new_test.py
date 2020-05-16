@@ -211,3 +211,8 @@ print("even:", even)
 nxt = False
 new = !nxt
 print("new:", new)
+
+a = [1, 2, 3, 4, 5, 6]
+b = a
+b.pop()
+print("a:", a)
