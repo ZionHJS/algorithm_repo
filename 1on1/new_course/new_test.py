@@ -207,3 +207,7 @@ print("a:", a)
 
 even = [1 if True, 2 if True, 3 if True, 4 if False]
 print("even:", even)
+
+nxt = False
+new = !nxt
+print("new:", new)
