@@ -197,3 +197,13 @@ print("m:", m, "c:", c)
 a = -1
 if a:
     print("A")
+
+a = set([1, 2])
+a.add(3)
+print("a:", a)
+
+
+[[6], [4], [9], [5], [1, 5], [3, 4, 6], [0, 5, 10], [8, 9, 10], [7], [2, 7], [6, 7]]
+
+even = [1 if True, 2 if True, 3 if True, 4 if False]
+print("even:", even)
