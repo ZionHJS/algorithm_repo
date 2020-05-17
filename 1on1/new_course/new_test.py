@@ -216,3 +216,7 @@ a = [1, 2, 3, 4, 5, 6]
 b = a
 b.pop()
 print("a:", a)
+
+cur = 3
+if cur != (1 and 2):
+    print("!=")
