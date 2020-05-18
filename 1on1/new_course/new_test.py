@@ -220,3 +220,11 @@ print("a:", a)
 cur = 3
 if cur != (1 and 2):
     print("!=")
+
+a = "abcdefghjklmn"
+b = "abcdef"
+c = "cdefghj"
+if b in a:
+    print("b in a!")
+if c in a:
+    print("c in a!")
