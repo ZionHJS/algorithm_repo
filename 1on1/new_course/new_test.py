@@ -237,3 +237,22 @@ elif r1:
     print("r1")
 elif r2:
     print("r2")
+
+a = []
+b = [1, 2, 3, 4, 5]
+c = [6, 7, 8, 9]
+a.append(b)
+a.append(c)
+print("a:", a)
+e = [1, 2, 3, 4, 5]
+if e in a:
+    print("can't add repeatly")
+f = set()
+g = tuple(b)
+print("g:", g)
+f.add(g)
+print("f:", f)
+
+a = tuple((1, 2, 3))
+b = tuple((4, 5, 6))
+print("+:", a+b)
