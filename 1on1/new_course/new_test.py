@@ -228,3 +228,12 @@ if b in a:
     print("b in a!")
 if c in a:
     print("c in a!")
+
+r1 = True
+r2 = True
+if not r1 and not r2:
+    print("both not")
+elif r1:
+    print("r1")
+elif r2:
+    print("r2")
