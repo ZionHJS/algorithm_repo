@@ -259,3 +259,6 @@ print("+:", a+b)
 
 a = "09"
 print(int(a))
+
+for i in range(9, 0, -1):
+    print("i:", i)
