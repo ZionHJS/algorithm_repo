@@ -256,3 +256,6 @@ print("f:", f)
 a = tuple((1, 2, 3))
 b = tuple((4, 5, 6))
 print("+:", a+b)
+
+a = "09"
+print(int(a))
