@@ -278,3 +278,9 @@ print("t:", t)
 a = "000"
 b = int(a)
 print("b:", b)
+
+s = [[]]
+if not s:
+    print("not s!")
+else:
+    print("S!")
