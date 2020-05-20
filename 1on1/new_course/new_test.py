@@ -262,3 +262,19 @@ print(int(a))
 
 for i in range(9, 0, -1):
     print("i:", i)
+
+d = {}
+idx = 3
+cur = [1, 2, 4]
+d[(idx, tuple(cur))] = True
+
+print("d:", d)
+
+a = [1, 2, 3, 4, 5, 6]
+t = set()
+t.add(a)
+print("t:", t)
+
+a = "000"
+b = int(a)
+print("b:", b)
