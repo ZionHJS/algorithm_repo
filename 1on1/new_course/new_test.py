@@ -284,3 +284,11 @@ if not s:
     print("not s!")
 else:
     print("S!")
+
+print(6 % 10)
+
+a = "0"*10
+print("a:", a)
+
+for i in range(10)[::-1]:
+    print("i:", i)
