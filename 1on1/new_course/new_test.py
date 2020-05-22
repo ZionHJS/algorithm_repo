@@ -292,3 +292,22 @@ print("a:", a)
 
 for i in range(10)[::-1]:
     print("i:", i)
+
+oper = -
+print("oper:", oper)
+
+a = "  13  "
+print(int(a))
+
+str = "   "
+
+if not str:
+    print("not!!!")
+
+print(int(str))
+
+str = "12+34"
+print(int(str))
+
+str = "-223"
+print(int(str))
