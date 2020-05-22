@@ -311,3 +311,6 @@ print(int(str))
 
 str = "-223"
 print(int(str))
+
+a = "" + 2
+print("a:", a)
