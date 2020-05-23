@@ -314,3 +314,9 @@ print(int(str))
 
 a = "" + 2
 print("a:", a)
+
+target = 3
+a = 1.5
+print(a*2 == target)
+
+print(1 % 2)
