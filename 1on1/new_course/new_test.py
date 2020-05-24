@@ -320,3 +320,9 @@ a = 1.5
 print(a*2 == target)
 
 print(1 % 2)
+
+a = 3
+b = 2
+print(a *= b+1)
+
+print(1.5 % 1)
