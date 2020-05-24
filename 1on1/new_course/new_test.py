@@ -326,3 +326,7 @@ b = 2
 print(a *= b+1)
 
 print(1.5 % 1)
+
+map = {}
+if not map:
+    print("empty!")
