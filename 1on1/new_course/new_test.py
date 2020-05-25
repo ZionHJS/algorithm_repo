@@ -330,3 +330,8 @@ print(1.5 % 1)
 map = {}
 if not map:
     print("empty!")
+
+ladder = [set()]
+ladder.append(set())
+ladder[1].add(3)
+print("ladder:", ladder)
