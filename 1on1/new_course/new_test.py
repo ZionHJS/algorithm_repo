@@ -342,3 +342,19 @@ print("cur_num:", cur_num)
 
 a = "-2342"
 print(int(a))
+
+a = "ebcdc"
+b = "eabcd"
+print(min(a, b))
+
+s = "abcd"
+print(s[5])
+
+res = "z"*len(s)
+print(res)
+nxt_s = s[4:]
+print("nxt_s:", nxt_s)
+
+a = "c"
+b = "c"
+print(min(a, b))
