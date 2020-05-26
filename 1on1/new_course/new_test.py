@@ -335,3 +335,10 @@ ladder = [set()]
 ladder.append(set())
 ladder[1].add(3)
 print("ladder:", ladder)
+
+cur_num = ""
+cur_num += 3
+print("cur_num:", cur_num)
+
+a = "-2342"
+print(int(a))
