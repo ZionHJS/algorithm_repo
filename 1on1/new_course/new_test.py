@@ -348,7 +348,8 @@ b = "eabcd"
 print(min(a, b))
 
 s = "abcd"
-print(s[5])
+s = s[:-1]
+print(s)
 
 res = "z"*len(s)
 print(res)
