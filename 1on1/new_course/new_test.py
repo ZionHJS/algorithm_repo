@@ -359,3 +359,21 @@ print("nxt_s:", nxt_s)
 a = "c"
 b = "c"
 print(min(a, b))
+
+print(5//3)
+
+a = "    abcd    "
+print("a:", a.strip(" "))
+
+cur1 = " "
+cur2 = ""
+
+if cur2 != " ":
+    print("cu2!")
+if cur1 != " ":
+    print("cur1")
+if cur1:
+    print("not a empty cur1")
+
+for i in range(9, -1, -1):
+    print("i:", i)
