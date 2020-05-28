@@ -387,3 +387,7 @@ for i in range(12, 99, -1):
 
 for i in range(10, -1, -1):
     print("i:", i)
+
+a = [1, 2, 3, 4, 5]
+idx = a.index(3)
+print("idx:", idx)
