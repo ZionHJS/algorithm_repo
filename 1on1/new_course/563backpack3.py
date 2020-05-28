@@ -27,3 +27,20 @@ class Solution:
                         dp[i % 2][j] = dp[(i+1) % 2][j]
 
         return dp[i % 2][-1] if (len(A)-1) % 2 else dp[(i-1) % 2][-1]
+
+
+class Solution:
+    def change(self, cashbox, amount): -> int
+     dp = [[0 for j in range(amount+1)] for i in range(2)]
+      dp[0][0] = 1
+       for k in range(len(cashbox[0])):
+            if cashbox[0][k] <= amount:
+                dp[0][cashbox[0][k]] += 1
+
+        for i in range(1, len(cashbox)):
+            dp[i % 2] = dp[(i-1) % 2]
+            for k in range(len(cashbox[i])):
+                for j in range(amount, cashbox[i][k]-1, -1):
+                    dp[i % 2][j] += dp[(i-1) % 2][j - cashbox[i % 2][k]]
+
+        return dp[len(cashbox) % 2][-1]

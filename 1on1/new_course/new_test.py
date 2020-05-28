@@ -377,3 +377,13 @@ if cur1:
 
 for i in range(9, -1, -1):
     print("i:", i)
+
+
+for i in range(99, 12):
+    print("i:", i)
+
+for i in range(12, 99, -1):
+    print("i:", i)
+
+for i in range(10, -1, -1):
+    print("i:", i)
