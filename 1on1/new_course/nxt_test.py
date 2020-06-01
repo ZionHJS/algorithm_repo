@@ -17,3 +17,8 @@ N = n[:0] + n[1:]
 print("N:", N)
 
 a = [1, [3, [4], [5]]]
+
+
+str2 = "123 sjhid dhi"
+list2 = str2.split()  # or list2 = str2.split(" ")
+print list2
