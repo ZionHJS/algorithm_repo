@@ -11,3 +11,9 @@ ta = tuple(a)
 print("ta:", ta)
 s.add(ta)
 print("s:", s)
+
+n = [0]
+N = n[:0] + n[1:]
+print("N:", N)
+
+a = [1, [3, [4], [5]]]
