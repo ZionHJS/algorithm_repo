@@ -36,3 +36,15 @@ class Solution:
             ans += left*(len(N))
 
         return ans
+
+        # bottom-top dp
+        N = [1] + [x for x in N if x > 0] + [1]
+        n = len(N)
+        dp = [[0 for j in range(n)] for i in range(n)]
+        for i in range(2, n):
+            for l in range(0, n-i):  # i和j是镜像的
+                r = l+i
+                for k in range(l+1, r):
+                    last_burst = N[l]*N[k]*N[r]
+                    dp[l][r] = max(dp[l][r], dp[l][k] + last_burst + dp[k][r])
+        return dp[0][n - 1]
