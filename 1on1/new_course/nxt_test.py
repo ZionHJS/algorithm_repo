@@ -22,3 +22,14 @@ a = [1, [3, [4], [5]]]
 str2 = "123 sjhid dhi"
 list2 = str2.split()  # or list2 = str2.split(" ")
 print list2
+
+
+def power(x, n=2):
+    s = 1
+    while n > 0:
+        n = n-1
+        s = s*x
+    return s
+
+
+print(power(5))
