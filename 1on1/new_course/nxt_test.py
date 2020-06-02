@@ -33,3 +33,7 @@ def power(x, n=2):
 
 
 print(power(5))
+
+print("2**30:", 2**30)
+
+print(1//2)
