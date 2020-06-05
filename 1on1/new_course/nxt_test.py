@@ -37,3 +37,13 @@ print(power(5))
 print("2**30:", 2**30)
 
 print(1//2)
+
+a = "abcdefg"
+b = "hjklmn"
+for (x, y) in zip(a, b):
+    print("x,y:", (x, y))
+
+c = "abc"
+d = "abca"
+print(c > d)
+print(d > c)
