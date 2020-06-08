@@ -47,3 +47,6 @@ c = "abc"
 d = "abca"
 print(c > d)
 print(d > c)
+
+str = "banana"
+print("ana" in str)
