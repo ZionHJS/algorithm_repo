@@ -28,3 +28,34 @@ class Solution:
                     seeds_right.discard(j+cur_i)
         dfs(0, B)
         return res
+
+
+class Solution {
+    public List < String > wordBreak(String s, List < String > wordDict) {
+        HashMap < Integer, List < String >> memo = new HashMap <> ()
+        HashSet < String > wordSet = new HashSet <> ()
+        for(String word: wordDict) wordSet.add(word)
+        dfs(0, wordSet, s, memo)
+    }
+    private List < String > dfs(int idx, HashSet wordSet, String s, HashMap memo){
+        if(idx == s.length()){
+            return new ArrayList < String > ()
+        }else if(memo.containsKey((Integer)idx)){
+            return memo.get((Integer)idx)
+        }
+        List < String > cur_res = new ArrayList <> ()
+        for(int i=idx
+            i < s.length()
+            i++){
+            String tmp_head = s.substring(idx, i+1)
+            if(wordSet.contains(tmp_head)){
+                List < String > nxt_res = dfs(idx+1, wordSet, s, memo)
+                for(String word: nxt_res){
+                    String nxt_word = tmp_head + " " + word
+                    cur_res.add(word.strip())
+                }
+            }
+        }
+        return cur_res
+    }
+}
