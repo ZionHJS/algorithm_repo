@@ -8,37 +8,32 @@ class Solution:
             if i <= n and (R[i] == 0 or i-R[i] > prevb[-1]+1):
                 i += 1
                 continue
+            while len(prevb) >= 2 and j-R[i] <= prevb[-2]:
+                stack.pop()
+                prevb.pop()
             stack.append(i)
             prevb.append(i+R[i])
             j = i+1
             #print("stack:", stack)
             while j <= n and j <= prevb[-1]:
-                if (j-R[j] <= stack[-1]-R[stack[-1]]) or(stack[-1]-R[stack[-1]] <= 0 and j-R[j] <= 0):
-                    # print("here?")
-                    while stack[-1] >= 0 and ((j-R[j] <= stack[-1]-R[stack[-1]]) or (stack[-1]-R[stack[-1]] <= 0 and j-R[j] <= 0)):
-                        # print("pop!")
-                        stack.pop()
-                        prevb.pop()
-                    stack.append(j)
-                    prevb.append(j+R[j])
-
-                if j+R[j] > prevb[-1]:
-                    while j-R[j] <= prevb[-2]+1:
+                if R[j] != 0 and j+R[j] >= prevb[-1]:
+                    while len(prevb) >= 2 and j-R[j] <= prevb[-2]:
                         stack.pop()
                         prevb.pop()
                     stack.append(j)
                     prevb.append(j+R[j])
                 j += 1
-            i = prevb[-1]+1
+            #print("prevb:", prevb)
+            i = j
         #print("prevb:", prevb, "stack:", stack)
         while prevb[-1] > n:
             stack.pop()
             prevb.pop()
             if prevb[-1] < n:
-                # print("nnnn")
                 prevb.append(n)
                 stack.append(n)
         #print("prevb:", prevb, "stack:", stack)
+        #print("stack:", stack)
         if prevb[-1] >= n:
             return len(stack)-1
         else:
