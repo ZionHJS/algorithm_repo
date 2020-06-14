@@ -61,4 +61,9 @@ for row in a:
 print("a:", a)
 
 a = "1+4*2"
+print(a[4:-2])
+print(a[1:-2])
+print(a[4:-2])
+
+
 print(int(a))
