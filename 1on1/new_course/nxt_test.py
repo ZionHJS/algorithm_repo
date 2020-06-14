@@ -59,3 +59,6 @@ for row in a:
     row = "".join(row)
     print("row:", row)
 print("a:", a)
+
+a = "1+4*2"
+print(int(a))
