@@ -67,3 +67,6 @@ print(a[4:-2])
 
 
 print(int(a))
+
+pld = "abcdef"
+print("pld:", pld[::-1])
