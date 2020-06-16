@@ -70,3 +70,7 @@ print(int(a))
 
 pld = "abcdef"
 print("pld:", pld[::-1])
+
+a = ""
+a += str(1)
+print("a:", a)
