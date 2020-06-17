@@ -74,3 +74,12 @@ print("pld:", pld[::-1])
 a = ""
 a += str(1)
 print("a:", a)
+
+for i in range(11, 1):
+    print("i:", i)
+
+words = "Anacell provides the best services in the city"
+#words_split = words.split(" ")
+#print("words_split:", words_split)
+a = set(words)
+print("a:", a)
