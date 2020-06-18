@@ -83,3 +83,8 @@ words = "Anacell provides the best services in the city"
 #print("words_split:", words_split)
 a = set(words)
 print("a:", a)
+
+words = "Anacell provides the best services in the city"
+print("words", words.lower())
+
+word = "Anacell"
