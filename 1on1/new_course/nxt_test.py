@@ -1,4 +1,10 @@
 import bisect
+words = "Anacell provides the best services in the city"
+word = "abcdefghijklmnopqrstuvwxyz"
+idx = bisect.bisect_left(word, "km")
+print("idx:", idx)
+
+
 a = "bfcde"
 idx = bisect.bisect_left(a, "f")
 print("idx:", idx)
@@ -88,3 +94,7 @@ words = "Anacell provides the best services in the city"
 print("words", words.lower())
 
 word = "Anacell"
+
+words = "Anacell provides the best services in the city"
+idx = bisect.bisect_left(" ")
+print("idx:", idx)
