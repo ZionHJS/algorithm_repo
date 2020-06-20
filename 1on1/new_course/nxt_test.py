@@ -98,3 +98,21 @@ word = "Anacell"
 words = "Anacell provides the best services in the city"
 idx = bisect.bisect_left(" ")
 print("idx:", idx)
+
+for i in range(10)[::-1]:
+    print("i:", i)
+
+
+i = 10
+
+for j in range(i+1, i+1):
+    print("jk:", j)
+
+print("j:", j)
+
+strg = "a#b#c#d#e#f"
+strg = strg.replace("#", "")
+print("strg:", strg)
+
+name = "Bob"
+print(name.lower())
