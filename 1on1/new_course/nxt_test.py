@@ -116,3 +116,9 @@ print("strg:", strg)
 
 name = "Bob"
 print(name.lower())
+
+A = "abcd"
+print("min_is:", min(A))
+
+res = "a"*10
+print("res:", res)
