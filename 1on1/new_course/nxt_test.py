@@ -122,3 +122,12 @@ print("min_is:", min(A))
 
 res = "a"*10
 print("res:", res)
+
+print("4321" > "3421")
+
+nxt_words = [""]
+head = "head"
+res = []
+for word in nxt_words:
+    res.append(head + " " + word)
+print("res:", res)
