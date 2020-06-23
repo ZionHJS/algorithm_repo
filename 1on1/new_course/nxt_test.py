@@ -131,3 +131,6 @@ res = []
 for word in nxt_words:
     res.append(head + " " + word)
 print("res:", res)
+
+keyboard = "adbcdefghijkldmnopqrstduvwxyz"
+print(keyboard.find("d"))
