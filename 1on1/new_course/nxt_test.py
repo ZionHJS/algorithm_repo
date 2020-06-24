@@ -134,3 +134,9 @@ print("res:", res)
 
 keyboard = "adbcdefghijkldmnopqrstduvwxyz"
 print(keyboard.find("d"))
+
+for i in range(100):
+    print("i:", i)
+    cur = i
+    while i < cur+3:
+        i += 1
