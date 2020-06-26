@@ -1,4 +1,9 @@
 import bisect
+roses = [1, 2, 4, 9, 1, 3, 4, 1]
+idx = 0
+while idx < len(roses):
+    idx = bisect.bisect_left()
+
 words = "Anacell provides the best services in the city"
 word = "abcdefghijklmnopqrstuvwxyz"
 idx = bisect.bisect_left(word, "km")
