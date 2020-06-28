@@ -152,3 +152,6 @@ s = set()
 print("a:", a, "t:", t)
 s.add(t)
 print("s:", s)
+
+c = "3"
+print("int:", int(c) == 3)
