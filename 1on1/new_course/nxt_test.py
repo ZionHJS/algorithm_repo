@@ -145,3 +145,10 @@ for i in range(100):
     cur = i
     while i < cur+3:
         i += 1
+
+a = [[1, 2], [3, 4], [7, 8]]
+t = tuple(a)
+s = set()
+print("a:", a, "t:", t)
+s.add(t)
+print("s:", s)
