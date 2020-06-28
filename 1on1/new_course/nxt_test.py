@@ -155,3 +155,8 @@ print("s:", s)
 
 c = "3"
 print("int:", int(c) == 3)
+
+A = [[1, 2], [3, 4], [7, 8]]
+for a in A:
+    a += [0]
+print("A:", A)
