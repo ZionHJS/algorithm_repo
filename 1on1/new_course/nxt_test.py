@@ -165,4 +165,4 @@ t = ['2', '9765', '12', '13', '4']
 tt = tuple(t)
 print("tt:", tt)
 
-print("empty")
+a = "empty"
