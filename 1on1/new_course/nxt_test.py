@@ -166,3 +166,5 @@ tt = tuple(t)
 print("tt:", tt)
 
 a = "empty"
+
+b = "empty too"
