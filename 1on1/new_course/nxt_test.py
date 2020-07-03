@@ -168,3 +168,5 @@ print("tt:", tt)
 a = "empty"
 
 b = "empty too"
+
+c = "another    "
