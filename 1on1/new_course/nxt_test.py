@@ -172,4 +172,4 @@ b = "empty too"
 c = "another    "
 
 x = -20
-print(x % 2)
+print(x % 2 + 1)
