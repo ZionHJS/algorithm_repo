@@ -173,3 +173,6 @@ c = "another    "
 
 x = -20
 print(x % 2 + 1)
+
+y = 20
+print(y % (-2))
