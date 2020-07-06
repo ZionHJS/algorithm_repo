@@ -175,4 +175,4 @@ x = -20
 print(x % 2 + 1)
 
 y = 20
-print(y % (-2))
+print(y % (-6))
