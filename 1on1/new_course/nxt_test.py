@@ -176,3 +176,6 @@ print(x % 2 + 1)
 
 y = 20
 print(y % (-6))
+
+burst = [3, 1, 5, 8]
+print("burst:", burst)
