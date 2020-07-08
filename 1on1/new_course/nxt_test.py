@@ -179,3 +179,7 @@ print(y % (-6))
 
 burst = [3, 1, 5, 8]
 print("burst:", burst)
+
+
+burst = [3, 1, 5, 8]
+print("burst:", burst)
