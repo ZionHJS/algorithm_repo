@@ -183,3 +183,6 @@ print("burst:", burst)
 
 burst = [3, 1, 5, 8]
 print("burst:", burst)
+
+word = "xfzdefghjklmn"
+print(min(word))
