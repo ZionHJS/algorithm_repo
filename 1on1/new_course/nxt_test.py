@@ -186,3 +186,7 @@ print("burst:", burst)
 
 word = "xfzdefghjklmn"
 print(min(word))
+
+string = "abcdefghjklmnopqrstuvwxyz"
+s = set(string)
+print("s:", s)
