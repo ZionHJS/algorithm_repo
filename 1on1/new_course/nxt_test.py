@@ -190,3 +190,6 @@ print(min(word))
 string = "abcdefghjklmnopqrstuvwxyz"
 s = set(string)
 print("s:", s)
+
+string = "abcdefghjklmnopqrstuvwxyz"
+print("s:", string[::-1])
