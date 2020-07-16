@@ -193,3 +193,14 @@ print("s:", s)
 
 string = "abcdefghjklmnopqrstuvwxyz"
 print("s:", string[::-1])
+
+lst = ["1", "2", "3", "4", "5"]
+strlist = str(lst)
+srlist = "".join(lst)
+
+print("strlist:", strlist)
+print("srlist:", srlist)
+
+string = "abcdefghjklmnopqrstuvwxyz"
+st = set(string)
+print("st:", st)
