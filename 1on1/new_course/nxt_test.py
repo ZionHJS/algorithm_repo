@@ -204,3 +204,6 @@ print("srlist:", srlist)
 string = "abcdefghjklmnopqrstuvwxyz"
 st = set(string)
 print("st:", st)
+
+a = tuple((1, 2, 3, 4))
+print("list:", list(a))
