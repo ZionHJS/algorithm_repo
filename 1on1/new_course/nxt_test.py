@@ -207,3 +207,6 @@ print("st:", st)
 
 a = tuple((1, 2, 3, 4))
 print("list:", list(a))
+
+a = [4]*5
+print("a:", a)
