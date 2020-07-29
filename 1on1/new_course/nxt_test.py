@@ -213,3 +213,6 @@ print("a:", a)
 
 nums = [1, 2, 3, 4, 5]
 print("str_nums:", str(nums))
+
+for i in range(10)[::-1]:
+    print("i:", i)
