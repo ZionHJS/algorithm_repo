@@ -216,3 +216,18 @@ print("str_nums:", str(nums))
 
 for i in range(10)[::-1]:
     print("i:", i)
+
+ans = []
+ds = ((-1, 0), (1, 0), (0, -1), (0, 1)); created = set(); lands = set()
+       # iteral
+   for p in P:   # O(N)    -> O(N*(N!))
+        lands.add((p[0], p[1]))
+        for i in range(4):  # O(4)
+            x_ = p[0]+ds[i][0]
+            y_ = p[1]+ds[i][1]
+            if (x_, y_) in created:
+                union(p, (x_, y_), lands)  # O(logN)
+        created.add((p[0], p[1]))
+        ans.append(len(lands))
+
+    return ans
