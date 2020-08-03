@@ -90,8 +90,8 @@ for i in range(11, 1):
     print("i:", i)
 
 words = "Anacell provides the best services in the city"
-#words_split = words.split(" ")
-#print("words_split:", words_split)
+# words_split = words.split(" ")
+# print("words_split:", words_split)
 a = set(words)
 print("a:", a)
 
@@ -231,3 +231,11 @@ ds = ((-1, 0), (1, 0), (0, -1), (0, 1)); created = set(); lands = set()
         ans.append(len(lands))
 
     return ans
+
+
+for i in range(10, -1, -1):
+    print("i: ", i)
+
+
+lst = [1,2,3,4,5]
+print("str:", str(lst))
