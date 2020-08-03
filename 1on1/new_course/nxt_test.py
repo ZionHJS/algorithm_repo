@@ -1,7 +1,6 @@
 import bisect
-nums = [1, 3, 5, 2, 7, 9]
-print(bisect.bisect(nums, 2))
-
+nums = [1, 1, 1, 2, 7, 9]
+print(bisect.bisect_left(nums, 2))
 
 roses = [1, 2, 4, 9, 1, 3, 4, 1]
 idx = 0
