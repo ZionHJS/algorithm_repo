@@ -1,5 +1,5 @@
 import bisect
-nums = [1, 3, 5, 7, 9]
+nums = [1, 3, 5, 2, 7, 9]
 print(bisect.bisect(nums, 2))
 
 
