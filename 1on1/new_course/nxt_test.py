@@ -1,4 +1,8 @@
 import bisect
+nums = [1, 3, 5, 7, 9]
+print(bisect.bisect(nums, 2))
+
+
 roses = [1, 2, 4, 9, 1, 3, 4, 1]
 idx = 0
 while idx < len(roses):
@@ -233,9 +237,20 @@ ds = ((-1, 0), (1, 0), (0, -1), (0, 1)); created = set(); lands = set()
     return ans
 
 
-for i in range(10, -1, -1):
+for i in range(10)[::-1]:
     print("i: ", i)
 
 
 lst = [1,2,3,4,5]
 print("str:", str(lst))
+
+for i in range(10, 0, -1):
+    print("i:", i)
+
+dict = {"b":2, "a":3, "c":6}
+if "d" in dict:
+    print(dict["d"])
+elif "c" in dict:
+    print(dict["c"])
+
+nums = [1, 3, 5, 7, 9]
