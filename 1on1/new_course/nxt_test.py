@@ -246,6 +246,9 @@ print("str:", str(lst))
 for i in range(10, 0, -1):
     print("i:", i)
 
+for i in range(10)[::-1]:
+    print("i:", i)
+
 dict = {"b":2, "a":3, "c":6}
 if "d" in dict:
     print(dict["d"])
@@ -253,3 +256,6 @@ elif "c" in dict:
     print(dict["c"])
 
 nums = [1, 3, 5, 7, 9]
+
+for i in range(10, 0, -1):
+    print("i: ", i)
