@@ -259,3 +259,7 @@ nums = [1, 3, 5, 7, 9]
 
 for i in range(10, 0, -1):
     print("i: ", i)
+
+str = "this is string!"
+if str.startswith(""):
+    print("inside!")
