@@ -263,3 +263,6 @@ for i in range(10, 0, -1):
 str = "this is string!"
 if str.startswith(""):
     print("inside!")
+
+rg = range(10)
+print("rg:", rg)
