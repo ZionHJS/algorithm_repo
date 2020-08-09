@@ -273,3 +273,22 @@ print("set1:", set1)
 print("set2:", set2)
 set1 = set1.union(set2)
 print("final set1:", set1)
+
+
+a=3
+a<<=3
+print(bin(a))
+
+b=2
+b<<=12
+print(bin(b))
+
+c = b | a
+print(bin(c))
+
+dic = {1:2, 2:3, 4:5, 6:10}
+a = sorted(dic.keys())
+print(a)
+
+for i in range(10)[::-1]:
+    print("i: ", i)
