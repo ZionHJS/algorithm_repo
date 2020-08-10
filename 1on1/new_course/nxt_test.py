@@ -1,4 +1,11 @@
 import bisect
+import re
+review = "I love anacell Best, services; Best services. provided by anacell"
+review = re.sub(r"[^a-z0-9 ]", "", review.lower())
+print("review:", review)
+print("s-review:", review.split(" "))
+
+
 nums = [1, 1, 1, 2, 7, 9]
 print(bisect.bisect_left(nums, 2))
 
@@ -292,3 +299,36 @@ print(a)
 
 for i in range(10)[::-1]:
     print("i: ", i)
+
+str = "I love anacell Best services; Best services provided by anacell"
+if "love" in str:
+    print("inside!")
+
+lst = ["1", "2", "3", "4", "5", "6"]
+lst_set = set(["1", "2", "3", "4", "5", "6"])
+
+str = "I love anacell Best services; Best services provided by anacell"
+lst_set = set(str.split(" "))
+print("lst_st:", lst_set)
+
+review = "I love anacell Best services; Best services provided by anacell"
+print("is:", review.lower().split(" "))
+print("is:", review.lower().replace('[^a-z0-9]', '').split())
+
+a = [2,3,5,1,2,3,5,2,3,57,6,33,776]
+b = sorted(a, key=lambda x: x)
+print("b:", b)
+
+
+str = "I love anacell Best, services; Best services. provided by anacell"
+review = re.sub(r"[^a-z0-9]", "", review)
+print("str:", str)
+
+
+l1= [1,2,3,4]
+l2 = [5,6,7,8]
+l1.append(l2)
+print("l1:", l1)
+
+i, j = 0
+print("i:", i, "j:", j)
