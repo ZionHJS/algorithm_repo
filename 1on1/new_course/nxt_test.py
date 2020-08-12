@@ -324,6 +324,8 @@ str = "I love anacell Best, services; Best services. provided by anacell"
 review = re.sub(r"[^a-z0-9]", "", review)
 print("str:", str)
 
+review = re.sub(r"[^a-z0-9 ]", "", review)
+print("str:", str)
 
 l1= [1,2,3,4]
 l2 = [5,6,7,8]
