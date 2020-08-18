@@ -347,3 +347,10 @@ print("l1:", l1)
 
 num = "-239"
 print(int(num) == (-239))
+
+a = -239
+print(str(a) == "239")
+
+chars = '+-0123456789'
+charss = chars.split("")
+print(charss)
