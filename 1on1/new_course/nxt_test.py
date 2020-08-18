@@ -354,3 +354,11 @@ print(str(a) == "239")
 chars = '+-0123456789'
 charss = chars.split("")
 print(charss)
+
+print("joke" > "dam")
+
+dict = {"a":3, "b":4, "c":5, "g":1}
+max1 = max(dict, key=dict.get)
+max2 = max(dict.keys()) 
+print("max1:", max1, "max2:", max2)
+print("dict[max1]", dict[max1])
