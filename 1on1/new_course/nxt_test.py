@@ -362,3 +362,8 @@ max1 = max(dict, key=dict.get)
 max2 = max(dict.keys()) 
 print("max1:", max1, "max2:", max2)
 print("dict[max1]", dict[max1])
+
+dict = {"a":3, "b":4, "c":5, "g":1}
+print("keys-len:", len(dict))
+for key in dict:
+    print("key:", key)
