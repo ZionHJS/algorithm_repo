@@ -367,3 +367,17 @@ dict = {"a":3, "b":4, "c":5, "g":1}
 print("keys-len:", len(dict))
 for key in dict:
     print("key:", key)
+print(dict)
+dict2 = {}
+if dict2:
+    print("dict2!!!")
+if not dict2:
+    print("not!")
+
+for i in 10:
+    print('I:', i)
+
+i = -10
+print("i:", str(i))
+
+print(int("3.0"))
