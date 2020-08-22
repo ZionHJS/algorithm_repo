@@ -381,3 +381,9 @@ i = -10
 print("i:", str(i))
 
 print(int("3.0"))
+
+s1 = set([1,2,3])
+s2 = set([3,4,5,6])
+
+print("union:", set.union(s1, s2))
+print("intersection:", set.intersection(s1, s2))
