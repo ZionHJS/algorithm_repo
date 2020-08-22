@@ -387,3 +387,9 @@ s2 = set([3,4,5,6])
 
 print("union:", set.union(s1, s2))
 print("intersection:", set.intersection(s1, s2))
+
+a = False
+b = False
+
+if a and b:
+    print("false!")
