@@ -400,3 +400,6 @@ if a and b:
 print("binary-1:", bin(1<<2))
 print("binary-1-1:", bin(1<<6))
 print("binary-0:", bin(0<<10))
+
+for i in range(10, 0, -1):
+    print("i:", i)
