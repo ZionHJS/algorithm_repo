@@ -403,3 +403,6 @@ print("binary-0:", bin(0<<10))
 
 for i in range(10, 0, -1):
     print("i:", i)
+
+s = "" + 1 + "#" + 3
+print("s:", s)
