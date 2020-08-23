@@ -294,6 +294,9 @@ c = b | a
 print(bin(c))
 
 dic = {1:2, 2:3, 4:5, 6:10}
+print("keys:", dic.keys())
+print("keys-0:", dic.keys()[0])
+
 a = sorted(dic.keys())
 print(a)
 
@@ -393,3 +396,7 @@ b = False
 
 if a and b:
     print("false!")
+
+print("binary-1:", bin(1<<2))
+print("binary-1-1:", bin(1<<6))
+print("binary-0:", bin(0<<10))
