@@ -1,6 +1,9 @@
 import re
 str = "$50 each. $100, $999"
-#res = re.sub(r"[$0-9]", str.lower().split)
+lst = re.findall(r"\$\d+", str.lower())
+print("res:", lst)
+
+
 print("find:", str.find("$"))
 print("split:", str.split("$"))
 
