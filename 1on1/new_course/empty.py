@@ -10,3 +10,6 @@ print("split:", str.split("$"))
 lst = [[1, 2], [3, 4], [5, 6]]
 for u, v in lst[::-1]:
     print("u:", u, "v:", v)
+
+for i in range(10, -1, -1):
+    print("i:", i)
