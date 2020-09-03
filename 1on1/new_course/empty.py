@@ -1,7 +1,7 @@
 import re
 str = "$50 each. $100, $999"
 lst = re.findall(r"\$\d+", str.lower())
-print("res:", lst)
+print("lst:", lst)
 
 
 print("find:", str.find("$"))
@@ -31,3 +31,7 @@ print("s:", s)
 
 num = -10
 print("str:", str(num))
+
+str = "$50 each. $100, $999"
+lst = re.findall(r"\$\d+", str.lower())
+print("lst:", lst)
