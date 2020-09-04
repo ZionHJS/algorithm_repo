@@ -37,3 +37,5 @@ lst = re.findall(r"\$\d+", str.lower())
 print("lst:", lst)
 
 print("bin:", bin(0))
+
+print("who larger:", "abc" < "aaaa")
