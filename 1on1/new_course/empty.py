@@ -39,3 +39,6 @@ print("lst:", lst)
 print("bin:", bin(0))
 
 print("who larger:", "abc" < "aaaa")
+
+for i in range(1, 10)[::-1]:
+    print("i:", i)
