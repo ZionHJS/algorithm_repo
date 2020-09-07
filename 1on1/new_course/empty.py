@@ -1,4 +1,10 @@
 import re
+import itertools
+a = [[1, 2], [2, 4], [3, 6]]
+b = [[1, 2]]
+print("product:", list(itertools.product(a, b)))
+
+
 str = "$50 each. $100, $999"
 lst = re.findall(r"\$\d+", str.lower())
 print("lst:", lst)
@@ -46,3 +52,8 @@ for i in range(1, 10)[::-1]:
 a = "A"
 b = "A"
 print(a == b and "EQ" or "Not EQ")
+
+a = [[1, 2], [2, 4], [3, 6]]
+b = [[1, 2]]
+
+print("zip:", zip(a, b))
