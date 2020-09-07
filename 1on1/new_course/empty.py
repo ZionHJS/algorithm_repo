@@ -42,3 +42,7 @@ print("who larger:", "abc" < "aaaa")
 
 for i in range(1, 10)[::-1]:
     print("i:", i)
+
+a = "A"
+b = "A"
+print(a == b and "EQ" or "Not EQ")
