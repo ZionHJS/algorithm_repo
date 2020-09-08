@@ -57,3 +57,8 @@ a = [[1, 2], [2, 4], [3, 6]]
 b = [[1, 2]]
 
 print("zip:", zip(a, b))
+
+lst = ["a", "b"]
+set_ = set()
+set_.addAll(lst)
+print("set_:", set_)
