@@ -62,3 +62,12 @@ lst = ["a", "b"]
 set_ = set()
 set_.addAll(lst)
 print("set_:", set_)
+
+grid = [[1, 0, 0, 0, 1], [0, 0, 0, 0, 0], [0, 0, 1, 0, 0]]
+for g in grid, zip(*grid):
+    print("g:", g)
+    X = []
+    for x, row in enumerate(g):
+        print("x:", x, "row:", row, "sum:", sum(row), "[x]*row:", [x]*sum(row))
+        X += [x]*sum(row)
+    print("X:", X)
