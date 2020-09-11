@@ -71,3 +71,6 @@ for g in grid, zip(*grid):
         print("x:", x, "row:", row, "sum:", sum(row), "[x]*row:", [x]*sum(row))
         X += [x]*sum(row)
     print("X:", X)
+
+for i in range(-10):
+    print("i:", i)
