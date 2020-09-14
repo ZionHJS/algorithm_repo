@@ -1,9 +1,12 @@
 import re
 import itertools
-a = [[1, 2], [2, 4], [3, 6]]
-b = [[1, 2]]
-print("product:", list(itertools.product(a, b)))
+import collections
+# a = [[1, 2], [2, 4], [3, 6]]
+# b = [[1, 2]]
+# print("product:", list(itertools.product(a, b)))
 
+s = "aaabbbcc"
+print("counter:", collections.Counter(s))
 
 str = "$50 each. $100, $999"
 lst = re.findall(r"\$\d+", str.lower())
@@ -74,3 +77,19 @@ for g in grid, zip(*grid):
 
 for i in range(-10):
     print("i:", i)
+lst = [0, 1, 2, 3]*2
+print("is:", lst)
+
+print("mod:", -1 % 10)
+
+for i in range(10)[::-1]:
+    print("i:", i)
+
+lst_str = "abcdefg"
+print("arr is:", list(lst_str))
+
+print("compare:", "3" < "6")
+
+print("is:", ~10)
+
+print("int:", int("0000"))
