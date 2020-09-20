@@ -93,3 +93,7 @@ print("compare:", "3" < "6")
 print("is:", ~10)
 
 print("int:", int("0000"))
+
+text = "  walks  udp package   into  bar a"
+print("split:", text.split(" "))
+print("filter:", list(filter(lambda x: len(x), text.split(" "))))
