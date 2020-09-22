@@ -97,3 +97,9 @@ print("int:", int("0000"))
 text = "  walks  udp package   into  bar a"
 print("split:", text.split(" "))
 print("filter:", list(filter(lambda x: len(x), text.split(" "))))
+
+stack = [[1, 2]]
+left, right = stack.pop()
+print("left:", left, "right:", right)
+
+print("%:", 9 % 8)
