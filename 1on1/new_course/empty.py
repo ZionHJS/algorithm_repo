@@ -1,6 +1,12 @@
 import re
 import itertools
 import collections
+import bisect
+
+lst = [0] * 10
+print("idx:", bisect.bisect_left(lst, 3, 0, 1))
+
+
 # a = [[1, 2], [2, 4], [3, 6]]
 # b = [[1, 2]]
 # print("product:", list(itertools.product(a, b)))
